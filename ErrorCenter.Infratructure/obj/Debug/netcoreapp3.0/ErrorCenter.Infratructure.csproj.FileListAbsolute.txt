@@ -1,0 +1,7 @@
+C:\Projeto-Final-Codenation\squad-3-ad-csharp-softplan-1-master\ErrorCenter.Infratructure\bin\Debug\netcoreapp3.0\ErrorCenter.Infratructure.deps.json
+C:\Projeto-Final-Codenation\squad-3-ad-csharp-softplan-1-master\ErrorCenter.Infratructure\bin\Debug\netcoreapp3.0\ErrorCenter.Infratructure.dll
+C:\Projeto-Final-Codenation\squad-3-ad-csharp-softplan-1-master\ErrorCenter.Infratructure\bin\Debug\netcoreapp3.0\ErrorCenter.Infratructure.pdb
+C:\Projeto-Final-Codenation\squad-3-ad-csharp-softplan-1-master\ErrorCenter.Infratructure\obj\Debug\netcoreapp3.0\ErrorCenter.Infratructure.AssemblyInfoInputs.cache
+C:\Projeto-Final-Codenation\squad-3-ad-csharp-softplan-1-master\ErrorCenter.Infratructure\obj\Debug\netcoreapp3.0\ErrorCenter.Infratructure.AssemblyInfo.cs
+C:\Projeto-Final-Codenation\squad-3-ad-csharp-softplan-1-master\ErrorCenter.Infratructure\obj\Debug\netcoreapp3.0\ErrorCenter.Infratructure.dll
+C:\Projeto-Final-Codenation\squad-3-ad-csharp-softplan-1-master\ErrorCenter.Infratructure\obj\Debug\netcoreapp3.0\ErrorCenter.Infratructure.pdb

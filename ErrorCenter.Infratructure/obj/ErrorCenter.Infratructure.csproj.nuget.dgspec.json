@@ -1,26 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Mauro\\codenation\\squad-3-ad-csharp-softplan-1\\squad-3-ad-csharp-softplan-1\\ErrorCenter.Infratructure\\ErrorCenter.Infratructure.csproj": {}
+    "C:\\Projeto-Final-Codenation\\squad-3-ad-csharp-softplan-1-master\\ErrorCenter.Infratructure\\ErrorCenter.Infratructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Mauro\\codenation\\squad-3-ad-csharp-softplan-1\\squad-3-ad-csharp-softplan-1\\ErrorCenter.Infratructure\\ErrorCenter.Infratructure.csproj": {
+    "C:\\Projeto-Final-Codenation\\squad-3-ad-csharp-softplan-1-master\\ErrorCenter.Infratructure\\ErrorCenter.Infratructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mauro\\codenation\\squad-3-ad-csharp-softplan-1\\squad-3-ad-csharp-softplan-1\\ErrorCenter.Infratructure\\ErrorCenter.Infratructure.csproj",
+        "projectUniqueName": "C:\\Projeto-Final-Codenation\\squad-3-ad-csharp-softplan-1-master\\ErrorCenter.Infratructure\\ErrorCenter.Infratructure.csproj",
         "projectName": "ErrorCenter.Infratructure",
-        "projectPath": "C:\\Users\\Mauro\\codenation\\squad-3-ad-csharp-softplan-1\\squad-3-ad-csharp-softplan-1\\ErrorCenter.Infratructure\\ErrorCenter.Infratructure.csproj",
-        "packagesPath": "C:\\Users\\Mauro\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mauro\\codenation\\squad-3-ad-csharp-softplan-1\\squad-3-ad-csharp-softplan-1\\ErrorCenter.Infratructure\\obj\\",
+        "projectPath": "C:\\Projeto-Final-Codenation\\squad-3-ad-csharp-softplan-1-master\\ErrorCenter.Infratructure\\ErrorCenter.Infratructure.csproj",
+        "packagesPath": "C:\\Users\\lucia\\.nuget\\packages\\",
+        "outputPath": "C:\\Projeto-Final-Codenation\\squad-3-ad-csharp-softplan-1-master\\ErrorCenter.Infratructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Mauro\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
+          "C:\\Users\\lucia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
@@ -42,6 +40,20 @@
       },
       "frameworks": {
         "netcoreapp3.0": {
+          "dependencies": {
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.3.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Proxies": {
+              "target": "Package",
+              "version": "[3.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
