@@ -1,0 +1,11 @@
+#banner {
+    height: 60%;
+    width: 100%;
+    background: #abc3d4;
+    font-size: 18px;
+    color: rgb(4, 24, 54);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}

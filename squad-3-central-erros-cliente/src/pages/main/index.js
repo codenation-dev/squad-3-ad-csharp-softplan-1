@@ -60,7 +60,6 @@ export default class Main extends Component {
         const { erros, paginaAtual, info} = this.state;
         return (
             <div>
-
                 <Dados erros={erros} />
 
 

@@ -9,7 +9,6 @@ export default class Dados extends Component {
     constructor (props)
     {
         super(props);
-        console.log("--- ctor ---------");
         console.log(props);
 
         this.state = {
@@ -17,26 +16,29 @@ export default class Dados extends Component {
         };
     }
 
-    handleChecked = event => {
+    atualizarSelecaoNovoItem = (id, selelcted) => {
         const {erros} = this.state;
+        return erros.map(item => {
+            if(item.id == id) {
+                return {
+                    ...item,
+                    sel: selelcted
+                };
+            }
+            else
+            {
+                return item;
+            }
+        });
+    }
 
+    handleChecked = event => {
         console.log("mudou id " + event.target.id);
 
-        var i = 0;
-        /*
-        while(i < erros.length())
-        {
-            console.log("id " + erros[i].id);
-            if(erros[i].id == event.target.id)
-            {
-                erros[i].sel = event.target.value;
-            }
-            i++;
-        }
-*/
-        //console.log(erros.findIndex( item => item.id == event.target.id));
+        const novoArray = atualizarSelecaoNovoItem(event.target.id,
+            event.target.value);
 
-        this.setState({ erros});
+        this.setState({ erros: novoArray});
 
     };
 
@@ -67,7 +69,7 @@ export default class Dados extends Component {
                                 <p>{erro.dataHora}</p>
                             </td>
                             <td>{erro.eventos}</td>
-                            <td><Link to={`/erros/${erro.id}`}>Acessar</Link></td>
+                            <td><Link id="linkDetalhes" to={`/erros/${erro.id}`}>...</Link></td>
                         </tr>
                     ))}
                 </table>
