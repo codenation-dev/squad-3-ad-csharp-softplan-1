@@ -8,7 +8,7 @@ import './styles.css';
 
 const App = () => (
     <div className="App">
-      <Header msgUsuario="Bem vindo usuário. Seu token é: dvsdvsdvsdv" />
+      <Header idUsuario="2" msgUsuario="Bem vindo usuÃ¡rio. Seu token Ã©: " />
       <Routes />
     </div>
   );

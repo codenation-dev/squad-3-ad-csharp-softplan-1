@@ -1,22 +1,64 @@
-.product-info {
-    max-width: 700px;
+, , , 
+
+  .detalhe-erro {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .detalhe-erro td, .detalhe-erro th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .detalhe-erro tr:nth-child{background-color: #f2f2f2;}
+  
+ 
+  .detalhe-erro th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #003761;
+    color: white;
+  }
+
+
+  #erro-grande{
+    height: 60%;
+    width: 100%;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .detalhes, .label-coletadopor, .valor-medio {
+    color: grey;
+    font-size: large;
+}
+
+.label-titulo {
+    color: grey;
+    font-size: large;
+}
+
+.label-detalhe {
+    color: grey;
+    font-size: large;
+}
+
+.valor-medio {
+    color: grey;
+    font-size: medium;
+}
+
+.nivel-erro {
+    max-width: 200px;
+    background: #666;
+    color: #FFF;
     margin: 20px auto 0;
-    padding: 20px;
-    background: #FFF;
+    padding: 2px;
     border-radius: 5px;
-    border: 1px solid #DDD;
 }
 
-.product-info h1 {
-    font-size: 32px;
-}
-
-.product-info p {
-    color: #666;
-    line-height: 24px;
-    margin-top: 5px;
-}
-
-.product-info p a {
-    color: #069;
-}

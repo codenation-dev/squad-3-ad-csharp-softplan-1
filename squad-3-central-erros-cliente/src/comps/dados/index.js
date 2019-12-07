@@ -9,16 +9,23 @@ export default class Dados extends Component {
     constructor (props)
     {
         super(props);
-        console.log(props);
+
+        const {erros} = this.props;
+
+        console.log("criando com props:");
+        console.log(erros);
 
         this.state = {
-                erros: props.erros,
+                erros: [],
         };
+
+
     }
 
     atualizarSelecaoNovoItem = (id, selelcted) => {
         const {erros} = this.state;
         return erros.map(item => {
+            console.log("id: " + item.id);
             if(item.id == id) {
                 return {
                     ...item,
@@ -34,9 +41,10 @@ export default class Dados extends Component {
 
     handleChecked = event => {
         console.log("mudou id " + event.target.id);
-
-        const novoArray = atualizarSelecaoNovoItem(event.target.id,
+        console.log(this.state.erros);
+        const novoArray = this.atualizarSelecaoNovoItem(event.target.id,
             event.target.value);
+            console.log(novoArray);
 
         this.setState({ erros: novoArray});
 
@@ -48,11 +56,16 @@ export default class Dados extends Component {
         return (
             <div className="dados-list">
                 <table id="customers">
-                    <th>check</th>
+                    <th><input
+                                id={-1}
+                                type="checkbox"
+                                checked={false}
+                                onChange={this.handleChecked} />
+                                </th>
                     <th>Level</th>
                     <th>Log</th>
                     <th>Eventos</th>
-                    <th>Detalhes</th>
+                    <th></th>
                     {erros.map( erro => (
                         <tr>
                             <td><input
@@ -69,7 +82,7 @@ export default class Dados extends Component {
                                 <p>{erro.dataHora}</p>
                             </td>
                             <td>{erro.eventos}</td>
-                            <td><Link id="linkDetalhes" to={`/erros/${erro.id}`}>...</Link></td>
+                            <td><Link id="linkDetalhes" to={`/erro/${erro.id}`}>...</Link></td>
                         </tr>
                     ))}
                 </table>

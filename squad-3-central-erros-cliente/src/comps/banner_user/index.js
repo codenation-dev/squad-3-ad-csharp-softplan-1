@@ -2,10 +2,28 @@ import React from 'react';
 import './styles.css';
 
 
-const Banner = () => (
-   <div id="banner">
-      {props.msgUsuario}
-   </div> 
-);
+export default class Banner extends React.Component {
 
-export default Banner;
+   
+
+    constructor (props)
+   {
+       super(props);
+
+       console.log("Banner props:");
+       console.log(props);
+
+       this.state = {
+         msgUsuario : props.msgUsuario
+       };
+   }
+
+   render () {
+         return (
+               <div id="banner"> {this.props.msgUsuario}
+               </div>  
+         );
+   }
+
+}
+
