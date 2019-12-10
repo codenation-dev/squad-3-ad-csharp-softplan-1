@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+import ImagemArquivado from '../ImagemArquivado/index.js';
+
 import './styles.css';
 
 
@@ -12,69 +14,82 @@ export default class Dados extends Component {
 
         const {erros} = this.props;
 
-        console.log("criando com props:");
-        console.log(erros);
+        if(this.props.log) console.log("criando com props:");
+        if(this.props.log) console.log(erros);
 
         this.state = {
                 erros: [],
+                selected: [],
         };
+
+        erros.forEach((element, index, arr) => {
+            this.state.selected.push(false);
+        });
+
+        
 
 
     }
 
-    atualizarSelecaoNovoItem = (id, selelcted) => {
-        const {erros} = this.state;
-        return erros.map(item => {
-            console.log("id: " + item.id);
-            if(item.id == id) {
-                return {
-                    ...item,
-                    sel: selelcted
-                };
+
+    handleChecked = event => {
+//        const {erros} = this.props;
+//        const {selected} = this.state;
+
+        if(event.target.id > 0)
+        {
+            this.props.onChange({id: event.target.id, type:"sel", value: event.target.checked});        
+        }
+                /*
+        erros.forEach((element, index, arr) => {
+            if(event.target.id > 0)
+            {
+                if(element.id === event.target.id)
+                {
+                    selected[index] = event.target.checked;
+                    this.props.onChange({id: element.id, type:"sel", value: event.target.checked});        
+                }
             }
             else
             {
-                return item;
+                selected[index] = event.target.checked;
+                this.props.onChange({id: element.id, type:"sel", value: event.target.checked});
             }
+
         });
-    }
-
-    handleChecked = event => {
-        console.log("mudou id " + event.target.id);
-        console.log(this.state.erros);
-        const novoArray = this.atualizarSelecaoNovoItem(event.target.id,
-            event.target.value);
-            console.log(novoArray);
-
-        this.setState({ erros: novoArray});
-
-    };
+                */
+           };
 
     render() {
-        const {erros} = this.props;
+        const {erros, selecionados} = this.props;
 
         return (
             <div className="dados-list">
                 <table id="customers">
-                    <th><input
-                                id={-1}
-                                type="checkbox"
-                                checked={false}
-                                onChange={this.handleChecked} />
-                                </th>
+                    <thead> 
+                    <tr> 
+                    <th>
+                        Sel.
+                    </th>
                     <th>Level</th>
                     <th>Log</th>
                     <th>Eventos</th>
                     <th></th>
+                    </tr>
+                    </thead> 
+                    <tbody>
                     {erros.map( erro => (
                         <tr>
                             <td><input
+                                key={erro.id}
                                 id={erro.id}
                                 type="checkbox"
-                                checked={erro.sel}
                                 onChange={this.handleChecked} />
-                         </td>
-                            <td>{erro.nivel.nome}</td>
+                            </td>
+                            <td>
+                                <ImagemArquivado  width="45" height="28" value={erro.arquivado} />
+                                <p>{erro.nivel.nome}</p>
+                            </td>
                             <td>
                                 <p>{erro.titulo}</p>
                                 <p>{erro.detalhe}</p>
@@ -82,9 +97,10 @@ export default class Dados extends Component {
                                 <p>{erro.dataHora}</p>
                             </td>
                             <td>{erro.eventos}</td>
-                            <td><Link id="linkDetalhes" to={`/erro/${erro.id}`}>...</Link></td>
+                            <td><Link id="linkDetalhes" key={erro.id} to={`/erro/${erro.id}`}>...</Link></td>
                         </tr>
                     ))}
+                    </tbody>
                 </table>
             </div>
         )

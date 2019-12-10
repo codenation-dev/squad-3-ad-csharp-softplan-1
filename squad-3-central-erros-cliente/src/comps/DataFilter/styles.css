@@ -1,0 +1,36 @@
+
+  .data-filter .filter-edit {
+    margin-top: 3px;
+    scroll-margin-left: 3px;
+    padding: 3px;
+    border-radius: 5px;
+    border-block-color: #000000;
+    color:#2578AC;
+    font-size: 12px;
+}
+
+
+.data-filter button {
+  padding: 10px;
+  border-radius: 5px;
+  border: 0;
+  background: #2578AC;
+  color: #FFF;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  
+}
+
+.data-filter button:hover {
+  opacity: 0.7;
+}
+
+.data-filter button[disabled] {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.data-filter button[disabled]:hover {
+  opacity: 0.5;
+}

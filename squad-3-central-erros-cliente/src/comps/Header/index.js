@@ -2,6 +2,7 @@ import React from 'react';
 import api from '../../services/api';
 import Banner from '../../comps/banner_user';
 
+import {isAutenticated, logout} from  '../../services/auth.js';
 
 import './styles.css';
 
@@ -12,7 +13,7 @@ export default class Header extends React.Component {
       constructor (props)
       {
           super(props);
-          console.log(props);
+          if(this.props.log) console.log(props);
   
           this.state = {
             msgUsuario : props.msgUsuario,
@@ -22,21 +23,34 @@ export default class Header extends React.Component {
       }
 
       componentDidMount() {
-           this.loadUser(this.state.idUsuario);
-        }
-    
+            if(isAutenticated())
+            {
+                  this.loadUser(this.state.idUsuario);
+            }
+            else
+            {
+                  if(this.props.log) console.log("******** não está logado!");
+                  this.setState({ usuario: {id: -1, token: ""}});
+                  if(this.props.log) console.log(this.state.usuario);                  
+            }
+        }    
+
         loadUser = async (id) => {
-            console.log('antes de chamar cons para id ' + id);
+            if(this.props.log) console.log('antes de chamar cons para id ' + id);
             const response = await api.get(`/usuario/${id}`);
     
-            console.log('depois de chamar cons usuario');
-            console.log(response.data);
+            if(this.props.log) console.log('depois de chamar cons usuario');
+            if(this.props.log) console.log(response.data);
     
             this.setState({ usuario: response.data});
-            console.log(this.state.usuario);
+            if(this.props.log) console.log(this.state.usuario);
     
             
         };
+
+        handleLogout = () => {
+            logout();  
+        }
     
       render () {
             const msg = this.state.usuario.id < 1 ? 
@@ -46,7 +60,11 @@ export default class Header extends React.Component {
                   <div>
                         <header id="main-header">
                               AceleraDev - squad 3 - Central de erros
+                              <div hidden={!isAutenticated()}>
+                                    <button onClick={this.handleLogout}>Logout</button>
+                              </div>
                         </header> 
+                        
                         
                         <Banner msgUsuario={msg} />
                   </div>  

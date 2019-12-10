@@ -10,8 +10,8 @@ export default class Banner extends React.Component {
    {
        super(props);
 
-       console.log("Banner props:");
-       console.log(props);
+       if(this.props.log) console.log("Banner props:");
+       if(this.props.log) console.log(props);
 
        this.state = {
          msgUsuario : props.msgUsuario

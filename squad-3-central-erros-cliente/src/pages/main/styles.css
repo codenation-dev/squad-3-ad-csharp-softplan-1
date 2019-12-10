@@ -31,11 +31,20 @@
     color: #fff;
 }
 
+.erro-list .msg-erro {
+    color: #ff0000;
+}
 
 
 .erro-list .actions {
     display: flex;
     justify-content: space-between;
+    scroll-margin-bottom: 20px;
+}
+
+.erro-list .options {
+    display: flex;
+    justify-content: flex-start;
     scroll-margin-bottom: 20px;
 }
 
@@ -48,6 +57,7 @@
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
+    
 }
 
 .erro-list .actions button:hover {

@@ -23,7 +23,7 @@ export default class Erro extends Component {
 
         return (
             <div className="erro-info">
-                
+                <a href="javascript: history.go(-1)">Voltar</a>
                 <div id="erro-grande" >Erro no {erro.origem} em {erro.dataHora}</div>
                 <table id="detalhe-erro">
                     <tr>

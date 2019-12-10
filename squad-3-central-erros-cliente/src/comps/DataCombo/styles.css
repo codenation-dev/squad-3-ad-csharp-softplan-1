@@ -1,0 +1,20 @@
+
+  .data-combo {
+    margin-top: 3px;
+    scroll-margin-left: 3px;
+    padding: 3px;
+    border-radius: 5px;
+    border-block-color: #000000;
+    color:#2578AC;
+    font-size: 12px;
+}
+
+.data-combo2 {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px;
+  background: #2578AC;
+  color: #FFF;
+  font-size: 12px;
+
+}
