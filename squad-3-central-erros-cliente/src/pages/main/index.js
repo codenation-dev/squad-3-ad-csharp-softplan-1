@@ -3,6 +3,8 @@ import api from '../../services/api';
 import Dados from '../../comps/dados';
 import DataCombo from '../../comps/DataCombo';
 import DataFilter from '../../comps/DataFilter';
+import Header from '../../comps/Header';
+import {getIdUsuario, logout} from '../../services/auth.js';
 
 
 import './styles.css';
@@ -11,6 +13,7 @@ const ordenacoes = ([{id: "", nome: "Ordenar por"}, {id: "L", nome: "Level"}, {i
 const tiposFiltro = ([{id: "T", nome: "Buscar por"}, {id: "L", nome: "Level"}, {id: "D", nome: "Descrição"},
 {id: "O", nome: "Origem"}]);
 
+const logAtivo = false;
 
 export default class Main extends Component {
    
@@ -54,7 +57,7 @@ export default class Main extends Component {
         let solicitacao = " query (" + verbo +")-> " + query;
         try
         {
-            console.log(solicitacao)
+            if(logAtivo) console.log(solicitacao)
 
             if(verbo === "get")
                 response = await api.get(query);
@@ -85,7 +88,7 @@ export default class Main extends Component {
     loadErros = async (sender, idAmbiente, paginaAtual, tipoOrdenacao, tipoFiltro, valorFiltro) => {
         const {tamanhoPagina} = this.state;
 
-        console.log("antes de chamar cons (" + sender+ ") para pag " + paginaAtual);
+        if(logAtivo) console.log("antes de chamar cons (" + sender+ ") para pag " + paginaAtual);
         
         //const response = await api.get(`/erros/pag=${paginaAtual}`);
         let valfiltro = this.strParam(valorFiltro, "none");
@@ -97,7 +100,7 @@ export default class Main extends Component {
             valfiltro = valorFiltro;
         }
         const query = `/erros/${idAmbiente}/${tamanhoPagina}/${paginaAtual}/${tipoOrd}/${tipofiltro}/${valfiltro}`;
-        console.log(`cons  -> idAmbiente:${idAmbiente}/tamanhoPagina:${tamanhoPagina}/paginaAtual:${paginaAtual}/tipoOrd:${tipoOrd}/tipofiltro:${tipofiltro}/valfiltro:${valfiltro}`);
+        if(logAtivo) console.log(`cons  -> idAmbiente:${idAmbiente}/tamanhoPagina:${tamanhoPagina}/paginaAtual:${paginaAtual}/tipoOrd:${tipoOrd}/tipofiltro:${tipofiltro}/valfiltro:${valfiltro}`);
 
         let response = await this.apiExecute(query);
 
@@ -136,66 +139,54 @@ export default class Main extends Component {
     };
 
     arquivarItem = () => {
-        const {selecionados, idAmbiente, paginaAtual, tipoOrdenacao, tipoFiltro, valorFiltro, info} = this.state;
+        const {selecionados, idAmbiente, paginaAtual, tipoOrdenacao, tipoFiltro, valorFiltro} = this.state;
 
         if(selecionados.length < 1)
         {
-            console.log("Sem seleção");
+            if(logAtivo) console.log("Sem seleção");
             return;
         }
         selecionados.map(id => {
-
-            let query = "/erro/" + id;
-
-            let obj = {
+            this.apiExecute(`/erro/{id}`, "put", {
                 id: id,
                 arquivado: this.deveArquivar()
-            }
-            let response = this.apiExecute(query, "put", obj);
-    
-            if(response === null)
-                return;        
-    
+            });
+            return id;
         })
 
         this.loadErros("arquivarItem", idAmbiente, paginaAtual, tipoOrdenacao, tipoFiltro, valorFiltro);
     };
     apagarItem = () => {
-        const {selecionados, idAmbiente, paginaAtual, tipoOrdenacao, tipoFiltro, valorFiltro, info} = this.state;
+        const {selecionados, idAmbiente, paginaAtual, tipoOrdenacao, tipoFiltro, valorFiltro} = this.state;
 
         if(selecionados.length < 1)
         {
-            console.log("Sem seleção");
+            if(logAtivo) console.log("Sem seleção");
             return;
         }
+
         selecionados.map(id => {
-
-            let query = "/erro/" + id;
-
-            let response = this.apiExecute(query, "delete");
-    
-            if(response === null)
-                return;        
-    
-        })
+            this.apiExecute(`/erro/{id}`, "delete");
+            return id;
+        });
 
         this.loadErros("apagarItem", idAmbiente, paginaAtual, tipoOrdenacao, tipoFiltro, valorFiltro);
     };
 
     handleDataComboAmbienteChanged = (dadosEvento) => {
-        console.log("evento handleDataComboAmbienteChanged");
+        if(logAtivo)  console.log("evento handleDataComboAmbienteChanged");
         
         const {paginaAtual, tipoOrdenacao, tipoFiltro, valorFiltro} = this.state;
 
         if(dadosEvento.id === "ambiente") 
         {
-            console.log(`Mudando state para setar idAmbiente = ${dadosEvento.value}`);
+            if(logAtivo) console.log(`Mudando state para setar idAmbiente = ${dadosEvento.value}`);
             this.loadErros("handleDataComboAmbienteChanged:ambiente", dadosEvento.value, paginaAtual, tipoOrdenacao, tipoFiltro, valorFiltro);
         }
     }
 
     handleDataComboChanged = (dadosEvento) => {
-        console.log(`evento handleDataComboChanged( ${dadosEvento.id}, ${dadosEvento.value} )`);
+        if(logAtivo) console.log(`evento handleDataComboChanged( ${dadosEvento.id}, ${dadosEvento.value} )`);
         if(dadosEvento.id === "ordenacao") 
         {
             const {idAmbiente, paginaAtual, valorFiltro, tipoFiltro} = this.state;
@@ -213,13 +204,13 @@ export default class Main extends Component {
     handleDataFilterChanged = (dadosEvento) => {
         const {idAmbiente, tipoFiltro, tipoOrdenacao, paginaAtual} = this.state;
 
-        console.log(`evento handleDataFilterChanged( ${dadosEvento.id}, ${dadosEvento.value} )`);
+        if(logAtivo) console.log(`evento handleDataFilterChanged( ${dadosEvento.id}, ${dadosEvento.value} )`);
         if(dadosEvento.id === "filtro") 
             this.loadErros("handleDataFilterChanged:filtro", idAmbiente, paginaAtual, tipoOrdenacao, tipoFiltro, dadosEvento.value);
     }
 
     handleDataChanged = (dadosEvento) => {
-        console.log(dadosEvento);
+        if(logAtivo) console.log(dadosEvento);
         if(dadosEvento.type !== "sel")
             return;
           
@@ -229,7 +220,7 @@ export default class Main extends Component {
 
         if(dadosEvento.value)
         {
-            console.log("Adicionando " + dadosEvento.id);
+            if(logAtivo)  console.log("Adicionando " + dadosEvento.id);
             sel = selecionados;
             sel.push(dadosEvento.id);
         } else {
@@ -237,7 +228,7 @@ export default class Main extends Component {
                 if(ele !== dadosEvento.id)
                     sel.push(ele);
             });
-            console.log(sel);
+            if(logAtivo) console.log(sel);
         }
 
         this.setState({selecionados: sel, qtdItensSelecionados: sel.length});
@@ -250,11 +241,11 @@ export default class Main extends Component {
             return true;
 
         let id = selecionados[0];
-        console.log(id);
-        const erroEncontrado = erros.find(erro => erro.id == id);
+        if(logAtivo) console.log(id);
+        const erroEncontrado = erros.find(erro => erro.id === id);
 
-        console.log("erroEncontrado:");
-        console.log(erroEncontrado);
+        if(logAtivo) console.log("erroEncontrado:");
+        if(logAtivo) console.log(erroEncontrado);
         let arquivado = false;
         if(erroEncontrado !== undefined)
         {
@@ -274,13 +265,26 @@ export default class Main extends Component {
         return "Desarquivar";
     }
 
+    handleLogoutQuery = (dadosEvento) => {
+        if(logAtivo) console.log(dadosEvento);
+        //alert("pedido de logout ");
+        logout();
+        this.props.history.push('/');
+        
+    }
+
     render() {
         //para facilitar o acesso
         const { selecionados, serverError, tipoFiltro, valorFiltro, tipoOrdenacao, erros, paginaAtual,
               qtdItensSelecionados, idAmbiente, info} = this.state;
 
         return (
+                        
             <div className="erro-list">
+                <Header log={logAtivo} idUsuario={getIdUsuario()} msgUsuario="Bem vindo usuário. Seu token é: " 
+                onLogoutQuery={this.handleLogoutQuery}/>
+
+                {this.serverError !== "" && <p>{serverError}</p>}
 
                 <div className="actions">
                     <button disabled={paginaAtual === 1} onClick={this.prevPage}>Anterior</button>
@@ -304,9 +308,8 @@ export default class Main extends Component {
                     <button disabled={qtdItensSelecionados === 0} onClick={this.apagarItem}>Apagar</button>
                 </div>
 
-                <Dados erros={erros} selecionados={selecionados} onChange={this.handleDataChanged} />
+                <Dados log={logAtivo} erros={erros} selecionados={selecionados} onChange={this.handleDataChanged} />
 
-                
                 <div className="msg-erro"> {serverError}</div>
 
             </div>

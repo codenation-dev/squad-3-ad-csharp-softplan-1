@@ -10,6 +10,7 @@ export  const login = token => {
 };
 
 export  const logout = () => {
+    localStorage.removeItem(TOKEN_LOGIN_ID_USUARIO);
     localStorage.removeItem(TOKEN_LOGIN_CENTRAL_ERROS);
 }
 

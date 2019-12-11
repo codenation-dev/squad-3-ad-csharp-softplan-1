@@ -33,35 +33,15 @@ export default class Dados extends Component {
 
 
     handleChecked = event => {
-//        const {erros} = this.props;
-//        const {selected} = this.state;
 
         if(event.target.id > 0)
         {
-            this.props.onChange({id: event.target.id, type:"sel", value: event.target.checked});        
+            this.props.onChange({id: event.target.id, type:"sel", value: event.target.checked});
         }
-                /*
-        erros.forEach((element, index, arr) => {
-            if(event.target.id > 0)
-            {
-                if(element.id === event.target.id)
-                {
-                    selected[index] = event.target.checked;
-                    this.props.onChange({id: element.id, type:"sel", value: event.target.checked});        
-                }
-            }
-            else
-            {
-                selected[index] = event.target.checked;
-                this.props.onChange({id: element.id, type:"sel", value: event.target.checked});
-            }
-
-        });
-                */
            };
 
     render() {
-        const {erros, selecionados} = this.props;
+        const {erros} = this.props;
 
         return (
             <div className="dados-list">
