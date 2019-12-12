@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Interfaces\Services\Base\**" />
+    <EmbeddedResource Remove="Interfaces\Services\Base\**" />
+    <EntityDeploy Remove="Interfaces\Services\Base\**" />
+    <None Remove="Interfaces\Services\Base\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Interfaces\Repositories\" />
+    <Folder Include="Interfaces\Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.30" />
+    <PackageReference Include="EntityFramework" Version="6.4.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="3.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.0.1" />
+  </ItemGroup>
+
+</Project>
