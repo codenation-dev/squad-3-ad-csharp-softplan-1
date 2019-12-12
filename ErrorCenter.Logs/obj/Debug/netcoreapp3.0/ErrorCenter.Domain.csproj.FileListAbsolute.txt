@@ -1,7 +1,0 @@
-C:\Projeto-Final-Codenation\squad-3-ad-csharp-softplan-1-master\ErrorCenter.Logs\bin\Debug\netcoreapp3.0\ErrorCenter.Domain.deps.json
-C:\Projeto-Final-Codenation\squad-3-ad-csharp-softplan-1-master\ErrorCenter.Logs\bin\Debug\netcoreapp3.0\ErrorCenter.Domain.dll
-C:\Projeto-Final-Codenation\squad-3-ad-csharp-softplan-1-master\ErrorCenter.Logs\bin\Debug\netcoreapp3.0\ErrorCenter.Domain.pdb
-C:\Projeto-Final-Codenation\squad-3-ad-csharp-softplan-1-master\ErrorCenter.Logs\obj\Debug\netcoreapp3.0\ErrorCenter.Domain.AssemblyInfoInputs.cache
-C:\Projeto-Final-Codenation\squad-3-ad-csharp-softplan-1-master\ErrorCenter.Logs\obj\Debug\netcoreapp3.0\ErrorCenter.Domain.AssemblyInfo.cs
-C:\Projeto-Final-Codenation\squad-3-ad-csharp-softplan-1-master\ErrorCenter.Logs\obj\Debug\netcoreapp3.0\ErrorCenter.Domain.dll
-C:\Projeto-Final-Codenation\squad-3-ad-csharp-softplan-1-master\ErrorCenter.Logs\obj\Debug\netcoreapp3.0\ErrorCenter.Domain.pdb
