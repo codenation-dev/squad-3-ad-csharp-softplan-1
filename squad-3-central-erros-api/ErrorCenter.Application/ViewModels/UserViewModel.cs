@@ -4,7 +4,7 @@ namespace ErrorCenter.Application.ViewModels
 {
     public class UserViewModel
     {
-        public int UserId { get; set; }
+        public int Id { get; set; }
 
         [Required]
         public string Name { get; set; }

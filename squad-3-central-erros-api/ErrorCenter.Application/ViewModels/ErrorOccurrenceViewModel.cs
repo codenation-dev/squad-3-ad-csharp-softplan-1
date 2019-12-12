@@ -6,7 +6,7 @@ namespace ErrorCenter.Application.ViewModels
 {
     public class ErrorOccurrenceViewModel
     {
-        public int ErrorOccurrenceId { get; set; }
+        public int Id { get; set; }
 
         [Required]
         public string Origin { get; set; }

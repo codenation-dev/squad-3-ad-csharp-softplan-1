@@ -66,7 +66,7 @@ namespace ErrorCenter.Api.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutErrorOccurrence(int id, ErrorOccurrence errorOccurrence)
         {
-            if (id != errorOccurrence.ErrorOccurrenceId)
+            if (id != errorOccurrence.Id)
             {
                 return BadRequest();
             }
@@ -99,7 +99,7 @@ namespace ErrorCenter.Api.Controllers
             _context.ErrorOccurrences.Add(errorOccurrence);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetErrorOccurrence", new { id = errorOccurrence.ErrorOccurrenceId }, errorOccurrence);
+            return CreatedAtAction("GetErrorOccurrence", new { id = errorOccurrence.Id }, errorOccurrence);
         }
 
         // DELETE: api/ErrorOccurrences/5
@@ -120,7 +120,7 @@ namespace ErrorCenter.Api.Controllers
 
         private bool ErrorOccurrenceExists(int id)
         {
-            return _context.ErrorOccurrences.Any(e => e.ErrorOccurrenceId == id);
+            return _context.ErrorOccurrences.Any(e => e.Id == id);
         }
     }
 }

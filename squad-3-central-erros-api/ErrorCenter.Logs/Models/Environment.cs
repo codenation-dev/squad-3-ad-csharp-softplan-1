@@ -10,12 +10,12 @@ namespace ErrorCenter.Domain.Models
         [Column("ID")]
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Environment_Id { get; set; }
+        public int Id { get; set; }
 
-        [Column("ENVIRONMENT")]
+        [Column("NAME")]
         [StringLength(30)]
         [Required]
-        public string EnvironmentName { get; set; }
+        public string Name { get; set; }
 
         public virtual ICollection<Error> Errors { get; set; }
 

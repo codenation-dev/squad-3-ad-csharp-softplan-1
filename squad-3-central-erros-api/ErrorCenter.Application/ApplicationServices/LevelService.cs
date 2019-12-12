@@ -17,9 +17,9 @@ namespace ErrorCenter.Application.ApplicationServices
 
         public bool RegisterLevel(string name)
         {
-            _context.Levels.Add(new Level { LevelName = name });
+            _context.Levels.Add(new Level { Name = name });
 
-            if (_context.Levels.FirstOrDefault(l => l.LevelName == name) != null)
+            if (_context.Levels.FirstOrDefault(l => l.Name == name) != null)
             {
                 return true;
             }

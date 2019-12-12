@@ -12,7 +12,7 @@ namespace ErrorCenter.Data.Config
         {
             builder.ToTable("environment");
             
-            builder.HasKey(p => p.Environment_Id);
+            builder.HasKey(p => p.Id);
             
         }
 

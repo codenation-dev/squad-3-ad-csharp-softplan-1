@@ -67,7 +67,7 @@ namespace ErrorCenter.Api.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutLevel(int id, Level level)
         {
-            if (id != level.LevelId)
+            if (id != level.Id)
             {
                 return BadRequest();
             }
@@ -100,7 +100,7 @@ namespace ErrorCenter.Api.Controllers
             _context.Levels.Add(level);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetLevel", new { id = level.LevelId }, level);
+            return CreatedAtAction("GetLevel", new { id = level.Id }, level);
         }
 
         // DELETE: api/Levels/5
@@ -121,7 +121,7 @@ namespace ErrorCenter.Api.Controllers
 
         private bool LevelExists(int id)
         {
-            return _context.Levels.Any(e => e.LevelId == id);
+            return _context.Levels.Any(e => e.Id == id);
         }
     }
 }

@@ -27,7 +27,7 @@ namespace ErrorCenter.Application.ApplicationServices
 
             //return false;
 
-            var state = environment.Environment_Id == 0 ? EntityState.Added : EntityState.Modified;
+            var state = environment.Id == 0 ? EntityState.Added : EntityState.Modified;
             _context.Entry(environment).State = state;
             _context.SaveChanges();
             return environment;
@@ -40,7 +40,7 @@ namespace ErrorCenter.Application.ApplicationServices
 
         public List<Environment> ConsultAllEnvironments()
         {
-            return _context.Environments.Select(a => a).ToList();
+            return _context.Environments.ToList();
         }
     }
 }

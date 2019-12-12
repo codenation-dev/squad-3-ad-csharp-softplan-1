@@ -13,7 +13,7 @@ namespace ErrorCenter.Data.Config
         {
             builder.ToTable("level");
 
-            builder.HasKey(p => p.LevelId);
+            builder.HasKey(p => p.Id);
         }
     }
 }

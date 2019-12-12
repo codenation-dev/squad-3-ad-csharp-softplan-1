@@ -13,7 +13,7 @@ namespace ErrorCenter.Data.Config
         {
             builder.ToTable("situation");
 
-            builder.HasKey(p => p.SituationId);
+            builder.HasKey(p => p.Id);
         }
     }
 }

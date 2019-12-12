@@ -64,7 +64,7 @@ namespace ErrorCenter.Api.Controllers
         [HttpPut("{id}")]
         public ActionResult<EnvironmentViewModel> PutEnvironment(int id, Environment environment)
         {
-            if (id != environment.Environment_Id)
+            if (id != environment.Id)
             {
                 return BadRequest();
             }
@@ -98,7 +98,7 @@ namespace ErrorCenter.Api.Controllers
 
         private bool EnvironmentExists(int id)
         {
-            return _context.Environments.Any(e => e.Environment_Id == id);
+            return _context.Environments.Any(e => e.Id == id);
         }
     }
 }

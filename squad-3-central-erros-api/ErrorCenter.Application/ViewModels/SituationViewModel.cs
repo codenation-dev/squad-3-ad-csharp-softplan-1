@@ -4,9 +4,9 @@ namespace ErrorCenter.Application.ViewModels
 {
     public class SituationViewModel
     {
-        public int SituationId { get; set; }
+        public int Id { get; set; }
 
         [Required]
-        public string SituationName { get; set; }
+        public string Name { get; set; }
     }
 }

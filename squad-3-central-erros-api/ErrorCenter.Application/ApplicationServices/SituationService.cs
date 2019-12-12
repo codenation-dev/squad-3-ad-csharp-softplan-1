@@ -17,9 +17,9 @@ namespace ErrorCenter.Application.ApplicationServices
 
         public bool RegisterSituation(string name)
         {
-            _context.Situations.Add(new Situation { SituationName = name });
+            _context.Situations.Add(new Situation { Name = name });
 
-            if (_context.Situations.FirstOrDefault(s => s.SituationName == name) != null)
+            if (_context.Situations.FirstOrDefault(s => s.Name == name) != null)
             {
                 return true;
             }

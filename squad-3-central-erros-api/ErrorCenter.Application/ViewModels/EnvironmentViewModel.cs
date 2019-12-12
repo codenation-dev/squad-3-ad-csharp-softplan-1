@@ -2,8 +2,8 @@
 {
     public class EnvironmentViewModel
     {
-        public int Environment_Id { get; set; }
+        public int Id { get; set; }
 
-        public string EnvironmentName { get; set; }
+        public string Name { get; set; }
     }
 }

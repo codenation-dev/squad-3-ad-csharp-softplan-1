@@ -66,7 +66,7 @@ namespace ErrorCenter.Api.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutSituation(int id, Situation situation)
         {
-            if (id != situation.SituationId)
+            if (id != situation.Id)
             {
                 return BadRequest();
             }
@@ -99,7 +99,7 @@ namespace ErrorCenter.Api.Controllers
             _context.Situations.Add(situation);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetSituation", new { id = situation.SituationId }, situation);
+            return CreatedAtAction("GetSituation", new { id = situation.Id }, situation);
         }
 
         // DELETE: api/Situations/5
@@ -120,7 +120,7 @@ namespace ErrorCenter.Api.Controllers
 
         private bool SituationExists(int id)
         {
-            return _context.Situations.Any(e => e.SituationId == id);
+            return _context.Situations.Any(e => e.Id == id);
         }
     }
 }

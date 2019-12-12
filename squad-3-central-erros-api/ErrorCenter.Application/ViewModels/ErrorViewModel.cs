@@ -26,6 +26,6 @@ namespace ErrorCenter.Application.ViewModels
         [Required]
         public string Title { get; set; }
 
-        public virtual List<ErrorOccurrenceViewModel> ErrorOccurrences { get; set; }
+        //public virtual List<ErrorOccurrenceViewModel> ErrorOccurrences { get; set; }
     }
 }

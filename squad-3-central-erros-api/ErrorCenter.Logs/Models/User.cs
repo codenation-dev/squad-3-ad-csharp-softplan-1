@@ -10,7 +10,7 @@ namespace ErrorCenter.Domain.Models
         [Column("ID")]
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int UserId { get; set; }
+        public int Id { get; set; }
 
         [Column("NAME")]
         [StringLength(200)]
@@ -32,7 +32,7 @@ namespace ErrorCenter.Domain.Models
         [Required]
         public string Token { get; set; }
 
-        public virtual ICollection<ErrorOccurrence> ErrorOccurrences { get; set; }
+       // public virtual ICollection<ErrorOccurrence> ErrorOccurrences { get; set; }
 
     }
 

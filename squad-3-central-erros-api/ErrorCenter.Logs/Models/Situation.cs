@@ -10,13 +10,13 @@ namespace ErrorCenter.Domain.Models
         [Column("ID")]
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int SituationId { get; set; }
+        public int Id { get; set; }
 
-        [Column("SITUATION")]
+        [Column("NAME")]
         [StringLength(30)]
         [Required]
-        public string SituationName { get; set; }
+        public string Name { get; set; }
 
-        public virtual ICollection<Error> Errors { get; set; }
+       // public virtual ICollection<Error> Errors { get; set; }
     }
 }

@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ErrorCenter.Data.Migrations
 {
     [DbContext(typeof(ErrorCenterContext))]
-    [Migration("20191212043854_ini")]
+    [Migration("20191212073129_ini")]
     partial class ini
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -23,37 +23,37 @@ namespace ErrorCenter.Data.Migrations
 
             modelBuilder.Entity("ErrorCenter.Domain.Models.Environment", b =>
                 {
-                    b.Property<int>("Environment_Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnName("ID")
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("EnvironmentName")
+                    b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnName("ENVIRONMENT")
+                        .HasColumnName("NAME")
                         .HasColumnType("nvarchar(30)")
                         .HasMaxLength(30);
 
-                    b.HasKey("Environment_Id");
+                    b.HasKey("Id");
 
                     b.ToTable("ENVIRONMENT");
 
                     b.HasData(
                         new
                         {
-                            Environment_Id = 1,
-                            EnvironmentName = "Produção"
+                            Id = 1,
+                            Name = "Produção"
                         },
                         new
                         {
-                            Environment_Id = 2,
-                            EnvironmentName = "Homologação"
+                            Id = 2,
+                            Name = "Homologação"
                         },
                         new
                         {
-                            Environment_Id = 3,
-                            EnvironmentName = "Dev"
+                            Id = 3,
+                            Name = "Dev"
                         });
                 });
 
@@ -3705,7 +3705,7 @@ namespace ErrorCenter.Data.Migrations
 
             modelBuilder.Entity("ErrorCenter.Domain.Models.ErrorOccurrence", b =>
                 {
-                    b.Property<int>("ErrorOccurrenceId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnName("ID")
                         .HasColumnType("int")
@@ -3733,7 +3733,7 @@ namespace ErrorCenter.Data.Migrations
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
-                    b.HasKey("ErrorOccurrenceId");
+                    b.HasKey("Id");
 
                     b.HasIndex("ErrorId");
 
@@ -3744,8 +3744,8 @@ namespace ErrorCenter.Data.Migrations
                     b.HasData(
                         new
                         {
-                            ErrorOccurrenceId = 1,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 398, DateTimeKind.Local).AddTicks(8701),
+                            Id = 1,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 18, DateTimeKind.Local).AddTicks(4669),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -3756,8 +3756,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 2,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 400, DateTimeKind.Local).AddTicks(7594),
+                            Id = 2,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 20, DateTimeKind.Local).AddTicks(4921),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -3768,8 +3768,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 3,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 400, DateTimeKind.Local).AddTicks(7829),
+                            Id = 3,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 20, DateTimeKind.Local).AddTicks(5404),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -3780,8 +3780,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 4,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 400, DateTimeKind.Local).AddTicks(7949),
+                            Id = 4,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 20, DateTimeKind.Local).AddTicks(5541),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -3792,8 +3792,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 5,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 400, DateTimeKind.Local).AddTicks(8073),
+                            Id = 5,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 20, DateTimeKind.Local).AddTicks(5772),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -3804,8 +3804,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 6,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 400, DateTimeKind.Local).AddTicks(8189),
+                            Id = 6,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 20, DateTimeKind.Local).AddTicks(5905),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -3816,8 +3816,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 7,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 400, DateTimeKind.Local).AddTicks(8300),
+                            Id = 7,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 20, DateTimeKind.Local).AddTicks(6025),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -3828,8 +3828,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 8,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 400, DateTimeKind.Local).AddTicks(8411),
+                            Id = 8,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 20, DateTimeKind.Local).AddTicks(6136),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -3840,8 +3840,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 9,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 400, DateTimeKind.Local).AddTicks(8526),
+                            Id = 9,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 20, DateTimeKind.Local).AddTicks(6251),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -3852,8 +3852,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 10,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 400, DateTimeKind.Local).AddTicks(8727),
+                            Id = 10,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 20, DateTimeKind.Local).AddTicks(6367),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -3864,8 +3864,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 11,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 400, DateTimeKind.Local).AddTicks(8843),
+                            Id = 11,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 20, DateTimeKind.Local).AddTicks(6559),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -3876,8 +3876,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 12,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 400, DateTimeKind.Local).AddTicks(8954),
+                            Id = 12,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 20, DateTimeKind.Local).AddTicks(6670),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -3888,8 +3888,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 13,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 400, DateTimeKind.Local).AddTicks(9065),
+                            Id = 13,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 20, DateTimeKind.Local).AddTicks(6782),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -3900,8 +3900,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 14,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 400, DateTimeKind.Local).AddTicks(9172),
+                            Id = 14,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 20, DateTimeKind.Local).AddTicks(6889),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -3912,8 +3912,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 15,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 400, DateTimeKind.Local).AddTicks(9283),
+                            Id = 15,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 20, DateTimeKind.Local).AddTicks(6995),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -3924,8 +3924,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 16,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 400, DateTimeKind.Local).AddTicks(9390),
+                            Id = 16,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 20, DateTimeKind.Local).AddTicks(7102),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -3936,8 +3936,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 17,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 400, DateTimeKind.Local).AddTicks(9501),
+                            Id = 17,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 20, DateTimeKind.Local).AddTicks(7214),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -3948,8 +3948,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 18,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 400, DateTimeKind.Local).AddTicks(9655),
+                            Id = 18,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 20, DateTimeKind.Local).AddTicks(7325),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -3960,8 +3960,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 19,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 400, DateTimeKind.Local).AddTicks(9771),
+                            Id = 19,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 20, DateTimeKind.Local).AddTicks(7479),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -3972,8 +3972,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 20,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 400, DateTimeKind.Local).AddTicks(9878),
+                            Id = 20,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 20, DateTimeKind.Local).AddTicks(7586),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -3984,8 +3984,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 21,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 400, DateTimeKind.Local).AddTicks(9989),
+                            Id = 21,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 20, DateTimeKind.Local).AddTicks(7693),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -3996,8 +3996,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 22,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(100),
+                            Id = 22,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 20, DateTimeKind.Local).AddTicks(7799),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4008,8 +4008,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 23,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(207),
+                            Id = 23,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 20, DateTimeKind.Local).AddTicks(7902),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4020,8 +4020,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 24,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(318),
+                            Id = 24,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 20, DateTimeKind.Local).AddTicks(8009),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4032,8 +4032,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 25,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(425),
+                            Id = 25,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 20, DateTimeKind.Local).AddTicks(8112),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4044,8 +4044,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 26,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(532),
+                            Id = 26,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 20, DateTimeKind.Local).AddTicks(8219),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4056,8 +4056,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 27,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(686),
+                            Id = 27,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 20, DateTimeKind.Local).AddTicks(8325),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4068,8 +4068,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 28,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(797),
+                            Id = 28,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 20, DateTimeKind.Local).AddTicks(8479),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4080,8 +4080,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 29,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(904),
+                            Id = 29,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 20, DateTimeKind.Local).AddTicks(8582),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4092,8 +4092,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 30,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(1015),
+                            Id = 30,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 20, DateTimeKind.Local).AddTicks(8689),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4104,8 +4104,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 31,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(1122),
+                            Id = 31,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 20, DateTimeKind.Local).AddTicks(8792),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4116,8 +4116,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 32,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(1233),
+                            Id = 32,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 20, DateTimeKind.Local).AddTicks(8898),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4128,8 +4128,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 33,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(1344),
+                            Id = 33,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 20, DateTimeKind.Local).AddTicks(9010),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4140,8 +4140,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 34,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(1494),
+                            Id = 34,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 20, DateTimeKind.Local).AddTicks(9121),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4152,8 +4152,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 35,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(1610),
+                            Id = 35,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 20, DateTimeKind.Local).AddTicks(9270),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4164,8 +4164,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 36,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(1717),
+                            Id = 36,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 20, DateTimeKind.Local).AddTicks(9377),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4176,8 +4176,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 37,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(2683),
+                            Id = 37,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(489),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4188,8 +4188,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 38,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(2803),
+                            Id = 38,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(605),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4200,8 +4200,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 39,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(2914),
+                            Id = 39,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(712),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4212,8 +4212,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 40,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(3025),
+                            Id = 40,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(823),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4224,8 +4224,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 41,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(3183),
+                            Id = 41,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(925),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4236,8 +4236,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 42,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(3299),
+                            Id = 42,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(1126),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4248,8 +4248,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 43,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(3410),
+                            Id = 43,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(1238),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4260,8 +4260,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 44,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(3521),
+                            Id = 44,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(1349),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4272,8 +4272,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 45,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(3632),
+                            Id = 45,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(1451),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4284,8 +4284,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 46,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(3760),
+                            Id = 46,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(1558),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4296,8 +4296,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 47,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(3871),
+                            Id = 47,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(1665),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4308,8 +4308,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 48,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(4030),
+                            Id = 48,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(1836),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4320,8 +4320,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 49,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(4141),
+                            Id = 49,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(1943),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4332,8 +4332,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 50,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(4295),
+                            Id = 50,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(2050),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4344,8 +4344,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 51,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(4406),
+                            Id = 51,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(2200),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4356,8 +4356,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 52,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(4517),
+                            Id = 52,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(2307),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4368,8 +4368,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 53,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(4624),
+                            Id = 53,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(2409),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4380,8 +4380,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 54,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(4735),
+                            Id = 54,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(2516),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4392,8 +4392,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 55,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(4842),
+                            Id = 55,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(2619),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4404,8 +4404,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 56,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(4953),
+                            Id = 56,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(2721),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4416,8 +4416,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 57,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(5065),
+                            Id = 57,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(2828),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4428,8 +4428,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 58,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(5253),
+                            Id = 58,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(2935),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4440,8 +4440,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 59,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(5377),
+                            Id = 59,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(3081),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4452,8 +4452,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 60,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(5488),
+                            Id = 60,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(3188),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4464,8 +4464,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 61,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(5599),
+                            Id = 61,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(3290),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4476,8 +4476,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 62,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(5710),
+                            Id = 62,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(3397),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4488,8 +4488,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 63,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(5821),
+                            Id = 63,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(3500),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4500,8 +4500,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 64,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(5928),
+                            Id = 64,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(3602),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4512,8 +4512,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 65,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(6044),
+                            Id = 65,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(3714),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4524,8 +4524,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 66,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(6206),
+                            Id = 66,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(3876),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4536,8 +4536,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 67,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(6317),
+                            Id = 67,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(3987),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4548,8 +4548,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 68,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(6429),
+                            Id = 68,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(4090),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4560,8 +4560,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 69,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(6536),
+                            Id = 69,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(4197),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4572,8 +4572,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 70,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(6647),
+                            Id = 70,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(4299),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4584,8 +4584,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 71,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(6754),
+                            Id = 71,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(4402),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4596,8 +4596,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 72,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(6861),
+                            Id = 72,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(4509),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4608,8 +4608,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 73,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(7220),
+                            Id = 73,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(4881),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4620,8 +4620,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 74,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(7340),
+                            Id = 74,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(4992),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4632,8 +4632,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 75,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(7451),
+                            Id = 75,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(5099),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4644,8 +4644,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 76,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(7558),
+                            Id = 76,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(5202),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4656,8 +4656,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 77,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(7669),
+                            Id = 77,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(5309),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4668,8 +4668,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 78,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(7780),
+                            Id = 78,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(5411),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4680,8 +4680,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 79,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(7887),
+                            Id = 79,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(5518),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4692,8 +4692,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 80,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(8028),
+                            Id = 80,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(5685),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4704,8 +4704,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 81,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(8148),
+                            Id = 81,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(5860),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4716,8 +4716,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 82,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(8259),
+                            Id = 82,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(5971),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4728,8 +4728,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 83,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(8366),
+                            Id = 83,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(6078),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4740,8 +4740,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 84,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(8473),
+                            Id = 84,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(6181),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4752,8 +4752,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 85,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(8580),
+                            Id = 85,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(6288),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4764,8 +4764,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 86,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(8687),
+                            Id = 86,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(6390),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4776,8 +4776,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 87,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(8798),
+                            Id = 87,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(6497),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4788,8 +4788,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 88,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(8905),
+                            Id = 88,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(6600),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4800,8 +4800,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 89,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(9054),
+                            Id = 89,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(6702),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4812,8 +4812,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 90,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(9166),
+                            Id = 90,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(6873),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4824,8 +4824,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 91,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(9272),
+                            Id = 91,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(6985),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4836,8 +4836,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 92,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(9384),
+                            Id = 92,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(7087),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4848,8 +4848,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 93,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(9491),
+                            Id = 93,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(7194),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4860,8 +4860,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 94,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(9597),
+                            Id = 94,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(7301),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4872,8 +4872,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 95,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(9709),
+                            Id = 95,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(7404),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4884,8 +4884,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 96,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(9816),
+                            Id = 96,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(7506),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4896,8 +4896,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 97,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 401, DateTimeKind.Local).AddTicks(9922),
+                            Id = 97,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(7613),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4908,8 +4908,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 98,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(76),
+                            Id = 98,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(7746),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4920,8 +4920,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 99,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(183),
+                            Id = 99,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(7866),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4932,8 +4932,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 100,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(294),
+                            Id = 100,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(7968),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4944,8 +4944,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 101,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(401),
+                            Id = 101,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(8075),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4956,8 +4956,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 102,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(508),
+                            Id = 102,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(8182),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4968,8 +4968,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 103,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(615),
+                            Id = 103,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(8285),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4980,8 +4980,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 104,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(726),
+                            Id = 104,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(8392),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -4992,8 +4992,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 105,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(833),
+                            Id = 105,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(8494),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5004,8 +5004,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 106,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(979),
+                            Id = 106,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(8601),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5016,8 +5016,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 107,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(1098),
+                            Id = 107,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(8849),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5028,8 +5028,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 108,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(1205),
+                            Id = 108,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(8965),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5040,8 +5040,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 109,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(1470),
+                            Id = 109,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(9277),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5052,8 +5052,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 110,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(1582),
+                            Id = 110,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(9384),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5064,8 +5064,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 111,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(1693),
+                            Id = 111,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(9491),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5076,8 +5076,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 112,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(1800),
+                            Id = 112,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(9602),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5088,8 +5088,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 113,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(1954),
+                            Id = 113,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(9704),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5100,8 +5100,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 114,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(2065),
+                            Id = 114,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(9884),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5112,8 +5112,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 115,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(2176),
+                            Id = 115,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 21, DateTimeKind.Local).AddTicks(9995),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5124,8 +5124,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 116,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(2283),
+                            Id = 116,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(102),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5136,8 +5136,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 117,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(2390),
+                            Id = 117,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(209),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5148,8 +5148,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 118,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(2501),
+                            Id = 118,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(316),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5160,8 +5160,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 119,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(2608),
+                            Id = 119,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(419),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5172,8 +5172,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 120,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(2719),
+                            Id = 120,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(521),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5184,8 +5184,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 121,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(2826),
+                            Id = 121,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(628),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5196,8 +5196,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 122,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(2980),
+                            Id = 122,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(731),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5208,8 +5208,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 123,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(3091),
+                            Id = 123,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(880),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5220,8 +5220,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 124,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(3198),
+                            Id = 124,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(987),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5232,8 +5232,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 125,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(3309),
+                            Id = 125,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(1094),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5244,8 +5244,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 126,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(3416),
+                            Id = 126,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(1197),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5256,8 +5256,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 127,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(3523),
+                            Id = 127,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(1299),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5268,8 +5268,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 128,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(3634),
+                            Id = 128,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(1402),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5280,8 +5280,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 129,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(3887),
+                            Id = 129,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(1556),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5292,8 +5292,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 130,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(4067),
+                            Id = 130,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(1667),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5304,8 +5304,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 131,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(4178),
+                            Id = 131,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(1774),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5316,8 +5316,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 132,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(4285),
+                            Id = 132,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(1877),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5328,8 +5328,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 133,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(4392),
+                            Id = 133,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(1979),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5340,8 +5340,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 134,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(4498),
+                            Id = 134,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(2086),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5352,8 +5352,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 135,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(4678),
+                            Id = 135,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(2240),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5364,8 +5364,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 136,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(4789),
+                            Id = 136,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(2356),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5376,8 +5376,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 137,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(4896),
+                            Id = 137,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(2463),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5388,8 +5388,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 138,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(5007),
+                            Id = 138,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(2565),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5400,8 +5400,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 139,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(5114),
+                            Id = 139,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(2668),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5412,8 +5412,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 140,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(5221),
+                            Id = 140,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(2775),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5424,8 +5424,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 141,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(5332),
+                            Id = 141,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(2877),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5436,8 +5436,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 142,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(5439),
+                            Id = 142,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(2980),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5448,8 +5448,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 143,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(5709),
+                            Id = 143,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(3083),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5460,8 +5460,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 144,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(5850),
+                            Id = 144,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(3232),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5472,8 +5472,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 145,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(6136),
+                            Id = 145,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(3523),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5484,8 +5484,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 146,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(6252),
+                            Id = 146,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(3634),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5496,8 +5496,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 147,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(6363),
+                            Id = 147,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(3741),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5508,8 +5508,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 148,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(6474),
+                            Id = 148,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(3844),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5520,8 +5520,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 149,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(6585),
+                            Id = 149,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(3951),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5532,8 +5532,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 150,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(6744),
+                            Id = 150,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(4053),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5544,8 +5544,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 151,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(6859),
+                            Id = 151,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(4220),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5556,8 +5556,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 152,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(6966),
+                            Id = 152,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(4331),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5568,8 +5568,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 153,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(7077),
+                            Id = 153,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(4438),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5580,8 +5580,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 154,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(7184),
+                            Id = 154,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(4541),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5592,8 +5592,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 155,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(7295),
+                            Id = 155,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(4648),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5604,8 +5604,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 156,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(7402),
+                            Id = 156,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(4750),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5616,8 +5616,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 157,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(7513),
+                            Id = 157,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(4857),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5628,8 +5628,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 158,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(7620),
+                            Id = 158,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(4960),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5640,8 +5640,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 159,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(7774),
+                            Id = 159,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(5063),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5652,8 +5652,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 160,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(7885),
+                            Id = 160,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(5212),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5664,8 +5664,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 161,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(7992),
+                            Id = 161,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(5319),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5676,8 +5676,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 162,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(8099),
+                            Id = 162,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(5426),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5688,8 +5688,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 163,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(8206),
+                            Id = 163,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(5533),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5700,8 +5700,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 164,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(8317),
+                            Id = 164,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(5704),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5712,8 +5712,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 165,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(8424),
+                            Id = 165,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(5867),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5724,8 +5724,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 166,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(8531),
+                            Id = 166,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(5974),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5736,8 +5736,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 167,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(8672),
+                            Id = 167,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(6077),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5748,8 +5748,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 168,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(8796),
+                            Id = 168,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(6248),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5760,8 +5760,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 169,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(8903),
+                            Id = 169,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(6363),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5772,8 +5772,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 170,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(9014),
+                            Id = 170,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(6470),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5784,8 +5784,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 171,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(9121),
+                            Id = 171,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(6577),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5796,8 +5796,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 172,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(9228),
+                            Id = 172,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(6679),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5808,8 +5808,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 173,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(9335),
+                            Id = 173,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(6786),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5820,8 +5820,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 174,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(9442),
+                            Id = 174,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(6889),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5832,8 +5832,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 175,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(9549),
+                            Id = 175,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(6996),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5844,8 +5844,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 176,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(9703),
+                            Id = 176,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(7099),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5856,8 +5856,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 177,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(9814),
+                            Id = 177,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(7248),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5868,8 +5868,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 178,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 402, DateTimeKind.Local).AddTicks(9921),
+                            Id = 178,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(7355),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5880,8 +5880,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 179,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(32),
+                            Id = 179,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(7458),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5892,8 +5892,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 180,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(135),
+                            Id = 180,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(7565),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5904,8 +5904,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 181,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(400),
+                            Id = 181,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(7843),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5916,8 +5916,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 182,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(511),
+                            Id = 182,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(7954),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5928,8 +5928,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 183,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(669),
+                            Id = 183,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(8061),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5940,8 +5940,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 184,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(780),
+                            Id = 184,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(8228),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5952,8 +5952,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 185,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(892),
+                            Id = 185,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(8334),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5964,8 +5964,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 186,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(999),
+                            Id = 186,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(8441),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5976,8 +5976,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 187,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(1110),
+                            Id = 187,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(8544),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -5988,8 +5988,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 188,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(1217),
+                            Id = 188,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(8651),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6000,8 +6000,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 189,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(1328),
+                            Id = 189,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(8754),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6012,8 +6012,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 190,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(1435),
+                            Id = 190,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(8860),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6024,8 +6024,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 191,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(1546),
+                            Id = 191,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(8963),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6036,8 +6036,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 192,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(1700),
+                            Id = 192,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(9130),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6048,8 +6048,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 193,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(1811),
+                            Id = 193,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(9245),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6060,8 +6060,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 194,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(1922),
+                            Id = 194,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(9352),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6072,8 +6072,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 195,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(2029),
+                            Id = 195,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(9455),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6084,8 +6084,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 196,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(2140),
+                            Id = 196,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(9557),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6096,8 +6096,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 197,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(2251),
+                            Id = 197,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(9664),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6108,8 +6108,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 198,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(2358),
+                            Id = 198,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(9767),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6120,8 +6120,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 199,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(2470),
+                            Id = 199,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(9874),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6132,8 +6132,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 200,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(2641),
+                            Id = 200,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 22, DateTimeKind.Local).AddTicks(9977),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6144,8 +6144,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 201,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(2756),
+                            Id = 201,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(122),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6156,8 +6156,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 202,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(2867),
+                            Id = 202,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(229),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6168,8 +6168,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 203,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(2974),
+                            Id = 203,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(336),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6180,8 +6180,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 204,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(3085),
+                            Id = 204,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(443),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6192,8 +6192,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 205,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(3192),
+                            Id = 205,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(545),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6204,8 +6204,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 206,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(3299),
+                            Id = 206,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(648),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6216,8 +6216,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 207,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(3406),
+                            Id = 207,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(751),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6228,8 +6228,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 208,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(3513),
+                            Id = 208,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(857),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6240,8 +6240,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 209,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(3679),
+                            Id = 209,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(960),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6252,8 +6252,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 210,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(3846),
+                            Id = 210,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(1255),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6264,8 +6264,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 211,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(4081),
+                            Id = 211,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(1366),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6276,8 +6276,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 212,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(4205),
+                            Id = 212,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(1473),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6288,8 +6288,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 213,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(4312),
+                            Id = 213,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(1580),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6300,8 +6300,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 214,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(4419),
+                            Id = 214,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(1687),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6312,8 +6312,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 215,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(4526),
+                            Id = 215,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(1790),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6324,8 +6324,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 216,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(4633),
+                            Id = 216,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(1897),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6336,8 +6336,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 217,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(4954),
+                            Id = 217,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(2299),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6348,8 +6348,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 218,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(5065),
+                            Id = 218,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(2410),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6360,8 +6360,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 219,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(5176),
+                            Id = 219,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(2517),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6372,8 +6372,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 220,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(5283),
+                            Id = 220,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(2624),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6384,8 +6384,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 221,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(5390),
+                            Id = 221,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(2726),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6396,8 +6396,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 222,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(5501),
+                            Id = 222,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(2833),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6408,8 +6408,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 223,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(5608),
+                            Id = 223,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(2936),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6420,8 +6420,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 224,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(5762),
+                            Id = 224,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(3038),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6432,8 +6432,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 225,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(5877),
+                            Id = 225,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(3205),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6444,8 +6444,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 226,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(5988),
+                            Id = 226,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(3312),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6456,8 +6456,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 227,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(6100),
+                            Id = 227,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(3419),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6468,8 +6468,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 228,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(6206),
+                            Id = 228,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(3526),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6480,8 +6480,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 229,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(6313),
+                            Id = 229,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(3633),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6492,8 +6492,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 230,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(6425),
+                            Id = 230,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(3735),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6504,8 +6504,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 231,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(6531),
+                            Id = 231,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(3842),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6516,8 +6516,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 232,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(6638),
+                            Id = 232,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(3945),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6528,8 +6528,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 233,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(6792),
+                            Id = 233,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(4052),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6540,8 +6540,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 234,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(6904),
+                            Id = 234,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(4227),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6552,8 +6552,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 235,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(7015),
+                            Id = 235,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(4334),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6564,8 +6564,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 236,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(7122),
+                            Id = 236,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(4441),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6576,8 +6576,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 237,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(7229),
+                            Id = 237,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(4548),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6588,8 +6588,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 238,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(7335),
+                            Id = 238,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(4655),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6600,8 +6600,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 239,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(7442),
+                            Id = 239,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(4757),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6612,8 +6612,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 240,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(7549),
+                            Id = 240,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(4864),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6624,8 +6624,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 241,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(7660),
+                            Id = 241,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(4967),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6636,8 +6636,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 242,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(7819),
+                            Id = 242,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(5121),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6648,8 +6648,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 243,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(7930),
+                            Id = 243,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(5236),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6660,8 +6660,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 244,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(8037),
+                            Id = 244,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(5343),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6672,8 +6672,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 245,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(8148),
+                            Id = 245,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(5450),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6684,8 +6684,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 246,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(8255),
+                            Id = 246,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(5553),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6696,8 +6696,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 247,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(8362),
+                            Id = 247,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(5741),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6708,8 +6708,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 248,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(8469),
+                            Id = 248,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(5852),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6720,8 +6720,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 249,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(8580),
+                            Id = 249,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(5959),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6732,8 +6732,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 250,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(8824),
+                            Id = 250,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(6066),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6744,8 +6744,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 251,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(8960),
+                            Id = 251,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(6215),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6756,8 +6756,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 252,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(9067),
+                            Id = 252,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(6322),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6768,8 +6768,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 253,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(9384),
+                            Id = 253,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(6600),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6780,8 +6780,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 254,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(9499),
+                            Id = 254,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(6711),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6792,8 +6792,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 255,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(9610),
+                            Id = 255,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(6814),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6804,8 +6804,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 256,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(9722),
+                            Id = 256,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(6921),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6816,8 +6816,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 257,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 403, DateTimeKind.Local).AddTicks(9884),
+                            Id = 257,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(7079),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6828,8 +6828,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 258,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(68),
+                            Id = 258,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(7255),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6840,8 +6840,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 259,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(183),
+                            Id = 259,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(7366),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6852,8 +6852,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 260,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(295),
+                            Id = 260,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(7473),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6864,8 +6864,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 261,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(402),
+                            Id = 261,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(7575),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6876,8 +6876,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 262,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(513),
+                            Id = 262,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(7678),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6888,8 +6888,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 263,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(624),
+                            Id = 263,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(7785),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6900,8 +6900,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 264,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(731),
+                            Id = 264,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(7887),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6912,8 +6912,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 265,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(842),
+                            Id = 265,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(7990),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6924,8 +6924,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 266,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(996),
+                            Id = 266,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(8093),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6936,8 +6936,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 267,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(1107),
+                            Id = 267,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(8242),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6948,8 +6948,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 268,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(1218),
+                            Id = 268,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(8349),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6960,8 +6960,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 269,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(1325),
+                            Id = 269,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(8452),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6972,8 +6972,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 270,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(1436),
+                            Id = 270,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(8555),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6984,8 +6984,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 271,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(1543),
+                            Id = 271,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(8661),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -6996,8 +6996,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 272,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(1650),
+                            Id = 272,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(8764),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7008,8 +7008,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 273,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(1761),
+                            Id = 273,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(8867),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7020,8 +7020,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 274,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(1903),
+                            Id = 274,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(8974),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7032,8 +7032,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 275,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(2022),
+                            Id = 275,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(9115),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7044,8 +7044,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 276,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(2129),
+                            Id = 276,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(9222),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7056,8 +7056,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 277,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(2240),
+                            Id = 277,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(9329),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7068,8 +7068,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 278,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(2347),
+                            Id = 278,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(9431),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7080,8 +7080,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 279,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(2458),
+                            Id = 279,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(9534),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7092,8 +7092,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 280,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(2565),
+                            Id = 280,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(9641),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7104,8 +7104,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 281,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(2677),
+                            Id = 281,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(9743),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7116,8 +7116,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 282,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(2783),
+                            Id = 282,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(9846),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7128,8 +7128,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 283,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(2933),
+                            Id = 283,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 23, DateTimeKind.Local).AddTicks(9953),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7140,8 +7140,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 284,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(3044),
+                            Id = 284,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(98),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7152,8 +7152,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 285,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(3156),
+                            Id = 285,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(205),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7164,8 +7164,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 286,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(3262),
+                            Id = 286,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(308),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7176,8 +7176,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 287,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(3374),
+                            Id = 287,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(415),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7188,8 +7188,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 288,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(3481),
+                            Id = 288,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(517),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7200,8 +7200,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 289,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(3768),
+                            Id = 289,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(795),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7212,8 +7212,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 290,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(3930),
+                            Id = 290,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(902),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7224,8 +7224,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 291,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(4042),
+                            Id = 291,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(1073),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7236,8 +7236,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 292,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(4153),
+                            Id = 292,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(1184),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7248,8 +7248,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 293,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(4260),
+                            Id = 293,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(1291),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7260,8 +7260,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 294,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(4367),
+                            Id = 294,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(1394),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7272,8 +7272,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 295,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(4478),
+                            Id = 295,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(1501),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7284,8 +7284,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 296,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(4585),
+                            Id = 296,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(1604),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7296,8 +7296,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 297,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(4692),
+                            Id = 297,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(1706),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7308,8 +7308,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 298,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(4833),
+                            Id = 298,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(1809),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7320,8 +7320,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 299,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(4952),
+                            Id = 299,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(1954),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7332,8 +7332,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 300,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(5064),
+                            Id = 300,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(2065),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7344,8 +7344,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 301,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(5175),
+                            Id = 301,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(2172),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7356,8 +7356,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 302,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(5282),
+                            Id = 302,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(2275),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7368,8 +7368,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 303,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(5393),
+                            Id = 303,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(2378),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7380,8 +7380,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 304,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(5500),
+                            Id = 304,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(2480),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7392,8 +7392,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 305,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(5611),
+                            Id = 305,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(2587),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7404,8 +7404,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 306,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(5718),
+                            Id = 306,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(2690),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7416,8 +7416,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 307,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(5868),
+                            Id = 307,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(2792),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7428,8 +7428,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 308,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(5979),
+                            Id = 308,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(3036),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7440,8 +7440,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 309,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(6090),
+                            Id = 309,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(3143),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7452,8 +7452,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 310,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(6201),
+                            Id = 310,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(3250),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7464,8 +7464,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 311,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(6308),
+                            Id = 311,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(3357),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7476,8 +7476,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 312,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(6419),
+                            Id = 312,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(3459),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7488,8 +7488,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 313,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(6526),
+                            Id = 313,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(3566),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7500,8 +7500,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 314,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(6633),
+                            Id = 314,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(3669),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7512,8 +7512,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 315,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(6744),
+                            Id = 315,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(3772),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7524,8 +7524,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 316,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(6902),
+                            Id = 316,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(3973),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7536,8 +7536,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 317,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(7014),
+                            Id = 317,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(4105),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7548,8 +7548,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 318,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(7125),
+                            Id = 318,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(4212),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7560,8 +7560,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 319,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(7232),
+                            Id = 319,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(4315),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7572,8 +7572,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 320,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(7343),
+                            Id = 320,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(4422),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7584,8 +7584,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 321,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(7450),
+                            Id = 321,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(4524),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7596,8 +7596,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 322,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(7557),
+                            Id = 322,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(4627),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7608,8 +7608,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 323,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(7668),
+                            Id = 323,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(4734),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7620,8 +7620,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 324,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(7826),
+                            Id = 324,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(4841),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7632,8 +7632,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 325,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(8104),
+                            Id = 325,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(5196),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7644,8 +7644,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 326,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(8215),
+                            Id = 326,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(5307),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7656,8 +7656,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 327,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(8326),
+                            Id = 327,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(5409),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7668,8 +7668,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 328,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(8433),
+                            Id = 328,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(5516),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7680,8 +7680,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 329,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(8545),
+                            Id = 329,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(5654),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7692,8 +7692,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 330,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(8656),
+                            Id = 330,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(5812),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7704,8 +7704,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 331,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(8805),
+                            Id = 331,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(5914),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7716,8 +7716,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 332,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(8921),
+                            Id = 332,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(6107),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7728,8 +7728,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 333,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(9028),
+                            Id = 333,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(6218),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7740,8 +7740,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 334,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(9139),
+                            Id = 334,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(6325),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7752,8 +7752,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 335,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(9250),
+                            Id = 335,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(6428),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7764,8 +7764,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 336,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(9357),
+                            Id = 336,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(6535),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7776,8 +7776,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 337,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(9464),
+                            Id = 337,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(6637),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7788,8 +7788,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 338,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(9571),
+                            Id = 338,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(6740),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7800,8 +7800,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 339,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(9682),
+                            Id = 339,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(6842),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7812,8 +7812,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 340,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(9832),
+                            Id = 340,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(6949),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7824,8 +7824,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 341,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 404, DateTimeKind.Local).AddTicks(9943),
+                            Id = 341,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(7095),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7836,8 +7836,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 342,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 405, DateTimeKind.Local).AddTicks(50),
+                            Id = 342,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(7202),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7848,8 +7848,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 343,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 405, DateTimeKind.Local).AddTicks(157),
+                            Id = 343,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(7309),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7860,8 +7860,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 344,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 405, DateTimeKind.Local).AddTicks(268),
+                            Id = 344,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(7411),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7872,8 +7872,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 345,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 405, DateTimeKind.Local).AddTicks(371),
+                            Id = 345,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(7514),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7884,8 +7884,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 346,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 405, DateTimeKind.Local).AddTicks(477),
+                            Id = 346,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(7621),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7896,8 +7896,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 347,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 405, DateTimeKind.Local).AddTicks(584),
+                            Id = 347,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(7723),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7908,8 +7908,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 348,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 405, DateTimeKind.Local).AddTicks(777),
+                            Id = 348,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(7826),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7920,8 +7920,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 349,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 405, DateTimeKind.Local).AddTicks(914),
+                            Id = 349,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(8078),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7932,8 +7932,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 350,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 405, DateTimeKind.Local).AddTicks(1025),
+                            Id = 350,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(8194),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7944,8 +7944,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 351,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 405, DateTimeKind.Local).AddTicks(1132),
+                            Id = 351,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(8301),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7956,8 +7956,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 352,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 405, DateTimeKind.Local).AddTicks(1243),
+                            Id = 352,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(8408),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7968,8 +7968,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 353,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 405, DateTimeKind.Local).AddTicks(1350),
+                            Id = 353,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(8510),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7980,8 +7980,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 354,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 405, DateTimeKind.Local).AddTicks(1461),
+                            Id = 354,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(8613),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -7992,8 +7992,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 355,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 405, DateTimeKind.Local).AddTicks(1568),
+                            Id = 355,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(8720),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -8004,8 +8004,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 356,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 405, DateTimeKind.Local).AddTicks(1679),
+                            Id = 356,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(8822),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -8016,8 +8016,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 357,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 405, DateTimeKind.Local).AddTicks(1833),
+                            Id = 357,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(8925),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -8028,8 +8028,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 358,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 405, DateTimeKind.Local).AddTicks(1944),
+                            Id = 358,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(9092),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -8040,8 +8040,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 359,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 405, DateTimeKind.Local).AddTicks(2055),
+                            Id = 359,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(9203),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -8052,8 +8052,8 @@ Detalhe maior 4",
                         },
                         new
                         {
-                            ErrorOccurrenceId = 360,
-                            DateTime = new DateTime(2019, 12, 12, 1, 38, 53, 405, DateTimeKind.Local).AddTicks(2162),
+                            Id = 360,
+                            DateTime = new DateTime(2019, 12, 12, 4, 31, 29, 24, DateTimeKind.Local).AddTicks(9306),
                             Details = @"Det1
 Det2
 detalhe 3
@@ -8066,74 +8066,74 @@ Detalhe maior 4",
 
             modelBuilder.Entity("ErrorCenter.Domain.Models.Level", b =>
                 {
-                    b.Property<int>("LevelId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnName("ID")
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("LevelName")
+                    b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnName("LEVEL")
+                        .HasColumnName("NAME")
                         .HasColumnType("nvarchar(30)")
                         .HasMaxLength(30);
 
-                    b.HasKey("LevelId");
+                    b.HasKey("Id");
 
                     b.ToTable("LEVEL");
 
                     b.HasData(
                         new
                         {
-                            LevelId = 1,
-                            LevelName = "debug"
+                            Id = 1,
+                            Name = "debug"
                         },
                         new
                         {
-                            LevelId = 2,
-                            LevelName = "warning"
+                            Id = 2,
+                            Name = "warning"
                         },
                         new
                         {
-                            LevelId = 3,
-                            LevelName = "error"
+                            Id = 3,
+                            Name = "error"
                         });
                 });
 
             modelBuilder.Entity("ErrorCenter.Domain.Models.Situation", b =>
                 {
-                    b.Property<int>("SituationId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnName("ID")
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("SituationName")
+                    b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnName("SITUATION")
+                        .HasColumnName("NAME")
                         .HasColumnType("nvarchar(30)")
                         .HasMaxLength(30);
 
-                    b.HasKey("SituationId");
+                    b.HasKey("Id");
 
                     b.ToTable("SITUATION");
 
                     b.HasData(
                         new
                         {
-                            SituationId = 1,
-                            SituationName = "Normal"
+                            Id = 1,
+                            Name = "Normal"
                         },
                         new
                         {
-                            SituationId = 2,
-                            SituationName = "Arquivado"
+                            Id = 2,
+                            Name = "Arquivado"
                         });
                 });
 
             modelBuilder.Entity("ErrorCenter.Domain.Models.User", b =>
                 {
-                    b.Property<int>("UserId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnName("ID")
                         .HasColumnType("int")
@@ -8163,90 +8163,90 @@ Detalhe maior 4",
                         .HasColumnType("nvarchar(40)")
                         .HasMaxLength(40);
 
-                    b.HasKey("UserId");
+                    b.HasKey("Id");
 
                     b.ToTable("USER");
 
                     b.HasData(
                         new
                         {
-                            UserId = 1,
+                            Id = 1,
                             Email = "user1@sp.com.br",
                             Name = "Usuário 1",
                             Password = "202cb962ac59075b964b07152d234b70",
-                            Token = "15a2b405-7e88-4fa5-972e-6f49de58ca06"
+                            Token = "d5f94ff1-7b3c-4916-9258-5425f2326282"
                         },
                         new
                         {
-                            UserId = 2,
+                            Id = 2,
                             Email = "user2@sp.com.br",
                             Name = "Usuário 2",
                             Password = "289dff07669d7a23de0ef88d2f7129e7",
-                            Token = "404e01c2-5b07-49c7-8e89-71e720d4c69f"
+                            Token = "39812756-2e19-4031-b072-00d08c2e2948"
                         },
                         new
                         {
-                            UserId = 3,
+                            Id = 3,
                             Email = "user3@sp.com.br",
                             Name = "Usuário 3",
                             Password = "d81f9c1be2e08964bf9f24b15f0e4900",
-                            Token = "9a458a17-534c-494a-a000-e2027ddf3c60"
+                            Token = "1e0fb212-5fdb-4434-939c-f55e8ca52c7e"
                         },
                         new
                         {
-                            UserId = 4,
+                            Id = 4,
                             Email = "user4@sp.com.br",
                             Name = "Usuário 4",
                             Password = "250cf8b51c773f3f8dc8b4be867a9a02",
-                            Token = "967d7c8b-ab0a-4b87-aa93-970b98e15e7d"
+                            Token = "92bbef4e-a2ca-4dec-bad9-f2b3c9fe4736"
                         },
                         new
                         {
-                            UserId = 5,
+                            Id = 5,
                             Email = "user5@sp.com.br",
                             Name = "Usuário 5",
                             Password = "99c5e07b4d5de9d18c350cdf64c5aa3d",
-                            Token = "5b6dd685-0365-4c19-816d-a3c283912b46"
+                            Token = "12a95959-668d-4b86-bc42-8f9bec0b4b84"
                         },
                         new
                         {
-                            UserId = 6,
+                            Id = 6,
                             Email = "user6@sp.com.br",
                             Name = "Usuário 6",
                             Password = "9fe8593a8a330607d76796b35c64c600",
-                            Token = "c0b90964-5348-4bab-b455-784298599491"
+                            Token = "2ab0112a-fcf9-4dad-b98a-2121b2a6a5e7"
                         },
                         new
                         {
-                            UserId = 7,
+                            Id = 7,
                             Email = "user7@sp.com.br",
                             Name = "Usuário 7",
                             Password = "68053af2923e00204c3ca7c6a3150cf7",
-                            Token = "86387f6f-7ab9-41ab-99e7-00ad5d17f5a0"
+                            Token = "e618562a-2d05-4873-847b-d047d495a01f"
                         },
                         new
                         {
-                            UserId = 8,
+                            Id = 8,
                             Email = "user8@sp.com.br",
                             Name = "Usuário 8",
                             Password = "86a1fa88adb5c33bd7a68ac2f9f3f96b",
-                            Token = "832ea3e2-6ef7-4161-8f25-66befb744155"
+                            Token = "2c31f93a-25ec-4bff-b348-b71a899630db"
                         },
                         new
                         {
-                            UserId = 9,
+                            Id = 9,
                             Email = "user9@sp.com.br",
                             Name = "Usuário 9",
                             Password = "7cf08c3ddac57a6d4f28034f88bfb23e",
-                            Token = "6259943b-3c4e-448e-a0bd-a5c01ad42f15"
+                            Token = "aebc544d-4e2c-444d-ae10-b011f6b2ec22"
                         },
                         new
                         {
-                            UserId = 10,
+                            Id = 10,
                             Email = "user10@sp.com.br",
                             Name = "Usuário 10",
                             Password = "cdd773039f5b1a8f41949a1fccd0768f",
-                            Token = "0c6b7f12-7ccf-4bc8-9240-557368cd24bb"
+                            Token = "5391f1a0-ba80-435f-bb2c-6cf70c02fe87"
                         });
                 });
 
@@ -8259,13 +8259,13 @@ Detalhe maior 4",
                         .IsRequired();
 
                     b.HasOne("ErrorCenter.Domain.Models.Level", "Level")
-                        .WithMany("Errors")
+                        .WithMany()
                         .HasForeignKey("LevelId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("ErrorCenter.Domain.Models.Situation", "Situation")
-                        .WithMany("Errors")
+                        .WithMany()
                         .HasForeignKey("SituationId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -8280,7 +8280,7 @@ Detalhe maior 4",
                         .IsRequired();
 
                     b.HasOne("ErrorCenter.Domain.Models.User", "User")
-                        .WithMany("ErrorOccurrences")
+                        .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

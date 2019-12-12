@@ -10,7 +10,7 @@ namespace ErrorCenter.Domain.Models
         [Column("ID")]
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ErrorOccurrenceId { get; set; }
+        public int Id { get; set; }
 
         [Column("ORIGIN")]
         [StringLength(200)]
