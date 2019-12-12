@@ -23,7 +23,8 @@ class SignUp extends Component {
     else 
     {
       try {
-        await api.post("/usuario", { nome: username, email, senha: password });
+        //await api.post("/usuario", { nome: username, email, senha: password });
+        await api.post("/users", { name: username, email, password });
         this.props.history.push("/");
       } catch (err) {
         console.log(err);

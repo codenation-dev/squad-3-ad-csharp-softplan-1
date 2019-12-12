@@ -56,7 +56,8 @@ namespace ErrorCenter.Api.Controllers
         private string GenarateJWT(UserViewModel user)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes(_appSettings.SecretKeyJWT);
+            var secretKeyJWT = _appSettings.SecretKeyJWT;
+            var key = Encoding.ASCII.GetBytes(secretKeyJWT);
 
             var tokenDescriptor = new SecurityTokenDescriptor
             {

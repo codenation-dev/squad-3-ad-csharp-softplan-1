@@ -54,7 +54,8 @@ export default class Header extends React.Component {
 
         loadUser = async (id) => {
             if(this.props.log) console.log('header: antes de chamar cons para id ' + id);
-            const response = await api.get(`/usuario/${id}`);
+            //const response = await api.get(`/usuario/${id}`);
+            const response = await api.get(`/users/${id}`);
     
             if(this.props.log) console.log('header: depois de chamar cons usuario');
             if(this.props.log) console.log(response.data);

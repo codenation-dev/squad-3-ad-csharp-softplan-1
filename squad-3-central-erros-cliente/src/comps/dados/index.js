@@ -67,17 +67,17 @@ export default class Dados extends Component {
                                 onChange={this.handleChecked} />
                             </td>
                             <td>
-                                <ImagemArquivado  width="45" height="28" value={erro.arquivado} />
-                                <p>{erro.nivel.nome}</p>
+                                <ImagemArquivado  width="45" height="28" value={erro.error.SituationId === 2} />
+                                <p>{erro.error.nivel.level.name}</p>
                             </td>
                             <td>
-                                <p>{erro.titulo}</p>
-                                <p>{erro.detalhe}</p>
-                                <p>{erro.origem}</p>
-                                <p>{erro.dataHora}</p>
+                                <p>{erro.error.title}</p>
+                                <p>{erro.error.details}</p>
+                                <p>{erro.error.origin}</p>
+                                <p>{erro.error.datetime}</p>
                             </td>
-                            <td>{erro.eventos}</td>
-                            <td><Link id="linkDetalhes" key={erro.id} to={`/erro/${erro.id}`}>...</Link></td>
+                            <td>{1}</td>
+                            <td><Link id="linkDetalhes" key={erro.id} to={`/erroroccurrences/${erro.id}`}>...</Link></td>
                         </tr>
                     ))}
                     </tbody>

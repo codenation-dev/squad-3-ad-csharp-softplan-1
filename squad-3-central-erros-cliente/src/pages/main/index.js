@@ -99,7 +99,9 @@ export default class Main extends Component {
         {
             valfiltro = valorFiltro;
         }
-        const query = `/erros/${idAmbiente}/${tamanhoPagina}/${paginaAtual}/${tipoOrd}/${tipofiltro}/${valfiltro}`;
+        //const query = `/erros/${idAmbiente}/${tamanhoPagina}/${paginaAtual}/${tipoOrd}/${tipofiltro}/${valfiltro}`;
+        const query = `/erroroccurrences/${idAmbiente}/${tamanhoPagina}/${paginaAtual}/${tipoOrd}/${tipofiltro}/${valfiltro}`;
+
         if(logAtivo) console.log(`cons  -> idAmbiente:${idAmbiente}/tamanhoPagina:${tamanhoPagina}/paginaAtual:${paginaAtual}/tipoOrd:${tipoOrd}/tipofiltro:${tipofiltro}/valfiltro:${valfiltro}`);
 
         let response = await this.apiExecute(query);
@@ -147,11 +149,20 @@ export default class Main extends Component {
             return;
         }
         selecionados.map(id => {
+            /*
             this.apiExecute(`/erro/{id}`, "put", {
                 id: id,
                 arquivado: this.deveArquivar()
             });
-            return id;
+            */
+           let situacao = this.deveArquivar() ? 2 : 1;
+           this.apiExecute(`/erroroccurrences/{id}`, "put", {
+            id: id,
+            error: {
+                SituationId: situacao
+            }
+        });
+        return id;
         })
 
         this.loadErros("arquivarItem", idAmbiente, paginaAtual, tipoOrdenacao, tipoFiltro, valorFiltro);
@@ -166,7 +177,9 @@ export default class Main extends Component {
         }
 
         selecionados.map(id => {
-            this.apiExecute(`/erro/{id}`, "delete");
+            //this.apiExecute(`/erro/{id}`, "delete");
+            this.apiExecute(`/erroroccurrences/{id}`, "delete");
+            
             return id;
         });
 

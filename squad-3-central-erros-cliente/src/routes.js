@@ -30,7 +30,7 @@ const Routes = () => (
             <Route exact path="/" component={SignIn}  />
             <Route path="/signup" component={SignUp}  />
             <PrivateRoute path="/app" component={Main}  />
-            <PrivateRoute path="/erro/:id" component={Erro}  />
+            <PrivateRoute path="/erroroccurrences/:id" component={Erro}  />
             <Route path="*" component={() => <h1>Página não encontrada</h1>}  />
         </Switch>
     </BrowserRouter>

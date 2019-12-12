@@ -11,7 +11,8 @@ export default class Erro extends Component {
     async componentDidMount() {
         const { id } = this.props.match.params;
         console.log("vai ler o erro id " + id);
-        const response = await api.get(`/erro/${id}`);
+        //const response = await api.get(`/erro/${id}`);
+        const response = await api.get(`/erroroccurrences/${id}`);
 
         console.log(response.data);
 
@@ -24,20 +25,20 @@ export default class Erro extends Component {
         return (
             <div className="erro-info">
                 <a href="javascript: history.go(-1)">Voltar</a>
-                <div id="erro-grande" >Erro no {erro.origem} em {erro.dataHora}</div>
+                <div id="erro-grande" >Erro no {erro.origin} em {erro.datetime}</div>
                 <table id="detalhe-erro">
                     <tr>
                         <td>
                             <div className="label-titulo">Título</div>
                         </td>
                         <td>
-                            <div className="nivel-erro">{erro.idNivel} - nivel.nome</div>
+                            <div className="nivel-erro">{erro.error.level.id} - erro.error.level.name</div>
                         </td>
                     </tr>
 
                     <tr>
                         <td>
-                            <div className="label-titulo">{erro.titulo}</div>
+                            <div className="label-titulo">{erro.error.title}</div>
                         </td>
                         <td>
                             <div className="label-eventos">Eventos</div>
@@ -48,7 +49,7 @@ export default class Erro extends Component {
                         <td>
                         </td>
                         <td>
-                            <div className="valor-medio">{erro.eventos}</div>
+                            <div className="valor-medio">{1}</div>
                         </td>
                     </tr>
 
@@ -63,10 +64,10 @@ export default class Erro extends Component {
 
                     <tr>
                         <td>
-                            <div className="detalhes">{erro.detalhe}</div>
+                            <div className="detalhes">{erro.details}</div>
                         </td>
                         <td>
-                            <div className="valor-medio">Token do usuário erro.usuario.nome</div>
+                            <div className="valor-medio">Token do usuário erro.user.token</div>
                         </td>
                     </tr>
                 </table>

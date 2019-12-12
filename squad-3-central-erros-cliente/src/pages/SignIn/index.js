@@ -27,9 +27,10 @@ class SignUp extends Component {
       try {
         let response = await api.post("/auth", { login: email, password });
         console.log(response);
-        const {access_token, usuario} = response.data;
+        //const {access_token, usuario} = response.data;
+        const {access_token, user} = response.data;
         login(access_token);
-        setIdUsuario(usuario.id);
+        setIdUsuario(user.id);
         this.props.history.push("/app");
       } catch (err) {
         console.log(err);
