@@ -9,6 +9,13 @@ namespace ErrorCenter.Application.Mapping
         public AutoMappingViewModelToDomain()
         {
             CreateMap<EnvironmentViewModel, Environment>();
+
+            CreateMap<ErrorOccurrenceViewModel, ErrorOccurrence>();
+            CreateMap<ErrorViewModel, Error>();
+            CreateMap<LevelViewModel, Level>();
+            CreateMap<SituationViewModel, Situation>();
+            CreateMap<UserViewModel, User>();
+
         }
     }
 }

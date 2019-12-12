@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using ErrorCenter.Application.Interfaces;
+using ErrorCenter.Application.ViewModels;
 using ErrorCenter.Data.Context;
 using ErrorCenter.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -28,9 +29,24 @@ namespace ErrorCenter.Api.Controllers
 
         // GET: api/Levels
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Level>>> GetLevels()
+        public ActionResult<IEnumerable<LevelViewModel>> GetLevels()
         {
-            return await _context.Levels.ToListAsync();
+            var levels = _service.ConsultAllLevels();
+
+            if (levels == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+
+                List<LevelViewModel> levelsViewModels = levels.
+                        Select(x => _mapper.Map<LevelViewModel>(x)).
+                        ToList();
+
+                return Ok(levelsViewModels);
+            }
+
         }
 
         // GET: api/Levels/5

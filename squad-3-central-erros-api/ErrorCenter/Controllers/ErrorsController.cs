@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using ErrorCenter.Application.Interfaces;
+using ErrorCenter.Application.ViewModels;
 using ErrorCenter.Data.Context;
 using ErrorCenter.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -29,9 +30,23 @@ namespace ErrorCenter.Api.Controllers
 
         // GET: api/Errors
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Error>>> GetErrors()
+        public ActionResult<IEnumerable<Error>> GetErrors()
         {
-            return await _context.Errors.ToListAsync();
+            var errors = _service.GetAllErros();
+
+            if (errors == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+
+                List<ErrorViewModel> usersViewModels = errors.
+                        Select(x => _mapper.Map<ErrorViewModel>(x)).
+                        ToList();
+
+                return Ok(usersViewModels);
+            }
         }
 
         // GET: api/Errors/5

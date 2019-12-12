@@ -17,6 +17,6 @@ namespace ErrorCenter.Domain.Models
         [Required]
         public string LevelName { get; set; }
 
-        public ICollection<Error> Errors { get; set; }
+        public virtual ICollection<Error> Errors { get; set; }
     }
 }

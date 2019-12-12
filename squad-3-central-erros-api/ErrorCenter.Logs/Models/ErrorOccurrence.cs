@@ -30,12 +30,12 @@ namespace ErrorCenter.Domain.Models
         public int UserId { get; set; }
 
         [Column("USER_ID"), Required]
-        public User User { get; set; }// referencia 
+        public virtual User User { get; set; }// referencia 
 
         [ForeignKey("ERROR_ID"), Required]
         public int ErrorId { get; set; }
 
         [Column("ERROR_ID"), Required]
-        public Error Error { get; set; }// referencia 
+        public virtual Error Error { get; set; }// referencia 
     }
 }

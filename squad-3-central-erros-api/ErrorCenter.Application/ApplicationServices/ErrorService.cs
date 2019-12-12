@@ -1,6 +1,7 @@
 ﻿using ErrorCenter.Application.Interfaces;
 using ErrorCenter.Data.Context;
 using ErrorCenter.Domain.Models;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace ErrorCenter.Application.ApplicationServices
@@ -25,6 +26,11 @@ namespace ErrorCenter.Application.ApplicationServices
             }
 
             return false;
+        }
+
+        public List<Error> GetAllErros()
+        {
+            return _context.Errors.Select(l => l).ToList();
         }
 
         public Error ConsultError(int id)

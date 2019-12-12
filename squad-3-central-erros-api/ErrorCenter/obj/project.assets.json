@@ -2897,6 +2897,21 @@
           "bin/placeholder/ErrorCenter.Application.dll": {}
         }
       },
+      "ErrorCenter.CrossCutting/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.0",
+        "dependencies": {
+          "EntityFramework": "6.4.0",
+          "Microsoft.EntityFrameworkCore": "3.1.0",
+          "Microsoft.EntityFrameworkCore.Proxies": "3.1.0"
+        },
+        "compile": {
+          "bin/placeholder/ErrorCenter.CrossCutting.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ErrorCenter.CrossCutting.dll": {}
+        }
+      },
       "ErrorCenter.CrossCuttingIoC/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.0",
@@ -2919,6 +2934,7 @@
         "framework": ".NETCoreApp,Version=v3.0",
         "dependencies": {
           "EntityFramework": "6.4.0",
+          "ErrorCenter.CrossCutting": "1.0.0",
           "ErrorCenter.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "3.1.0",
           "Microsoft.EntityFrameworkCore.Proxies": "3.1.0"
@@ -9362,6 +9378,11 @@
       "type": "project",
       "path": "../ErrorCenter.Application/ErrorCenter.Application.csproj",
       "msbuildProject": "../ErrorCenter.Application/ErrorCenter.Application.csproj"
+    },
+    "ErrorCenter.CrossCutting/1.0.0": {
+      "type": "project",
+      "path": "../Error.CrossCutting/ErrorCenter.CrossCutting.csproj",
+      "msbuildProject": "../Error.CrossCutting/ErrorCenter.CrossCutting.csproj"
     },
     "ErrorCenter.CrossCuttingIoC/1.0.0": {
       "type": "project",

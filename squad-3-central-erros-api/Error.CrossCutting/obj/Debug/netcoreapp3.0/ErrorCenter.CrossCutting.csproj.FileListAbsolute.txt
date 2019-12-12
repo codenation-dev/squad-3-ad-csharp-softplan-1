@@ -1,0 +1,9 @@
+C:\Users\LENOVO\Documents\GitHub\squad-3-ad-csharp-softplan-1\squad-3-central-erros-api\Error.CrossCutting\bin\Debug\netcoreapp3.0\ErrorCenter.CrossCutting.deps.json
+C:\Users\LENOVO\Documents\GitHub\squad-3-ad-csharp-softplan-1\squad-3-central-erros-api\Error.CrossCutting\bin\Debug\netcoreapp3.0\ErrorCenter.CrossCutting.runtimeconfig.json
+C:\Users\LENOVO\Documents\GitHub\squad-3-ad-csharp-softplan-1\squad-3-central-erros-api\Error.CrossCutting\bin\Debug\netcoreapp3.0\ErrorCenter.CrossCutting.runtimeconfig.dev.json
+C:\Users\LENOVO\Documents\GitHub\squad-3-ad-csharp-softplan-1\squad-3-central-erros-api\Error.CrossCutting\bin\Debug\netcoreapp3.0\ErrorCenter.CrossCutting.dll
+C:\Users\LENOVO\Documents\GitHub\squad-3-ad-csharp-softplan-1\squad-3-central-erros-api\Error.CrossCutting\bin\Debug\netcoreapp3.0\ErrorCenter.CrossCutting.pdb
+C:\Users\LENOVO\Documents\GitHub\squad-3-ad-csharp-softplan-1\squad-3-central-erros-api\Error.CrossCutting\obj\Debug\netcoreapp3.0\ErrorCenter.CrossCutting.AssemblyInfoInputs.cache
+C:\Users\LENOVO\Documents\GitHub\squad-3-ad-csharp-softplan-1\squad-3-central-erros-api\Error.CrossCutting\obj\Debug\netcoreapp3.0\ErrorCenter.CrossCutting.AssemblyInfo.cs
+C:\Users\LENOVO\Documents\GitHub\squad-3-ad-csharp-softplan-1\squad-3-central-erros-api\Error.CrossCutting\obj\Debug\netcoreapp3.0\ErrorCenter.CrossCutting.dll
+C:\Users\LENOVO\Documents\GitHub\squad-3-ad-csharp-softplan-1\squad-3-central-erros-api\Error.CrossCutting\obj\Debug\netcoreapp3.0\ErrorCenter.CrossCutting.pdb

@@ -29,19 +29,19 @@ namespace ErrorCenter.Domain.Models
         public int EnvironmentId { get; set; }
 
         [Column("ENVIRONMENT_ID"), Required]
-        public Environment Environment { get; set; }// referencia 
+        public virtual Environment Environment { get; set; }// referencia 
 
         [ForeignKey("LEVEL_ID"), Required]
         public int LevelId { get; set; }
 
         [Column("LEVEL_ID"), Required]
-        public Level Level { get; set; }// referencia 
+        public virtual Level Level { get; set; }// referencia 
 
         [ForeignKey("SITUATION_ID"), Required]
         public int SituationId { get; set; }
 
         [Column("SITUATION_ID"), Required]
-        public Situation Situation { get; set; }// referencia 
+        public virtual Situation Situation { get; set; }// referencia 
 
     }
 }

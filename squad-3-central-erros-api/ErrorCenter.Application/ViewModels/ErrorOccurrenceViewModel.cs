@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ErrorCenter.Domain.Models;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace ErrorCenter.Application.ViewModels
@@ -19,8 +20,12 @@ namespace ErrorCenter.Application.ViewModels
         [Required]
         public int UserId { get; set; }
 
+        public virtual UserViewModel User { get; set; }
+
         [Required]
         public int ErrorId { get; set; }
+
+        public virtual ErrorViewModel Error { get; set; }
 
     }
 }

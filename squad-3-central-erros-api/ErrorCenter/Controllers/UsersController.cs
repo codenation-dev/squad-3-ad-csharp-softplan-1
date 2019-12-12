@@ -1,5 +1,7 @@
-﻿using AutoMapper;
+﻿using AceleraDev.CrossCutting.Utils;
+using AutoMapper;
 using ErrorCenter.Application.Interfaces;
+using ErrorCenter.Application.ViewModels;
 using ErrorCenter.Data.Context;
 using ErrorCenter.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -29,7 +31,22 @@ namespace ErrorCenter.Api.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetUsers()
         {
-            return await _context.Users.ToListAsync();
+            var users = _service.ConsultAllUsers();
+
+            if (users == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+
+                List<UserViewModel> usersViewModels = users.
+                        Select(x => _mapper.Map<UserViewModel>(x)).
+                        ToList();
+
+                return Ok(usersViewModels);
+            }
+
         }
 
         // GET: api/Users/5
@@ -54,6 +71,9 @@ namespace ErrorCenter.Api.Controllers
             {
                 return BadRequest();
             }
+
+            //max: colcoa a senha que vem em md5
+            user.Password = user.Password.ToHashMD5();
 
             _context.Entry(user).State = EntityState.Modified;
 
@@ -80,6 +100,9 @@ namespace ErrorCenter.Api.Controllers
         [HttpPost]
         public async Task<ActionResult<User>> PostUser(User user)
         {
+            //max: passa apra md5
+            user.Password = user.Password.ToHashMD5();
+
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
 

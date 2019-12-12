@@ -32,7 +32,7 @@ namespace ErrorCenter.Domain.Models
         [Required]
         public string Token { get; set; }
 
-        public ICollection<ErrorOccurrence> ErrorOccurrences { get; set; }
+        public virtual ICollection<ErrorOccurrence> ErrorOccurrences { get; set; }
 
     }
 

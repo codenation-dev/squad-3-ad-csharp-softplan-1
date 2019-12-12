@@ -65,6 +65,11 @@ namespace ErrorCenter.Application.ApplicationServices
             return _context.ErrorOccurrences.Where(o => o.Error.EnvironmentId == ambiente).ToList();
         }
 
+        public List<ErrorOccurrence> GetAllErrorOccurrences()
+        {
+            return _context.ErrorOccurrences.Select(l => l).ToList();
+        }
+
         public List<ErrorOccurrence> ListOccurencesByLevel(int level)
         {
             return _context.ErrorOccurrences.Where(o => o.Error.LevelId == level).ToList();

@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Error.CrossCutting\ErrorCenter.CrossCutting.csproj" />
     <ProjectReference Include="..\ErrorCenter.Logs\ErrorCenter.Domain.csproj" />
   </ItemGroup>
 

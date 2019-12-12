@@ -2152,6 +2152,21 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "ErrorCenter.CrossCutting/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.0",
+        "dependencies": {
+          "EntityFramework": "6.4.0",
+          "Microsoft.EntityFrameworkCore": "3.1.0",
+          "Microsoft.EntityFrameworkCore.Proxies": "3.1.0"
+        },
+        "compile": {
+          "bin/placeholder/ErrorCenter.CrossCutting.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ErrorCenter.CrossCutting.dll": {}
+        }
+      },
       "ErrorCenter.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.0",
@@ -7464,6 +7479,11 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "ErrorCenter.CrossCutting/1.0.0": {
+      "type": "project",
+      "path": "../Error.CrossCutting/ErrorCenter.CrossCutting.csproj",
+      "msbuildProject": "../Error.CrossCutting/ErrorCenter.CrossCutting.csproj"
+    },
     "ErrorCenter.Domain/1.0.0": {
       "type": "project",
       "path": "../ErrorCenter.Logs/ErrorCenter.Domain.csproj",
@@ -7473,6 +7493,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.0": [
       "EntityFramework >= 6.4.0",
+      "ErrorCenter.CrossCutting >= 1.0.0",
       "ErrorCenter.Domain >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 3.1.0",
       "Microsoft.EntityFrameworkCore.Proxies >= 3.1.0"
@@ -7504,6 +7525,9 @@
       "frameworks": {
         "netcoreapp3.0": {
           "projectReferences": {
+            "C:\\Users\\LENOVO\\Documents\\GitHub\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\Error.CrossCutting\\ErrorCenter.CrossCutting.csproj": {
+              "projectPath": "C:\\Users\\LENOVO\\Documents\\GitHub\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\Error.CrossCutting\\ErrorCenter.CrossCutting.csproj"
+            },
             "C:\\Users\\LENOVO\\Documents\\GitHub\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Logs\\ErrorCenter.Domain.csproj": {
               "projectPath": "C:\\Users\\LENOVO\\Documents\\GitHub\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Logs\\ErrorCenter.Domain.csproj"
             }

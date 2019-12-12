@@ -1,0 +1,10 @@
+C:\Users\LENOVO\Documents\GitHub\squad-3-ad-csharp-softplan-1\squad-3-central-erros-api\ErrorCenter.Logs\bin\Debug\netcoreapp3.0\ErrorCenter.Domain.deps.json
+C:\Users\LENOVO\Documents\GitHub\squad-3-ad-csharp-softplan-1\squad-3-central-erros-api\ErrorCenter.Logs\bin\Debug\netcoreapp3.0\ErrorCenter.Domain.runtimeconfig.json
+C:\Users\LENOVO\Documents\GitHub\squad-3-ad-csharp-softplan-1\squad-3-central-erros-api\ErrorCenter.Logs\bin\Debug\netcoreapp3.0\ErrorCenter.Domain.runtimeconfig.dev.json
+C:\Users\LENOVO\Documents\GitHub\squad-3-ad-csharp-softplan-1\squad-3-central-erros-api\ErrorCenter.Logs\bin\Debug\netcoreapp3.0\ErrorCenter.Domain.dll
+C:\Users\LENOVO\Documents\GitHub\squad-3-ad-csharp-softplan-1\squad-3-central-erros-api\ErrorCenter.Logs\bin\Debug\netcoreapp3.0\ErrorCenter.Domain.pdb
+C:\Users\LENOVO\Documents\GitHub\squad-3-ad-csharp-softplan-1\squad-3-central-erros-api\ErrorCenter.Logs\obj\Debug\netcoreapp3.0\ErrorCenter.Domain.csprojAssemblyReference.cache
+C:\Users\LENOVO\Documents\GitHub\squad-3-ad-csharp-softplan-1\squad-3-central-erros-api\ErrorCenter.Logs\obj\Debug\netcoreapp3.0\ErrorCenter.Domain.AssemblyInfoInputs.cache
+C:\Users\LENOVO\Documents\GitHub\squad-3-ad-csharp-softplan-1\squad-3-central-erros-api\ErrorCenter.Logs\obj\Debug\netcoreapp3.0\ErrorCenter.Domain.AssemblyInfo.cs
+C:\Users\LENOVO\Documents\GitHub\squad-3-ad-csharp-softplan-1\squad-3-central-erros-api\ErrorCenter.Logs\obj\Debug\netcoreapp3.0\ErrorCenter.Domain.dll
+C:\Users\LENOVO\Documents\GitHub\squad-3-ad-csharp-softplan-1\squad-3-central-erros-api\ErrorCenter.Logs\obj\Debug\netcoreapp3.0\ErrorCenter.Domain.pdb
