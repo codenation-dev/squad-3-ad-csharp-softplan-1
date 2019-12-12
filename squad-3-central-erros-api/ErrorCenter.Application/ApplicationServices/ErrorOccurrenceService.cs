@@ -50,6 +50,7 @@ namespace ErrorCenter.Application.ApplicationServices
             //else if (sortOrder == SortOrder.SortByRank)
             //    orderByFunc = item => item.Rank;
 
+            /*
             string ordenacao = null;
 
             if (campoOrdenacao == 1)
@@ -61,8 +62,10 @@ namespace ErrorCenter.Application.ApplicationServices
             {
                 ordenacao = "Error.Frequencia";
             }
-
+            
             return _context.ErrorOccurrences.Where(o => o.Error.EnvironmentId == ambiente).ToList();
+            */
+            return null;
         }
 
         public List<ErrorOccurrence> GetAllErrorOccurrences()

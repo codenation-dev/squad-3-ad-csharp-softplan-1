@@ -15,6 +15,7 @@ namespace ErrorCenter.CrossCuttingIoC
             serviceCollection.AddScoped<ILevelService, LevelService>();
             serviceCollection.AddScoped<ISituationService, SituationService>();
             serviceCollection.AddScoped<IUserService, UserService>();
+            serviceCollection.AddScoped<ISystemAuthenticationService, SystemAuthenticationService>();
 
 
             //// services
