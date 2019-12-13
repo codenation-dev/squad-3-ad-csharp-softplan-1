@@ -1,6 +1,6 @@
-using AceleraDev.CrossCutting.Helpers;
 using AutoMapper;
 using ErrorCenter.Application.Mapping;
+using ErrorCenter.CrossCutting.Helpers;
 using ErrorCenter.CrossCuttingIoC;
 using ErrorCenter.Data.Context;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -11,8 +11,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
 using System.Text;
 
 namespace ErrorCenter
@@ -46,6 +50,9 @@ namespace ErrorCenter
 
             // Configuração da autenticação
             ConfigureAuth(services);
+
+            
+            ConfigureSwagger(services);
         }
 
 
@@ -79,6 +86,35 @@ namespace ErrorCenter
                 };
             });
         }
+        [Obsolete]
+        private void ConfigureSwagger(IServiceCollection services)
+        {
+            services.AddSwaggerGen(config =>
+            {
+                config.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "API ErroCenter",
+                    Version = "1.0.0",
+                    License = new OpenApiLicense
+                    {
+                        Url = new Uri("https://swagger.io/docs/specification/api-general-info/e")
+                    },
+                    Description = "API para fornecimento de dados para execuções funcionalidades do ErroCenter.</br>",
+                    Contact = new OpenApiContact
+                    {
+                        Name = "Luciano Fagundes de Oliveira",
+                        Email = "luciano.fagundes02@gmail.com",
+                        Url = new Uri("https://github.com/lucianojec")
+                    }
+                });
+
+                // Para funcionar a leitura do .xml de documentação é preciso habilitar nas configurações do projeto:
+                // https://docs.microsoft.com/pt-br/aspnet/core/tutorials/getting-started-with-swashbuckle?view=aspnetcore-3.1&tabs=visual-studio
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                config.IncludeXmlComments(xmlPath);
+            });
+        }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -91,6 +127,14 @@ namespace ErrorCenter
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseSwagger();
+            app.UseSwaggerUI(config =>
+            {
+
+                config.SwaggerEndpoint("/swagger/v1/swagger.json", "API - AceleraDev V1");
+                config.SwaggerEndpoint("/swagger/v2/swagger.json", "API - AceleraDev V2");
+            });
 
             app.UseEndpoints(endpoints =>
             {

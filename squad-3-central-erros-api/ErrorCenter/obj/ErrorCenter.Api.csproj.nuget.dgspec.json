@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\LENOVO\\Documents\\GitHub\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter\\ErrorCenter.Api.csproj": {}
+    "C:\\Projeto-Final-Codenation\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter\\ErrorCenter.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\LENOVO\\Documents\\GitHub\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\Error.CrossCutting\\ErrorCenter.CrossCutting.csproj": {
+    "C:\\Projeto-Final-Codenation\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\Error.CrossCutting\\ErrorCenter.CrossCutting.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\LENOVO\\Documents\\GitHub\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\Error.CrossCutting\\ErrorCenter.CrossCutting.csproj",
+        "projectUniqueName": "C:\\Projeto-Final-Codenation\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\Error.CrossCutting\\ErrorCenter.CrossCutting.csproj",
         "projectName": "ErrorCenter.CrossCutting",
-        "projectPath": "C:\\Users\\LENOVO\\Documents\\GitHub\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\Error.CrossCutting\\ErrorCenter.CrossCutting.csproj",
-        "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\LENOVO\\Documents\\GitHub\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\Error.CrossCutting\\obj\\",
+        "projectPath": "C:\\Projeto-Final-Codenation\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\Error.CrossCutting\\ErrorCenter.CrossCutting.csproj",
+        "packagesPath": "C:\\Users\\lucia\\.nuget\\packages\\",
+        "outputPath": "C:\\Projeto-Final-Codenation\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\Error.CrossCutting\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lucia\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -61,40 +64,29 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[3.0.1, 3.0.1]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[3.0.0, 3.0.0]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[3.0.0, 3.0.0]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\LENOVO\\Documents\\GitHub\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Application\\ErrorCenter.Application.csproj": {
+    "C:\\Projeto-Final-Codenation\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Application\\ErrorCenter.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\LENOVO\\Documents\\GitHub\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Application\\ErrorCenter.Application.csproj",
+        "projectUniqueName": "C:\\Projeto-Final-Codenation\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Application\\ErrorCenter.Application.csproj",
         "projectName": "ErrorCenter.Application",
-        "projectPath": "C:\\Users\\LENOVO\\Documents\\GitHub\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Application\\ErrorCenter.Application.csproj",
-        "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\LENOVO\\Documents\\GitHub\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Application\\obj\\",
+        "projectPath": "C:\\Projeto-Final-Codenation\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Application\\ErrorCenter.Application.csproj",
+        "packagesPath": "C:\\Users\\lucia\\.nuget\\packages\\",
+        "outputPath": "C:\\Projeto-Final-Codenation\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Application\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lucia\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -107,11 +99,11 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "C:\\Users\\LENOVO\\Documents\\GitHub\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Data\\ErrorCenter.Data.csproj": {
-                "projectPath": "C:\\Users\\LENOVO\\Documents\\GitHub\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Data\\ErrorCenter.Data.csproj"
+              "C:\\Projeto-Final-Codenation\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Data\\ErrorCenter.Data.csproj": {
+                "projectPath": "C:\\Projeto-Final-Codenation\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Data\\ErrorCenter.Data.csproj"
               },
-              "C:\\Users\\LENOVO\\Documents\\GitHub\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Logs\\ErrorCenter.Domain.csproj": {
-                "projectPath": "C:\\Users\\LENOVO\\Documents\\GitHub\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Logs\\ErrorCenter.Domain.csproj"
+              "C:\\Projeto-Final-Codenation\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Logs\\ErrorCenter.Domain.csproj": {
+                "projectPath": "C:\\Projeto-Final-Codenation\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Logs\\ErrorCenter.Domain.csproj"
               }
             }
           }
@@ -152,40 +144,29 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[3.0.1, 3.0.1]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[3.0.0, 3.0.0]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[3.0.0, 3.0.0]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\LENOVO\\Documents\\GitHub\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.CrossCuttingIoC\\ErrorCenter.CrossCuttingIoC.csproj": {
+    "C:\\Projeto-Final-Codenation\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.CrossCuttingIoC\\ErrorCenter.CrossCuttingIoC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\LENOVO\\Documents\\GitHub\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.CrossCuttingIoC\\ErrorCenter.CrossCuttingIoC.csproj",
+        "projectUniqueName": "C:\\Projeto-Final-Codenation\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.CrossCuttingIoC\\ErrorCenter.CrossCuttingIoC.csproj",
         "projectName": "ErrorCenter.CrossCuttingIoC",
-        "projectPath": "C:\\Users\\LENOVO\\Documents\\GitHub\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.CrossCuttingIoC\\ErrorCenter.CrossCuttingIoC.csproj",
-        "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\LENOVO\\Documents\\GitHub\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.CrossCuttingIoC\\obj\\",
+        "projectPath": "C:\\Projeto-Final-Codenation\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.CrossCuttingIoC\\ErrorCenter.CrossCuttingIoC.csproj",
+        "packagesPath": "C:\\Users\\lucia\\.nuget\\packages\\",
+        "outputPath": "C:\\Projeto-Final-Codenation\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.CrossCuttingIoC\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lucia\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -198,8 +179,8 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "C:\\Users\\LENOVO\\Documents\\GitHub\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Application\\ErrorCenter.Application.csproj": {
-                "projectPath": "C:\\Users\\LENOVO\\Documents\\GitHub\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Application\\ErrorCenter.Application.csproj"
+              "C:\\Projeto-Final-Codenation\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Application\\ErrorCenter.Application.csproj": {
+                "projectPath": "C:\\Projeto-Final-Codenation\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Application\\ErrorCenter.Application.csproj"
               }
             }
           }
@@ -240,40 +221,29 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[3.0.1, 3.0.1]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[3.0.0, 3.0.0]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[3.0.0, 3.0.0]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\LENOVO\\Documents\\GitHub\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Data\\ErrorCenter.Data.csproj": {
+    "C:\\Projeto-Final-Codenation\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Data\\ErrorCenter.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\LENOVO\\Documents\\GitHub\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Data\\ErrorCenter.Data.csproj",
+        "projectUniqueName": "C:\\Projeto-Final-Codenation\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Data\\ErrorCenter.Data.csproj",
         "projectName": "ErrorCenter.Data",
-        "projectPath": "C:\\Users\\LENOVO\\Documents\\GitHub\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Data\\ErrorCenter.Data.csproj",
-        "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\LENOVO\\Documents\\GitHub\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Data\\obj\\",
+        "projectPath": "C:\\Projeto-Final-Codenation\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Data\\ErrorCenter.Data.csproj",
+        "packagesPath": "C:\\Users\\lucia\\.nuget\\packages\\",
+        "outputPath": "C:\\Projeto-Final-Codenation\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Data\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lucia\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -286,11 +256,11 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "C:\\Users\\LENOVO\\Documents\\GitHub\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\Error.CrossCutting\\ErrorCenter.CrossCutting.csproj": {
-                "projectPath": "C:\\Users\\LENOVO\\Documents\\GitHub\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\Error.CrossCutting\\ErrorCenter.CrossCutting.csproj"
+              "C:\\Projeto-Final-Codenation\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\Error.CrossCutting\\ErrorCenter.CrossCutting.csproj": {
+                "projectPath": "C:\\Projeto-Final-Codenation\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\Error.CrossCutting\\ErrorCenter.CrossCutting.csproj"
               },
-              "C:\\Users\\LENOVO\\Documents\\GitHub\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Logs\\ErrorCenter.Domain.csproj": {
-                "projectPath": "C:\\Users\\LENOVO\\Documents\\GitHub\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Logs\\ErrorCenter.Domain.csproj"
+              "C:\\Projeto-Final-Codenation\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Logs\\ErrorCenter.Domain.csproj": {
+                "projectPath": "C:\\Projeto-Final-Codenation\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Logs\\ErrorCenter.Domain.csproj"
               }
             }
           }
@@ -327,40 +297,29 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[3.0.1, 3.0.1]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[3.0.0, 3.0.0]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[3.0.0, 3.0.0]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\LENOVO\\Documents\\GitHub\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Logs\\ErrorCenter.Domain.csproj": {
+    "C:\\Projeto-Final-Codenation\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Logs\\ErrorCenter.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\LENOVO\\Documents\\GitHub\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Logs\\ErrorCenter.Domain.csproj",
+        "projectUniqueName": "C:\\Projeto-Final-Codenation\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Logs\\ErrorCenter.Domain.csproj",
         "projectName": "ErrorCenter.Domain",
-        "projectPath": "C:\\Users\\LENOVO\\Documents\\GitHub\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Logs\\ErrorCenter.Domain.csproj",
-        "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\LENOVO\\Documents\\GitHub\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Logs\\obj\\",
+        "projectPath": "C:\\Projeto-Final-Codenation\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Logs\\ErrorCenter.Domain.csproj",
+        "packagesPath": "C:\\Users\\lucia\\.nuget\\packages\\",
+        "outputPath": "C:\\Projeto-Final-Codenation\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Logs\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lucia\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -415,40 +374,29 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[3.0.1, 3.0.1]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[3.0.0, 3.0.0]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[3.0.0, 3.0.0]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\LENOVO\\Documents\\GitHub\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter\\ErrorCenter.Api.csproj": {
+    "C:\\Projeto-Final-Codenation\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter\\ErrorCenter.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\LENOVO\\Documents\\GitHub\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter\\ErrorCenter.Api.csproj",
+        "projectUniqueName": "C:\\Projeto-Final-Codenation\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter\\ErrorCenter.Api.csproj",
         "projectName": "ErrorCenter.Api",
-        "projectPath": "C:\\Users\\LENOVO\\Documents\\GitHub\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter\\ErrorCenter.Api.csproj",
-        "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\LENOVO\\Documents\\GitHub\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter\\obj\\",
+        "projectPath": "C:\\Projeto-Final-Codenation\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter\\ErrorCenter.Api.csproj",
+        "packagesPath": "C:\\Users\\lucia\\.nuget\\packages\\",
+        "outputPath": "C:\\Projeto-Final-Codenation\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lucia\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -461,17 +409,17 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "C:\\Users\\LENOVO\\Documents\\GitHub\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Application\\ErrorCenter.Application.csproj": {
-                "projectPath": "C:\\Users\\LENOVO\\Documents\\GitHub\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Application\\ErrorCenter.Application.csproj"
+              "C:\\Projeto-Final-Codenation\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Application\\ErrorCenter.Application.csproj": {
+                "projectPath": "C:\\Projeto-Final-Codenation\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Application\\ErrorCenter.Application.csproj"
               },
-              "C:\\Users\\LENOVO\\Documents\\GitHub\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.CrossCuttingIoC\\ErrorCenter.CrossCuttingIoC.csproj": {
-                "projectPath": "C:\\Users\\LENOVO\\Documents\\GitHub\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.CrossCuttingIoC\\ErrorCenter.CrossCuttingIoC.csproj"
+              "C:\\Projeto-Final-Codenation\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.CrossCuttingIoC\\ErrorCenter.CrossCuttingIoC.csproj": {
+                "projectPath": "C:\\Projeto-Final-Codenation\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.CrossCuttingIoC\\ErrorCenter.CrossCuttingIoC.csproj"
               },
-              "C:\\Users\\LENOVO\\Documents\\GitHub\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Data\\ErrorCenter.Data.csproj": {
-                "projectPath": "C:\\Users\\LENOVO\\Documents\\GitHub\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Data\\ErrorCenter.Data.csproj"
+              "C:\\Projeto-Final-Codenation\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Data\\ErrorCenter.Data.csproj": {
+                "projectPath": "C:\\Projeto-Final-Codenation\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Data\\ErrorCenter.Data.csproj"
               },
-              "C:\\Users\\LENOVO\\Documents\\GitHub\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Logs\\ErrorCenter.Domain.csproj": {
-                "projectPath": "C:\\Users\\LENOVO\\Documents\\GitHub\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Logs\\ErrorCenter.Domain.csproj"
+              "C:\\Projeto-Final-Codenation\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Logs\\ErrorCenter.Domain.csproj": {
+                "projectPath": "C:\\Projeto-Final-Codenation\\squad-3-ad-csharp-softplan-1\\squad-3-central-erros-api\\ErrorCenter.Logs\\ErrorCenter.Domain.csproj"
               }
             }
           }
@@ -526,6 +474,14 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.0.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.0.0-rc4, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerUi": {
+              "target": "Package",
+              "version": "[5.0.0-rc4, )"
             }
           },
           "imports": [
@@ -538,24 +494,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[3.0.1, 3.0.1]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[3.0.1, 3.0.1]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[3.0.0, 3.0.0]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[3.0.0, 3.0.0]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -564,7 +502,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

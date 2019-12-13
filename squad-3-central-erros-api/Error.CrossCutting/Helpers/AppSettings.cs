@@ -1,4 +1,4 @@
-﻿namespace AceleraDev.CrossCutting.Helpers
+﻿namespace ErrorCenter.CrossCutting.Helpers
 {
     public class AppSettings
     {
