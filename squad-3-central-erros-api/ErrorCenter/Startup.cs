@@ -30,7 +30,7 @@ namespace ErrorCenter
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers()
-                // Desabilitar referência circular na serialiazção dos json
+                // Desabilitar referência circular na serialização dos json
                 .AddNewtonsoftJson(opt =>
                     opt.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
 

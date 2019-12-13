@@ -9,11 +9,11 @@ import {getIdUsuario, logout} from '../../services/auth.js';
 
 import './styles.css';
 
-const ordenacoes = ([{id: "", nome: "Ordenar por"}, {id: "L", nome: "Level"}, {id: "F", nome: "Frequência"}]);
-const tiposFiltro = ([{id: "T", nome: "Buscar por"}, {id: "L", nome: "Level"}, {id: "D", nome: "Descrição"},
+const ordenacoes = ([{id: "", name: "Ordenar por"}, {id: "L", name: "Level"}, {id: "F", name: "Frequência"}]);
+const tiposFiltro = ([{id: "T", name: "Buscar por"}, {id: "L", name: "Level"}, {id: "D", name: "Descrição"},
 {id: "O", nome: "Origem"}]);
 
-const logAtivo = false;
+const logAtivo = true;
 
 export default class Main extends Component {
    
@@ -111,11 +111,12 @@ export default class Main extends Component {
 
         //console.log('depois de chamar');
 
-        //console.log(response.data);
-        const {erros, ...info} = response.data;
+        console.log(response.data);
+        //const {erros, ...info} = response.data;
+        const {errorOccurrences, ...info} = response.data;
 
         this.setState({selecionados: [], qtdItensSelecionados: 0, idAmbiente, paginaAtual, 
-            tipoOrdenacao: tipoOrd, tipoFiltro: tipofiltro, valorFiltro: valfiltro, erros, info});
+            tipoOrdenacao: tipoOrd, tipoFiltro: tipofiltro, valorFiltro: valfiltro, erros: errorOccurrences, info});
     };
 
     prevPage = () => {
@@ -219,7 +220,18 @@ export default class Main extends Component {
 
         if(logAtivo) console.log(`evento handleDataFilterChanged( ${dadosEvento.id}, ${dadosEvento.value} )`);
         if(dadosEvento.id === "filtro") 
-            this.loadErros("handleDataFilterChanged:filtro", idAmbiente, paginaAtual, tipoOrdenacao, tipoFiltro, dadosEvento.value);
+        {
+            if(dadosEvento.value.substring(0, 2) === "p:")
+            {
+                let tamanhoPagina = dadosEvento.value.substring(2);
+                if(logAtivo) console.log(`Alterando tam. página para  ${tamanhoPagina}`);
+                this.setState({tamanhoPagina});
+            }
+            else
+            {
+                this.loadErros("handleDataFilterChanged:filtro", idAmbiente, paginaAtual, tipoOrdenacao, tipoFiltro, dadosEvento.value);
+            }
+        }
     }
 
     handleDataChanged = (dadosEvento) => {
@@ -307,7 +319,7 @@ export default class Main extends Component {
 
                 <div className="options">
 
-                    <DataCombo id="ambiente" nomeEndPoint="/ambiente" value={idAmbiente} onChange={this.handleDataComboAmbienteChanged} />
+                    <DataCombo id="ambiente" nomeEndPoint="/environments" value={idAmbiente} onChange={this.handleDataComboAmbienteChanged} log={logAtivo} />
                     <DataCombo id="ordenacao" nomeEndPoint="" options={ordenacoes} value={tipoOrdenacao} onChange={this.handleDataComboChanged} />
                     <DataCombo id="tipo-filtro" nomeEndPoint="" options={tiposFiltro} value={tipoFiltro} onChange={this.handleDataComboChanged} />
 

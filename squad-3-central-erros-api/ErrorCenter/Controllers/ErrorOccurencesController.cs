@@ -48,6 +48,31 @@ namespace ErrorCenter.Api.Controllers
             }
         }
 
+        //[Route("api/erros/consulta")]
+        [HttpGet("{idAmbiente}/{tamanhoPagina}/{pagina}/{tipoOrdenacao}/{tipoFiltro}/{valorFiltro}")]
+        // https://localhost:5001/api/erros/1/10/1/T/teste
+        public ActionResult GetErrorOccurrences(int idAmbiente,
+            int tamanhoPagina, int pagina, string tipoOrdenacao, string tipoFiltro, string valorFiltro)
+        {
+            int tamPag = tamanhoPagina < 1 ? 10 : tamanhoPagina;
+            int pag = pagina < 1 ? 1 : pagina;
+
+
+            var errorOccurrencesResultPage = _service.GetErrorOccurrencesParams(idAmbiente,
+            tamPag, pag, tipoOrdenacao, tipoFiltro, valorFiltro);
+
+            if (errorOccurrencesResultPage == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(errorOccurrencesResultPage);
+            }
+
+        }
+
+
         // GET: api/ErrorOccurrences/5
         [HttpGet("{id}")]
         public async Task<ActionResult<ErrorOccurrence>> GetErrorOccurrence(int id)

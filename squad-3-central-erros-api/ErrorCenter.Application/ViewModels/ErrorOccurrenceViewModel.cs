@@ -27,5 +27,8 @@ namespace ErrorCenter.Application.ViewModels
 
         public virtual ErrorViewModel Error { get; set; }
 
+        [Required]
+        public int EventCount { get; set; }
+
     }
 }

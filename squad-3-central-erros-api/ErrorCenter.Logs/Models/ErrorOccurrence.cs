@@ -37,5 +37,9 @@ namespace ErrorCenter.Domain.Models
 
         [Column("ERROR_ID"), Required]
         public virtual Error Error { get; set; }// referencia 
+
+        [Column("EVENT_COUNT"), Required]
+        public int EventCount { get; set; }
+
     }
 }

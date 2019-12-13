@@ -1,4 +1,6 @@
-﻿using ErrorCenter.Application.Interfaces;
+﻿using AutoMapper;
+using ErrorCenter.Application.Interfaces;
+using ErrorCenter.Application.ViewModels;
 using ErrorCenter.Data.Context;
 using ErrorCenter.Domain.Models;
 using System;
@@ -11,10 +13,12 @@ namespace ErrorCenter.Application.ApplicationServices
     {
 
         private ErrorCenterContext _context;
+        private readonly IMapper _mapper;
 
-        public ErrorOccurrenceService(ErrorCenterContext context)
+        public ErrorOccurrenceService(IMapper mapper, ErrorCenterContext context)
         {
             this._context = context;
+            this._mapper = mapper;
         }
 
         public bool RegisterError(Error error, User user, string origin, string details, DateTime dateTime, string userToken)
@@ -29,43 +33,125 @@ namespace ErrorCenter.Application.ApplicationServices
             return false;
         }
 
-        public List<ErrorOccurrence> Consult(int ambiente, int campoOrdenacao, int campoBuscado, string textoBuscado)
+        private bool testarItemCorrespondeFiltro(ErrorOccurrence erro, string tipoFiltro, string valorFiltro)
         {
-            // dado vem do frontEnd
+            if (tipoFiltro == "T")
+                return true;
 
-            // Campo ordenação
-            // 1 - Level
-            // 2 - Frequência
+            if (valorFiltro == "none")
+                return true;
 
-            // Campo buscado
-            // 1 - Level
-            // 2 - Descrição
-            // 3 - Origem
 
-            //TODO
+            if (string.IsNullOrEmpty(valorFiltro))
+                return true;
 
-            //Func<OcorrenciaErro, Object> orderByFunc = null;
-            //if (sortOrder == SortOrder.SortByName)
-            //    orderByFunc = item => item.Error.Level;
-            //else if (sortOrder == SortOrder.SortByRank)
-            //    orderByFunc = item => item.Rank;
 
-            /*
-            string ordenacao = null;
+            if (tipoFiltro == "L")
+                return erro.Error.Level.Id.ToString().Contains(valorFiltro.ToUpper()) ||
+                    erro.Error.Level.Name.ToUpper().Contains(valorFiltro.ToUpper());
 
-            if (campoOrdenacao == 1)
+
+            if (tipoFiltro == "D")
+                return erro.Details.ToUpper().Contains(valorFiltro.ToUpper()) ||
+                    erro.Error.Title.ToUpper().Contains(valorFiltro.ToUpper());
+
+            if (tipoFiltro == "O")
+                return erro.Origin.Contains(valorFiltro);
+
+            return true;
+        }
+
+
+        public ErrorOccurrencesResultPageViewModel GetErrorOccurrencesParams(int idAmbiente,
+            int tamanhoPagina, int pagina, string tipoOrdenacao, string tipoFiltro, string valorFiltro)
+
+        {
+
+            int skip = (pagina - 1) * tamanhoPagina;
+
+
+            var res = new ErrorOccurrencesResultPageViewModel()
             {
-                ordenacao = "Error.Level";
+                IdAmbiente = idAmbiente,
+                PaginaAtual = pagina,
+                TamanhoPagina = tamanhoPagina,
+                TipoFiltro = tipoFiltro,
+                TipoOrdenacao = tipoOrdenacao,
+                ValorFiltro = valorFiltro
+            };
 
-            }
-            else if (campoOrdenacao == 2)
+
+            res.QuantidadeTotal = _context.ErrorOccurrencesCount();
+            res.QuantidadePaginas = res.QuantidadeTotal / tamanhoPagina;
+            if ((res.QuantidadeTotal % tamanhoPagina) > 0)
+                res.QuantidadePaginas++;
+
+            var bSemFiltro = false; 
+            if ( (tipoFiltro == "T") || (valorFiltro == "none") ||  (string.IsNullOrEmpty(valorFiltro)) )
             {
-                ordenacao = "Error.Frequencia";
+                bSemFiltro = true;
             }
-            
-            return _context.ErrorOccurrences.Where(o => o.Error.EnvironmentId == ambiente).ToList();
-            */
-            return null;
+            else
+            if (tipoFiltro == "L")
+            {
+                res.ErrorOccurrences = _mapper.Map<List<ErrorOccurrenceViewModel>>(
+                        _context.ErrorOccurrences.Where(
+                        errorOcor => errorOcor.Error.Level.Id.ToString().Contains(valorFiltro.ToUpper()) ||
+                                     errorOcor.Error.Level.Name.ToUpper().Contains(valorFiltro.ToUpper()))
+                        .OrderByDescending(p => p.DateTime)
+                        .Skip(skip)
+                        .Take(tamanhoPagina)
+                        .ToList()
+                    );
+            }
+            else
+            if (tipoFiltro == "D")
+            {
+                res.ErrorOccurrences = _mapper.Map<List<ErrorOccurrenceViewModel>>(
+                        _context.ErrorOccurrences.Where(
+                        errorOcor => errorOcor.Details.ToUpper().Contains(valorFiltro.ToUpper()) ||
+                                     errorOcor.Error.Title.ToUpper().Contains(valorFiltro.ToUpper()))
+                        .OrderByDescending(p => p.DateTime)
+                        .Skip(skip)
+                        .Take(tamanhoPagina)
+                        .ToList()
+                    );
+            }
+            else
+            if (tipoFiltro == "O")
+            {
+                res.ErrorOccurrences = _mapper.Map<List<ErrorOccurrenceViewModel>>(
+                        _context.ErrorOccurrences.Where(
+                        errorOcor => errorOcor.Origin.Contains(valorFiltro))
+                        .OrderByDescending(p => p.DateTime)
+                        .Skip(skip)
+                        .Take(tamanhoPagina)
+                        .ToList()
+                    );
+            }
+            else
+            {
+                bSemFiltro = true;
+            }
+
+
+            if(bSemFiltro)
+            {
+                res.ErrorOccurrences = _mapper.Map<List<ErrorOccurrenceViewModel>>(
+                        _context.ErrorOccurrences.Where(
+                        errorOcor => errorOcor.Id > 0)
+                        .OrderByDescending(p => p.DateTime)
+                        .Skip(skip)
+                        .Take(tamanhoPagina)
+                        .ToList()
+                    );
+            }
+
+            if ((tipoOrdenacao != "") && (tipoOrdenacao != "none"))
+                res.ErrorOccurrences = res.ErrorOccurrences.OrderBy(p => tipoOrdenacao == "L" ? p.Error.LevelId : 
+                p.EventCount).ToList();
+
+            return res;
         }
 
         public List<ErrorOccurrence> GetAllErrorOccurrences()

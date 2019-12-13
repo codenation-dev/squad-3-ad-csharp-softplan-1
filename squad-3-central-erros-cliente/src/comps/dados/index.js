@@ -68,7 +68,7 @@ export default class Dados extends Component {
                             </td>
                             <td>
                                 <ImagemArquivado  width="45" height="28" value={erro.error.SituationId === 2} />
-                                <p>{erro.error.nivel.level.name}</p>
+                                <p>{erro.error.level.name}</p>
                             </td>
                             <td>
                                 <p>{erro.error.title}</p>
@@ -76,7 +76,7 @@ export default class Dados extends Component {
                                 <p>{erro.error.origin}</p>
                                 <p>{erro.error.datetime}</p>
                             </td>
-                            <td>{1}</td>
+                            <td>{erro.eventCount}</td>
                             <td><Link id="linkDetalhes" key={erro.id} to={`/erroroccurrences/${erro.id}`}>...</Link></td>
                         </tr>
                     ))}
