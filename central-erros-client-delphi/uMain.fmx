@@ -1,0 +1,284 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 770
+  ClientWidth = 925
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object Panel1: TPanel
+    Align = Top
+    Size.Width = 925.000000000000000000
+    Size.Height = 205.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object Label1: TLabel
+      Align = Top
+      Size.Width = 925.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Caminho base da API'
+      TabOrder = 0
+    end
+    object edtBaseIrl: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Align = Top
+      TabOrder = 4
+      Text = 'http://localhost:5000/api'
+      Position.Y = 17.000000000000000000
+      Size.Width = 925.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object ToolBar1: TToolBar
+      Position.Y = 117.000000000000000000
+      Size.Width = 925.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 5
+      object btnLogin: TButton
+        Align = MostLeft
+        Size.Width = 80.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Text = 'Login'
+        OnClick = btnLoginClick
+      end
+      object Panel3: TPanel
+        Align = Client
+        Size.Width = 845.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 10
+        object edtCodigoUsuario: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = MostLeft
+          TabOrder = 3
+          Hint = '{0} - C'#243'digo do usu'#225'rio'
+          Size.Width = 63.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          ParentShowHint = False
+          ShowHint = True
+        end
+        object edtTokenLog: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Client
+          TabOrder = 2
+          Hint = '{1} token de usu'#225'rio'
+          Size.Width = 782.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          ParentShowHint = False
+          ShowHint = True
+        end
+      end
+    end
+    object Label2: TLabel
+      Align = Top
+      Position.Y = 39.000000000000000000
+      Size.Width = 925.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'e-mail'
+      TabOrder = 9
+    end
+    object edtEMail: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Align = Top
+      TabOrder = 3
+      Text = 'user1@sp.com.br'
+      Position.Y = 56.000000000000000000
+      Size.Width = 925.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object Label3: TLabel
+      Align = Top
+      Position.Y = 78.000000000000000000
+      Size.Width = 925.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Senha'
+      TabOrder = 8
+    end
+    object edtSenha: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Align = Top
+      TabOrder = 2
+      Text = '123'
+      Position.Y = 95.000000000000000000
+      Size.Width = 925.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object Label4: TLabel
+      Align = Top
+      Position.Y = 157.000000000000000000
+      Size.Width = 925.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'token (autentica'#231#227'o)'
+      TabOrder = 7
+    end
+    object edtToken: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Align = Top
+      TabOrder = 1
+      Position.Y = 174.000000000000000000
+      Size.Width = 925.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+    end
+  end
+  object Panel2: TPanel
+    Align = Bottom
+    Position.Y = 714.000000000000000000
+    Size.Width = 925.000000000000000000
+    Size.Height = 56.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object btnEnviarErro: TButton
+      Align = MostRight
+      Position.X = 766.000000000000000000
+      Size.Width = 159.000000000000000000
+      Size.Height = 56.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = '&Enviar registro de erro'
+      OnClick = btnEnviarErroClick
+    end
+  end
+  object Label5: TLabel
+    Align = Top
+    Position.Y = 205.000000000000000000
+    Size.Width = 925.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'chamada (variaelis {1}, {2}, etc'
+    TabOrder = 3
+  end
+  object edtChamada: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    Align = Top
+    TabOrder = 5
+    Text = '/errorlog'
+    Position.Y = 222.000000000000000000
+    Size.Width = 925.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object Label6: TLabel
+    Align = Top
+    Position.Y = 244.000000000000000000
+    Size.Width = 925.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'json do valor a ser enviado:'
+    TabOrder = 2
+  end
+  object Panel4: TPanel
+    Align = Client
+    Size.Width = 925.000000000000000000
+    Size.Height = 269.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 10
+    object mmJsonEnvio: TMemo
+      Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+      DataDetectorTypes = []
+      Lines.Strings = (
+        '{'
+        #9'"userToken": "{1}",'
+        #9'"ErrorId": 1,'
+        #9'"EnvironmentId": 1,'
+        #9'"EnvironmentName": "Produ'#231#227'o",'
+        #9'"LevelId": 1,'
+        #9'"LevelName": "debug",'
+        #9'"SituationId": 1,'
+        #9'"SituationName": "normal",'
+        #9'"Title": "Erro enviado pelo sw",'
+        #9'"ErrorOccurrenceId": 1,'
+        #9'"Origin": "192.168.0.1",'
+        #9'"Details": "Detalhe do erro",'
+        #9'"DateTime": "2019-12-13 17:00:00",'
+        #9'"UserId": "3",'
+        #9'"UserName": "user 3",'
+        #9'"UserEmail": "user3@sp.com.br"'
+        '}'
+        '')
+      Align = Client
+      Size.Width = 925.000000000000000000
+      Size.Height = 269.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 5
+      Viewport.Width = 905.000000000000000000
+      Viewport.Height = 265.000000000000000000
+    end
+  end
+  object Panel5: TPanel
+    Align = Bottom
+    Position.Y = 530.000000000000000000
+    Size.Width = 925.000000000000000000
+    Size.Height = 184.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 9
+    object mmJson: TMemo
+      Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+      DataDetectorTypes = []
+      Align = Client
+      Size.Width = 925.000000000000000000
+      Size.Height = 184.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 6
+      Viewport.Width = 921.000000000000000000
+      Viewport.Height = 180.000000000000000000
+    end
+  end
+  object RESTClient: TRESTClient
+    Params = <>
+    HandleRedirects = True
+    Left = 104
+    Top = 290
+  end
+  object RESTRequestLogin: TRESTRequest
+    Client = RESTClient
+    Method = rmPOST
+    Params = <
+      item
+        Kind = pkREQUESTBODY
+        name = 'login'
+        ContentType = ctAPPLICATION_JSON
+      end>
+    Response = RESTResponseLogin
+    SynchronizedEvents = False
+    OnHTTPProtocolError = RESTRequestLoginHTTPProtocolError
+    Left = 50
+    Top = 358
+  end
+  object RESTResponseLogin: TRESTResponse
+    Left = 56
+    Top = 432
+  end
+  object RESTRequest: TRESTRequest
+    Client = RESTClient
+    Method = rmPOST
+    Params = <
+      item
+        Kind = pkREQUESTBODY
+        name = 'item'
+        ContentType = ctAPPLICATION_JSON
+      end>
+    Response = RESTResponse
+    SynchronizedEvents = False
+    OnHTTPProtocolError = RESTRequestHTTPProtocolError
+    Left = 248
+    Top = 366
+  end
+  object RESTResponse: TRESTResponse
+    Left = 242
+    Top = 434
+  end
+end
