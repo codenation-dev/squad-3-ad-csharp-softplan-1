@@ -10,7 +10,7 @@ using ErrorCenter.Data.Context;
 using ErrorCenter.Application.Interfaces;
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
-using AceleraDev.CrossCutting.Helpers;
+using ErrorCenter.CrossCutting.Helpers;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.Security.Claims;
