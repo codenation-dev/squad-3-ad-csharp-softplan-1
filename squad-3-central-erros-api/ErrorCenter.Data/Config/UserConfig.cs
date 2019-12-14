@@ -11,6 +11,10 @@ namespace ErrorCenter.Data.Config
             builder.ToTable("user");
 
             builder.HasKey(p => p.Id);
+            builder.Property(p => p.Name).HasMaxLength(200).HasColumnType("varchar(200)");
+            builder.Property(p => p.Password).HasMaxLength(50).HasColumnType("varchar(50)");
+            builder.Property(p => p.Token).HasMaxLength(100).HasColumnType("varchar(100)");
+            builder.Property(p => p.Email).HasMaxLength(200).HasColumnType("varchar(200)");
         }
     }
 }
