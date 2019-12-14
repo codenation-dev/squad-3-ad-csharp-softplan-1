@@ -1,6 +1,4 @@
 C:\Users\LENOVO\Documents\GitHub\squad-3-ad-csharp-softplan-1\squad-3-central-erros-api\ErrorCenter.Application\bin\Debug\netcoreapp3.0\ErrorCenter.Application.deps.json
-C:\Users\LENOVO\Documents\GitHub\squad-3-ad-csharp-softplan-1\squad-3-central-erros-api\ErrorCenter.Application\bin\Debug\netcoreapp3.0\ErrorCenter.Application.runtimeconfig.json
-C:\Users\LENOVO\Documents\GitHub\squad-3-ad-csharp-softplan-1\squad-3-central-erros-api\ErrorCenter.Application\bin\Debug\netcoreapp3.0\ErrorCenter.Application.runtimeconfig.dev.json
 C:\Users\LENOVO\Documents\GitHub\squad-3-ad-csharp-softplan-1\squad-3-central-erros-api\ErrorCenter.Application\bin\Debug\netcoreapp3.0\ErrorCenter.Application.dll
 C:\Users\LENOVO\Documents\GitHub\squad-3-ad-csharp-softplan-1\squad-3-central-erros-api\ErrorCenter.Application\bin\Debug\netcoreapp3.0\ErrorCenter.Application.pdb
 C:\Users\LENOVO\Documents\GitHub\squad-3-ad-csharp-softplan-1\squad-3-central-erros-api\ErrorCenter.Application\bin\Debug\netcoreapp3.0\ErrorCenter.CrossCutting.dll
@@ -15,20 +13,3 @@ C:\Users\LENOVO\Documents\GitHub\squad-3-ad-csharp-softplan-1\squad-3-central-er
 C:\Users\LENOVO\Documents\GitHub\squad-3-ad-csharp-softplan-1\squad-3-central-erros-api\ErrorCenter.Application\obj\Debug\netcoreapp3.0\ErrorCenter.Application.csproj.CopyComplete
 C:\Users\LENOVO\Documents\GitHub\squad-3-ad-csharp-softplan-1\squad-3-central-erros-api\ErrorCenter.Application\obj\Debug\netcoreapp3.0\ErrorCenter.Application.dll
 C:\Users\LENOVO\Documents\GitHub\squad-3-ad-csharp-softplan-1\squad-3-central-erros-api\ErrorCenter.Application\obj\Debug\netcoreapp3.0\ErrorCenter.Application.pdb
-C:\Projeto-Final-Codenation\squad-3-ad-csharp-softplan-1\squad-3-central-erros-api\ErrorCenter.Application\bin\Debug\netcoreapp3.0\ErrorCenter.Application.deps.json
-C:\Projeto-Final-Codenation\squad-3-ad-csharp-softplan-1\squad-3-central-erros-api\ErrorCenter.Application\bin\Debug\netcoreapp3.0\ErrorCenter.Application.runtimeconfig.json
-C:\Projeto-Final-Codenation\squad-3-ad-csharp-softplan-1\squad-3-central-erros-api\ErrorCenter.Application\bin\Debug\netcoreapp3.0\ErrorCenter.Application.runtimeconfig.dev.json
-C:\Projeto-Final-Codenation\squad-3-ad-csharp-softplan-1\squad-3-central-erros-api\ErrorCenter.Application\bin\Debug\netcoreapp3.0\ErrorCenter.Application.dll
-C:\Projeto-Final-Codenation\squad-3-ad-csharp-softplan-1\squad-3-central-erros-api\ErrorCenter.Application\bin\Debug\netcoreapp3.0\ErrorCenter.Application.pdb
-C:\Projeto-Final-Codenation\squad-3-ad-csharp-softplan-1\squad-3-central-erros-api\ErrorCenter.Application\bin\Debug\netcoreapp3.0\ErrorCenter.CrossCutting.dll
-C:\Projeto-Final-Codenation\squad-3-ad-csharp-softplan-1\squad-3-central-erros-api\ErrorCenter.Application\bin\Debug\netcoreapp3.0\ErrorCenter.Data.dll
-C:\Projeto-Final-Codenation\squad-3-ad-csharp-softplan-1\squad-3-central-erros-api\ErrorCenter.Application\bin\Debug\netcoreapp3.0\ErrorCenter.Domain.dll
-C:\Projeto-Final-Codenation\squad-3-ad-csharp-softplan-1\squad-3-central-erros-api\ErrorCenter.Application\bin\Debug\netcoreapp3.0\ErrorCenter.Data.pdb
-C:\Projeto-Final-Codenation\squad-3-ad-csharp-softplan-1\squad-3-central-erros-api\ErrorCenter.Application\bin\Debug\netcoreapp3.0\ErrorCenter.Domain.pdb
-C:\Projeto-Final-Codenation\squad-3-ad-csharp-softplan-1\squad-3-central-erros-api\ErrorCenter.Application\bin\Debug\netcoreapp3.0\ErrorCenter.CrossCutting.pdb
-C:\Projeto-Final-Codenation\squad-3-ad-csharp-softplan-1\squad-3-central-erros-api\ErrorCenter.Application\obj\Debug\netcoreapp3.0\ErrorCenter.Application.csprojAssemblyReference.cache
-C:\Projeto-Final-Codenation\squad-3-ad-csharp-softplan-1\squad-3-central-erros-api\ErrorCenter.Application\obj\Debug\netcoreapp3.0\ErrorCenter.Application.AssemblyInfoInputs.cache
-C:\Projeto-Final-Codenation\squad-3-ad-csharp-softplan-1\squad-3-central-erros-api\ErrorCenter.Application\obj\Debug\netcoreapp3.0\ErrorCenter.Application.AssemblyInfo.cs
-C:\Projeto-Final-Codenation\squad-3-ad-csharp-softplan-1\squad-3-central-erros-api\ErrorCenter.Application\obj\Debug\netcoreapp3.0\ErrorCenter.Application.csproj.CopyComplete
-C:\Projeto-Final-Codenation\squad-3-ad-csharp-softplan-1\squad-3-central-erros-api\ErrorCenter.Application\obj\Debug\netcoreapp3.0\ErrorCenter.Application.dll
-C:\Projeto-Final-Codenation\squad-3-ad-csharp-softplan-1\squad-3-central-erros-api\ErrorCenter.Application\obj\Debug\netcoreapp3.0\ErrorCenter.Application.pdb

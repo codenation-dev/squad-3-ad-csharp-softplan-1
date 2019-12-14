@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 
 namespace ErrorCenter.Api.Controllers
 {
+	/// <summary>
+	/// Controller for the Errors service.
+	/// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class ErrorsController : ControllerBase
@@ -19,7 +22,9 @@ namespace ErrorCenter.Api.Controllers
         private readonly IErrorService _service;
         private readonly IMapper _mapper;
 
-
+		/// <summary>
+		/// Instantiates a new ErrorsController in a Context.
+		/// </summary>
         public ErrorsController(IMapper mapper, IErrorService service, ErrorCenterContext context)
         {
             _service = service;
@@ -27,7 +32,9 @@ namespace ErrorCenter.Api.Controllers
             _context = context;
         }
 
-
+		/// <summary>
+		/// Returns all registered Errors.
+		/// </summary>
         // GET: api/Errors
         [HttpGet]
         public ActionResult<IEnumerable<Error>> GetErrors()
@@ -49,6 +56,9 @@ namespace ErrorCenter.Api.Controllers
             }
         }
 
+		/// <summary>
+		/// Returns a registered Error by its ID.
+		/// </summary>
         // GET: api/Errors/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Error>> GetError(int id)
@@ -63,6 +73,9 @@ namespace ErrorCenter.Api.Controllers
             return error;
         }
 
+		/// <summary>
+		/// Updates a registered Error.
+		/// </summary>
         // PUT: api/Errors/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutError(int id, Error error)
@@ -93,6 +106,9 @@ namespace ErrorCenter.Api.Controllers
             return NoContent();
         }
 
+		/// <summary>
+		/// Creates an Error.
+		/// </summary>
         // POST: api/Errors
         [HttpPost]
         public async Task<ActionResult<Error>> PostError(Error error)
@@ -117,6 +133,9 @@ namespace ErrorCenter.Api.Controllers
             return CreatedAtAction("GetError", new { id = error.SituationId }, error);
         }
 
+		/// <summary>
+		/// Deletes a registered Error.
+		/// </summary>
         // DELETE: api/Errors/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<Error>> DeleteError(int id)
@@ -133,6 +152,9 @@ namespace ErrorCenter.Api.Controllers
             return error;
         }
 
+		/// <summary>
+		/// Asserts the exitance of a Error.
+		/// </summary>
         private bool ErrorExists(int id)
         {
             return _context.Errors.Any(e => e.SituationId == id);

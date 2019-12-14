@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ErrorCenter.Data.Config
 {
-    public class EnvironmentConfig
+    public class EnvironmentConfig : IEntityTypeConfiguration<Environment>
     {
         public void Configure(EntityTypeBuilder<Environment> builder)
         {

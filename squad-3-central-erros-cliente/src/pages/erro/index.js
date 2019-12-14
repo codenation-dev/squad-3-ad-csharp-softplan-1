@@ -2,24 +2,58 @@ import React, { Component } from 'react';
 import api from '../../services/api';
 
 import './styles.css';
+import { supportsCssVariables } from '@material/ripple/util';
 
 export default class Erro extends Component {
-    state = {
-        erro: {},
+
+
+    constructor(props)
+    {
+        super(props);
+
+        console.log(props);
+
+        this.state = {
+            erro: {},
+            id: this.props.match.params.id
+        }
+
     }
 
-    async componentDidMount() {
+    consDados = async (id) => {
+        console.log("vai consultar ")
+        try {
+            //const response = await api.get(`/erro/${id}`);
+            const response = await  api.get(`/errorOccurrences/${id}`);
+
+            console.log(response);
+            console.log(response.data);
+    
+            this.setState({erro: response.data});
+    
+        } catch (error) {
+            console.log("Erro!!");
+            console.log(error);
+        }
+        return {};
+
+    };
+
+    
+    componentDidMount() {
         const { id } = this.props.match.params;
         console.log("vai ler o erro id " + id);
-        //const response = await api.get(`/erro/${id}`);
-        const response = await api.get(`/erroroccurrences/${id}`);
-
-        console.log(response.data);
-
-        this.setState({erro: response.data});
+        console.log(this.consDados(id));
     }
+    
+
     render() {
+        console.log("***************** erro -> render()");
+
         const { erro } = this.state;
+        console.log(erro);
+        const { error } = this.state.erro;
+        console.log(error);
 
 
         return (
@@ -32,13 +66,13 @@ export default class Erro extends Component {
                             <div className="label-titulo">Título</div>
                         </td>
                         <td>
-                            <div className="nivel-erro">{erro.error.level.id} - erro.error.level.name</div>
+        <div className="nivel-erro">erro.error.level.id - erro.error.level.name</div>
                         </td>
                     </tr>
 
                     <tr>
                         <td>
-                            <div className="label-titulo">{erro.error.title}</div>
+                            <div className="label-titulo">erro.error.title</div>
                         </td>
                         <td>
                             <div className="label-eventos">Eventos</div>

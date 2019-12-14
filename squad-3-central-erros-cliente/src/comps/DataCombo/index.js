@@ -9,7 +9,7 @@ export default class DataCombo extends Component {
     {
         super(props);
 
-        if(this.props.log) console.log("criando DataCombo com props:");
+        if(this.props.log) console.log("Ccriando DataCombo com props:");
         if(this.props.log) console.log(this.props);
 
         this.state = {
@@ -18,6 +18,7 @@ export default class DataCombo extends Component {
         };
         if(this.props.nomeEndPoint === "")
         {
+            if(this.props.log) console.log("recebendo opções por array");
             this.state.items = this.props.options;
         }
 
@@ -70,7 +71,7 @@ handleChanged = event => {
             <div>
                 <select className="data-combo" onChange={this.handleChanged} value={this.state.value}>
                     {items.map( item => (
-                        <option value={item.id}>{item.nome}</option>
+                        <option value={item.id}>{item.name}</option>
                     ))}
                 </select>
             </div>

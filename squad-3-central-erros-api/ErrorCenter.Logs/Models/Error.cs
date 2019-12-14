@@ -3,44 +3,77 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ErrorCenter.Domain.Models
 {
-    [Table("ERROR")]
+	/// <summary>
+	/// Basic parameters for an Error.
+	/// </summary>
+    //[Table("ERROR")]
     public class Error
     {
-        [Column("ID")]
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+		/// <summary>
+		/// Unique identifier for the Error.
+		/// </summary>
+        //[Column("ID")]
+        //[Key]
+        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        [Column("CODE")]
-        [Required]
+		/// <summary>
+		/// Code of the Error.
+		/// </summary>
+        //[Column("CODE")]
+        //[Required]
         public int Code { get; set; }
-
-        [Column("TITLE")]
-        [StringLength(200)]
-        [Required]
+		
+		/// <summary>
+		/// Title of the Error.
+		/// </summary>
+        //[Column("TITLE")]
+        //[StringLength(200)]
+        //[Required]
         public string Title { get; set; }
 
-        [Column("DESCRIPTION")]
-        [StringLength(200)]
-        [Required]
+		/// <summary>
+		/// Description of the Error.
+		/// </summary>
+        //[Column("DESCRIPTION")]
+        //[StringLength(200)]
+        //[Required]
         public string Description { get; set; }
 
-        [ForeignKey("ENVIRONMENT_ID"), Required]
+		/// <summary>
+		/// ID of the Environment.
+		/// </summary>
+        //[ForeignKey("ENVIRONMENT_ID"), Required]
         public int EnvironmentId { get; set; }
 
-        [Column("ENVIRONMENT_ID"), Required]
+		/// <summary>
+		/// ID of the Environment.
+		/// </summary>
+        //[Column("ENVIRONMENT_ID"), Required]
         public virtual Environment Environment { get; set; }// referencia 
 
-        [ForeignKey("LEVEL_ID"), Required]
+		/// <summary>
+		/// ID of the Level of severity.
+		/// </summary>
+        //[ForeignKey("LEVEL_ID"), Required]
         public int LevelId { get; set; }
 
-        [Column("LEVEL_ID"), Required]
+		/// <summary>
+		/// ID of the Level of severity.
+		/// </summary>
+        //[Column("LEVEL_ID"), Required]
         public virtual Level Level { get; set; }// referencia 
 
-        [ForeignKey("SITUATION_ID"), Required]
+		/// <summary>
+		/// ID of the Situation.
+		/// </summary>
+        //[ForeignKey("SITUATION_ID"), Required]
         public int SituationId { get; set; }
 
-        [Column("SITUATION_ID"), Required]
+		/// <summary>
+		/// ID of the Situation.
+		/// </summary>
+        //[Column("SITUATION_ID"), Required]
         public virtual Situation Situation { get; set; }// referencia 
 
     }

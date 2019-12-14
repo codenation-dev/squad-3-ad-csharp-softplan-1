@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 
 namespace ErrorCenter.Api.Controllers
 {
+	/// <summary>
+	/// Controller for the Levels service.
+	/// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class LevelsController : ControllerBase
@@ -19,6 +22,9 @@ namespace ErrorCenter.Api.Controllers
         private readonly ILevelService _service;
         private readonly IMapper _mapper;
 
+		/// <summary>
+		/// Instantiates a new LevelsController in a Context.
+		/// </summary>
         public LevelsController(IMapper mapper, ILevelService service, ErrorCenterContext context)
         {
             _service = service;
@@ -26,7 +32,9 @@ namespace ErrorCenter.Api.Controllers
             _context = context;
         }
 
-
+		/// <summary>
+		/// Returns all registered Levels.
+		/// </summary>
         // GET: api/Levels
         [HttpGet]
         public ActionResult<IEnumerable<LevelViewModel>> GetLevels()
@@ -49,6 +57,9 @@ namespace ErrorCenter.Api.Controllers
 
         }
 
+		/// <summary>
+		/// Returns a specified Level by its ID.
+		/// </summary>
         // GET: api/Levels/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Level>> GetLevel(int id)
@@ -63,6 +74,9 @@ namespace ErrorCenter.Api.Controllers
             return level;
         }
 
+		/// <summary>
+		/// Updates a registered Level.
+		/// </summary>
         // PUT: api/Levels/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutLevel(int id, Level level)
@@ -93,6 +107,9 @@ namespace ErrorCenter.Api.Controllers
             return NoContent();
         }
 
+		/// <summary>
+		/// Creates a new Level.
+		/// </summary>
         // POST: api/Levels
         [HttpPost]
         public async Task<ActionResult<Level>> PostLevel(Level level)
@@ -103,6 +120,9 @@ namespace ErrorCenter.Api.Controllers
             return CreatedAtAction("GetLevel", new { id = level.Id }, level);
         }
 
+		/// <summary>
+		/// Deletes a registered Level.
+		/// </summary>
         // DELETE: api/Levels/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<Level>> DeleteLevel(int id)
@@ -119,6 +139,9 @@ namespace ErrorCenter.Api.Controllers
             return level;
         }
 
+		/// <summary>
+		/// Asserts the exitance of a Level.
+		/// </summary>
         private bool LevelExists(int id)
         {
             return _context.Levels.Any(e => e.Id == id);

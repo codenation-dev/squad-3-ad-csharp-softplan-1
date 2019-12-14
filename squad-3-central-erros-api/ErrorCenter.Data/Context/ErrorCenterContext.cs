@@ -1,7 +1,9 @@
 ﻿using AceleraDev.CrossCutting.Utils;
-using ErrorCenter.Data.Config;
+using Dapper;
 using ErrorCenter.Domain.Models;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Linq;
 
@@ -9,8 +11,10 @@ namespace ErrorCenter.Data.Context
 {
     public class ErrorCenterContext : DbContext
     {
-        public ErrorCenterContext(DbContextOptions options) : base(options)
+        private readonly IConfiguration _configuration;
+        public ErrorCenterContext(DbContextOptions options, IConfiguration configuration) : base(options)
         {
+            _configuration = configuration;
         }
 
         public DbSet<Error> Errors { get; set; }
@@ -19,6 +23,42 @@ namespace ErrorCenter.Data.Context
         public DbSet<Situation> Situations { get; set; }
         public DbSet<Level> Levels { get; set; }
         public DbSet<Domain.Models.Environment> Environments { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            base.OnConfiguring(optionsBuilder);
+
+            optionsBuilder.UseLazyLoadingProxies();
+        }
+
+        internal string GetConnectionString()
+        {
+            return _configuration.GetConnectionString("DefaultConnection");
+        }
+        public int ErrorOccurrencesCount()
+        {
+            string query = "select count(1) as cont from ERROR_OCCURRENCE";
+            object param = null;
+
+            using (var con = new SqlConnection(GetConnectionString()))
+            {
+                try
+                {
+                    con.Open();
+                    var res = con.Query<int>(query, param);
+                    return res.FirstOrDefault();
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Ocorreu um erro ao executar uma pesquisa do contador de registros com Dapper em ErrorOccurrencesCount()", ex);
+                }
+                finally
+                {
+                    con.Close();
+                }
+            }
+        }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -87,7 +127,8 @@ namespace ErrorCenter.Data.Context
                                 ErrorId = idErro,
                                 Origin = $"192.168.2.{idErro}",
                                 Id = idOcor++,
-                                UserId = i
+                                UserId = i,
+                                EventCount = i * 2
                             }); ;
 
                             idErro++;

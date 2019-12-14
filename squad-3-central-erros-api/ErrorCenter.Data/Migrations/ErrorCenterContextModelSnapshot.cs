@@ -35,7 +35,7 @@ namespace ErrorCenter.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ENVIRONMENT");
+                    b.ToTable("environment");
 
                     b.HasData(
                         new
@@ -59,19 +59,16 @@ namespace ErrorCenter.Data.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnName("ID")
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("Code")
-                        .HasColumnName("CODE")
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasColumnName("DESCRIPTION")
-                        .HasColumnType("nvarchar(200)")
-                        .HasMaxLength(200);
+                        .HasColumnType("nvarchar(255)")
+                        .HasMaxLength(255);
 
                     b.Property<int>("EnvironmentId")
                         .HasColumnType("int");
@@ -83,10 +80,8 @@ namespace ErrorCenter.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnName("TITLE")
-                        .HasColumnType("nvarchar(200)")
-                        .HasMaxLength(200);
+                        .HasColumnType("nvarchar(255)")
+                        .HasMaxLength(255);
 
                     b.HasKey("Id");
 
@@ -3722,6 +3717,10 @@ namespace ErrorCenter.Data.Migrations
                     b.Property<int>("ErrorId")
                         .HasColumnType("int");
 
+                    b.Property<int>("EventCount")
+                        .HasColumnName("EVENT_COUNT")
+                        .HasColumnType("int");
+
                     b.Property<string>("Origin")
                         .IsRequired()
                         .HasColumnName("ORIGIN")
@@ -3737,4326 +3736,4686 @@ namespace ErrorCenter.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("ERROR_OCCURRENCE");
+                    b.ToTable("ErrorOccurrence");
 
                     b.HasData(
                         new
                         {
                             Id = 1,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 307, DateTimeKind.Local).AddTicks(8210),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 813, DateTimeKind.Local).AddTicks(4072),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 1,
+                            EventCount = 2,
                             Origin = "192.168.2.1",
                             UserId = 1
                         },
                         new
                         {
                             Id = 2,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 311, DateTimeKind.Local).AddTicks(8477),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 816, DateTimeKind.Local).AddTicks(5709),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 2,
+                            EventCount = 2,
                             Origin = "192.168.2.2",
                             UserId = 1
                         },
                         new
                         {
                             Id = 3,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 311, DateTimeKind.Local).AddTicks(8700),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 816, DateTimeKind.Local).AddTicks(6181),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 3,
+                            EventCount = 2,
                             Origin = "192.168.2.3",
                             UserId = 1
                         },
                         new
                         {
                             Id = 4,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 311, DateTimeKind.Local).AddTicks(8776),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 816, DateTimeKind.Local).AddTicks(6397),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 4,
+                            EventCount = 2,
                             Origin = "192.168.2.4",
                             UserId = 1
                         },
                         new
                         {
                             Id = 5,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 311, DateTimeKind.Local).AddTicks(8851),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 816, DateTimeKind.Local).AddTicks(6622),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 5,
+                            EventCount = 2,
                             Origin = "192.168.2.5",
                             UserId = 1
                         },
                         new
                         {
                             Id = 6,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 311, DateTimeKind.Local).AddTicks(8924),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 816, DateTimeKind.Local).AddTicks(6834),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 6,
+                            EventCount = 2,
                             Origin = "192.168.2.6",
                             UserId = 1
                         },
                         new
                         {
                             Id = 7,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 311, DateTimeKind.Local).AddTicks(8988),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 816, DateTimeKind.Local).AddTicks(7033),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 7,
+                            EventCount = 2,
                             Origin = "192.168.2.7",
                             UserId = 1
                         },
                         new
                         {
                             Id = 8,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 311, DateTimeKind.Local).AddTicks(9052),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 816, DateTimeKind.Local).AddTicks(7472),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 8,
+                            EventCount = 2,
                             Origin = "192.168.2.8",
                             UserId = 1
                         },
                         new
                         {
                             Id = 9,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 311, DateTimeKind.Local).AddTicks(9116),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 816, DateTimeKind.Local).AddTicks(7692),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 9,
+                            EventCount = 2,
                             Origin = "192.168.2.9",
                             UserId = 1
                         },
                         new
                         {
                             Id = 10,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 311, DateTimeKind.Local).AddTicks(9178),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 816, DateTimeKind.Local).AddTicks(7898),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 10,
+                            EventCount = 2,
                             Origin = "192.168.2.10",
                             UserId = 1
                         },
                         new
                         {
                             Id = 11,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 311, DateTimeKind.Local).AddTicks(9289),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 816, DateTimeKind.Local).AddTicks(8101),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 11,
+                            EventCount = 2,
                             Origin = "192.168.2.11",
                             UserId = 1
                         },
                         new
                         {
                             Id = 12,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 311, DateTimeKind.Local).AddTicks(9351),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 816, DateTimeKind.Local).AddTicks(8312),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 12,
+                            EventCount = 2,
                             Origin = "192.168.2.12",
                             UserId = 1
                         },
                         new
                         {
                             Id = 13,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 311, DateTimeKind.Local).AddTicks(9415),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 816, DateTimeKind.Local).AddTicks(8513),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 13,
+                            EventCount = 2,
                             Origin = "192.168.2.13",
                             UserId = 1
                         },
                         new
                         {
                             Id = 14,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 311, DateTimeKind.Local).AddTicks(9475),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 816, DateTimeKind.Local).AddTicks(8710),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 14,
+                            EventCount = 2,
                             Origin = "192.168.2.14",
                             UserId = 1
                         },
                         new
                         {
                             Id = 15,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 311, DateTimeKind.Local).AddTicks(9538),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 816, DateTimeKind.Local).AddTicks(8913),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 15,
+                            EventCount = 2,
                             Origin = "192.168.2.15",
                             UserId = 1
                         },
                         new
                         {
                             Id = 16,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 311, DateTimeKind.Local).AddTicks(9600),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 816, DateTimeKind.Local).AddTicks(9220),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 16,
+                            EventCount = 2,
                             Origin = "192.168.2.16",
                             UserId = 1
                         },
                         new
                         {
                             Id = 17,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 311, DateTimeKind.Local).AddTicks(9665),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 816, DateTimeKind.Local).AddTicks(9444),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 17,
+                            EventCount = 2,
                             Origin = "192.168.2.17",
                             UserId = 1
                         },
                         new
                         {
                             Id = 18,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 311, DateTimeKind.Local).AddTicks(9728),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 816, DateTimeKind.Local).AddTicks(9649),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 18,
+                            EventCount = 2,
                             Origin = "192.168.2.18",
                             UserId = 1
                         },
                         new
                         {
                             Id = 19,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 311, DateTimeKind.Local).AddTicks(9838),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 816, DateTimeKind.Local).AddTicks(9856),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 19,
+                            EventCount = 2,
                             Origin = "192.168.2.19",
                             UserId = 1
                         },
                         new
                         {
                             Id = 20,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 311, DateTimeKind.Local).AddTicks(9909),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 817, DateTimeKind.Local).AddTicks(64),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 20,
+                            EventCount = 2,
                             Origin = "192.168.2.20",
                             UserId = 1
                         },
                         new
                         {
                             Id = 21,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 311, DateTimeKind.Local).AddTicks(9980),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 817, DateTimeKind.Local).AddTicks(266),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 21,
+                            EventCount = 2,
                             Origin = "192.168.2.21",
                             UserId = 1
                         },
                         new
                         {
                             Id = 22,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(50),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 817, DateTimeKind.Local).AddTicks(530),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 22,
+                            EventCount = 2,
                             Origin = "192.168.2.22",
                             UserId = 1
                         },
                         new
                         {
                             Id = 23,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(121),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 817, DateTimeKind.Local).AddTicks(750),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 23,
+                            EventCount = 2,
                             Origin = "192.168.2.23",
                             UserId = 1
                         },
                         new
                         {
                             Id = 24,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(196),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 817, DateTimeKind.Local).AddTicks(1055),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 24,
+                            EventCount = 2,
                             Origin = "192.168.2.24",
                             UserId = 1
                         },
                         new
                         {
                             Id = 25,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(270),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 817, DateTimeKind.Local).AddTicks(1273),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 25,
+                            EventCount = 2,
                             Origin = "192.168.2.25",
                             UserId = 1
                         },
                         new
                         {
                             Id = 26,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(340),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 817, DateTimeKind.Local).AddTicks(1478),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 26,
+                            EventCount = 2,
                             Origin = "192.168.2.26",
                             UserId = 1
                         },
                         new
                         {
                             Id = 27,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(448),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 817, DateTimeKind.Local).AddTicks(1687),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 27,
+                            EventCount = 2,
                             Origin = "192.168.2.27",
                             UserId = 1
                         },
                         new
                         {
                             Id = 28,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(516),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 817, DateTimeKind.Local).AddTicks(1892),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 28,
+                            EventCount = 2,
                             Origin = "192.168.2.28",
                             UserId = 1
                         },
                         new
                         {
                             Id = 29,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(579),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 817, DateTimeKind.Local).AddTicks(2087),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 29,
+                            EventCount = 2,
                             Origin = "192.168.2.29",
                             UserId = 1
                         },
                         new
                         {
                             Id = 30,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(642),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 817, DateTimeKind.Local).AddTicks(2286),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 30,
+                            EventCount = 2,
                             Origin = "192.168.2.30",
                             UserId = 1
                         },
                         new
                         {
                             Id = 31,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(707),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 817, DateTimeKind.Local).AddTicks(2494),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 31,
+                            EventCount = 2,
                             Origin = "192.168.2.31",
                             UserId = 1
                         },
                         new
                         {
                             Id = 32,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(772),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 817, DateTimeKind.Local).AddTicks(2699),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 32,
+                            EventCount = 2,
                             Origin = "192.168.2.32",
                             UserId = 1
                         },
                         new
                         {
                             Id = 33,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(841),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 817, DateTimeKind.Local).AddTicks(3009),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 33,
+                            EventCount = 2,
                             Origin = "192.168.2.33",
                             UserId = 1
                         },
                         new
                         {
                             Id = 34,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(907),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 817, DateTimeKind.Local).AddTicks(3230),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 34,
+                            EventCount = 2,
                             Origin = "192.168.2.34",
                             UserId = 1
                         },
                         new
                         {
                             Id = 35,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(1022),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 817, DateTimeKind.Local).AddTicks(3443),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 35,
+                            EventCount = 2,
                             Origin = "192.168.2.35",
                             UserId = 1
                         },
                         new
                         {
                             Id = 36,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(1093),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 817, DateTimeKind.Local).AddTicks(3644),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 36,
+                            EventCount = 2,
                             Origin = "192.168.2.36",
                             UserId = 1
                         },
                         new
                         {
                             Id = 37,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(2263),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 817, DateTimeKind.Local).AddTicks(5169),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 37,
+                            EventCount = 4,
                             Origin = "192.168.2.37",
                             UserId = 2
                         },
                         new
                         {
                             Id = 38,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(2374),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 817, DateTimeKind.Local).AddTicks(5378),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 38,
+                            EventCount = 4,
                             Origin = "192.168.2.38",
                             UserId = 2
                         },
                         new
                         {
                             Id = 39,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(2467),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 817, DateTimeKind.Local).AddTicks(5697),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 39,
+                            EventCount = 4,
                             Origin = "192.168.2.39",
                             UserId = 2
                         },
                         new
                         {
                             Id = 40,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(2558),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 817, DateTimeKind.Local).AddTicks(5908),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 40,
+                            EventCount = 4,
                             Origin = "192.168.2.40",
                             UserId = 2
                         },
                         new
                         {
                             Id = 41,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(2649),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 817, DateTimeKind.Local).AddTicks(6113),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 41,
+                            EventCount = 4,
                             Origin = "192.168.2.41",
                             UserId = 2
                         },
                         new
                         {
                             Id = 42,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(2811),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 817, DateTimeKind.Local).AddTicks(6311),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 42,
+                            EventCount = 4,
                             Origin = "192.168.2.42",
                             UserId = 2
                         },
                         new
                         {
                             Id = 43,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(2905),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 817, DateTimeKind.Local).AddTicks(6519),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 43,
+                            EventCount = 4,
                             Origin = "192.168.2.43",
                             UserId = 2
                         },
                         new
                         {
                             Id = 44,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(2995),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 817, DateTimeKind.Local).AddTicks(6732),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 44,
+                            EventCount = 4,
                             Origin = "192.168.2.44",
                             UserId = 2
                         },
                         new
                         {
                             Id = 45,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(3091),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 817, DateTimeKind.Local).AddTicks(6936),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 45,
+                            EventCount = 4,
                             Origin = "192.168.2.45",
                             UserId = 2
                         },
                         new
                         {
                             Id = 46,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(3183),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 817, DateTimeKind.Local).AddTicks(7134),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 46,
+                            EventCount = 4,
                             Origin = "192.168.2.46",
                             UserId = 2
                         },
                         new
                         {
                             Id = 47,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(3278),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 817, DateTimeKind.Local).AddTicks(7433),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 47,
+                            EventCount = 4,
                             Origin = "192.168.2.47",
                             UserId = 2
                         },
                         new
                         {
                             Id = 48,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(3404),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 817, DateTimeKind.Local).AddTicks(7748),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 48,
+                            EventCount = 4,
                             Origin = "192.168.2.48",
                             UserId = 2
                         },
                         new
                         {
                             Id = 49,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(3624),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 817, DateTimeKind.Local).AddTicks(7952),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 49,
+                            EventCount = 4,
                             Origin = "192.168.2.49",
                             UserId = 2
                         },
                         new
                         {
                             Id = 50,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(3760),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 817, DateTimeKind.Local).AddTicks(8153),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 50,
+                            EventCount = 4,
                             Origin = "192.168.2.50",
                             UserId = 2
                         },
                         new
                         {
                             Id = 51,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(3852),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 817, DateTimeKind.Local).AddTicks(8364),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 51,
+                            EventCount = 4,
                             Origin = "192.168.2.51",
                             UserId = 2
                         },
                         new
                         {
                             Id = 52,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(3939),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 817, DateTimeKind.Local).AddTicks(8573),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 52,
+                            EventCount = 4,
                             Origin = "192.168.2.52",
                             UserId = 2
                         },
                         new
                         {
                             Id = 53,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(4025),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 817, DateTimeKind.Local).AddTicks(8773),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 53,
+                            EventCount = 4,
                             Origin = "192.168.2.53",
                             UserId = 2
                         },
                         new
                         {
                             Id = 54,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(4113),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 817, DateTimeKind.Local).AddTicks(8973),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 54,
+                            EventCount = 4,
                             Origin = "192.168.2.54",
                             UserId = 2
                         },
                         new
                         {
                             Id = 55,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(4201),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 817, DateTimeKind.Local).AddTicks(9186),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 55,
+                            EventCount = 4,
                             Origin = "192.168.2.55",
                             UserId = 2
                         },
                         new
                         {
                             Id = 56,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(4287),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 817, DateTimeKind.Local).AddTicks(9498),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 56,
+                            EventCount = 4,
                             Origin = "192.168.2.56",
                             UserId = 2
                         },
                         new
                         {
                             Id = 57,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(4375),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 817, DateTimeKind.Local).AddTicks(9705),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 57,
+                            EventCount = 4,
                             Origin = "192.168.2.57",
                             UserId = 2
                         },
                         new
                         {
                             Id = 58,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(4460),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 817, DateTimeKind.Local).AddTicks(9920),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 58,
+                            EventCount = 4,
                             Origin = "192.168.2.58",
                             UserId = 2
                         },
                         new
                         {
                             Id = 59,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(4671),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 818, DateTimeKind.Local).AddTicks(136),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 59,
+                            EventCount = 4,
                             Origin = "192.168.2.59",
                             UserId = 2
                         },
                         new
                         {
                             Id = 60,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(4930),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 818, DateTimeKind.Local).AddTicks(345),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 60,
+                            EventCount = 4,
                             Origin = "192.168.2.60",
                             UserId = 2
                         },
                         new
                         {
                             Id = 61,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(4977),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 818, DateTimeKind.Local).AddTicks(696),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 61,
+                            EventCount = 4,
                             Origin = "192.168.2.61",
                             UserId = 2
                         },
                         new
                         {
                             Id = 62,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(5022),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 818, DateTimeKind.Local).AddTicks(930),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 62,
+                            EventCount = 4,
                             Origin = "192.168.2.62",
                             UserId = 2
                         },
                         new
                         {
                             Id = 63,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(5085),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 818, DateTimeKind.Local).AddTicks(1163),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 63,
+                            EventCount = 4,
                             Origin = "192.168.2.63",
                             UserId = 2
                         },
                         new
                         {
                             Id = 64,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(5128),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 818, DateTimeKind.Local).AddTicks(1380),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 64,
+                            EventCount = 4,
                             Origin = "192.168.2.64",
                             UserId = 2
                         },
                         new
                         {
                             Id = 65,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(5177),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 818, DateTimeKind.Local).AddTicks(1736),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 65,
+                            EventCount = 4,
                             Origin = "192.168.2.65",
                             UserId = 2
                         },
                         new
                         {
                             Id = 66,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(5261),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 818, DateTimeKind.Local).AddTicks(1971),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 66,
+                            EventCount = 4,
                             Origin = "192.168.2.66",
                             UserId = 2
                         },
                         new
                         {
                             Id = 67,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(5304),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 818, DateTimeKind.Local).AddTicks(2205),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 67,
+                            EventCount = 4,
                             Origin = "192.168.2.67",
                             UserId = 2
                         },
                         new
                         {
                             Id = 68,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(5346),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 818, DateTimeKind.Local).AddTicks(2430),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 68,
+                            EventCount = 4,
                             Origin = "192.168.2.68",
                             UserId = 2
                         },
                         new
                         {
                             Id = 69,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(5388),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 818, DateTimeKind.Local).AddTicks(2654),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 69,
+                            EventCount = 4,
                             Origin = "192.168.2.69",
                             UserId = 2
                         },
                         new
                         {
                             Id = 70,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(5430),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 818, DateTimeKind.Local).AddTicks(2897),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 70,
+                            EventCount = 4,
                             Origin = "192.168.2.70",
                             UserId = 2
                         },
                         new
                         {
                             Id = 71,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(5472),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 818, DateTimeKind.Local).AddTicks(3524),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 71,
+                            EventCount = 4,
                             Origin = "192.168.2.71",
                             UserId = 2
                         },
                         new
                         {
                             Id = 72,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(5514),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 818, DateTimeKind.Local).AddTicks(3765),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 72,
+                            EventCount = 4,
                             Origin = "192.168.2.72",
                             UserId = 2
                         },
                         new
                         {
                             Id = 73,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(5689),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 818, DateTimeKind.Local).AddTicks(4326),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 73,
+                            EventCount = 6,
                             Origin = "192.168.2.73",
                             UserId = 3
                         },
                         new
                         {
                             Id = 74,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(5734),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 818, DateTimeKind.Local).AddTicks(4548),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 74,
+                            EventCount = 6,
                             Origin = "192.168.2.74",
                             UserId = 3
                         },
                         new
                         {
                             Id = 75,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(5777),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 818, DateTimeKind.Local).AddTicks(4763),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 75,
+                            EventCount = 6,
                             Origin = "192.168.2.75",
                             UserId = 3
                         },
                         new
                         {
                             Id = 76,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(5819),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 818, DateTimeKind.Local).AddTicks(4990),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 76,
+                            EventCount = 6,
                             Origin = "192.168.2.76",
                             UserId = 3
                         },
                         new
                         {
                             Id = 77,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(5862),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 818, DateTimeKind.Local).AddTicks(5227),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 77,
+                            EventCount = 6,
                             Origin = "192.168.2.77",
                             UserId = 3
                         },
                         new
                         {
                             Id = 78,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(5904),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 818, DateTimeKind.Local).AddTicks(5589),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 78,
+                            EventCount = 6,
                             Origin = "192.168.2.78",
                             UserId = 3
                         },
                         new
                         {
                             Id = 79,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(5948),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 818, DateTimeKind.Local).AddTicks(5812),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 79,
+                            EventCount = 6,
                             Origin = "192.168.2.79",
                             UserId = 3
                         },
                         new
                         {
                             Id = 80,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(5991),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 818, DateTimeKind.Local).AddTicks(6030),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 80,
+                            EventCount = 6,
                             Origin = "192.168.2.80",
                             UserId = 3
                         },
                         new
                         {
                             Id = 81,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(6068),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 818, DateTimeKind.Local).AddTicks(6252),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 81,
+                            EventCount = 6,
                             Origin = "192.168.2.81",
                             UserId = 3
                         },
                         new
                         {
                             Id = 82,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(6111),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 818, DateTimeKind.Local).AddTicks(6485),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 82,
+                            EventCount = 6,
                             Origin = "192.168.2.82",
                             UserId = 3
                         },
                         new
                         {
                             Id = 83,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(6154),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 818, DateTimeKind.Local).AddTicks(6715),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 83,
+                            EventCount = 6,
                             Origin = "192.168.2.83",
                             UserId = 3
                         },
                         new
                         {
                             Id = 84,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(6196),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 818, DateTimeKind.Local).AddTicks(6954),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 84,
+                            EventCount = 6,
                             Origin = "192.168.2.84",
                             UserId = 3
                         },
                         new
                         {
                             Id = 85,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(6238),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 818, DateTimeKind.Local).AddTicks(7198),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 85,
+                            EventCount = 6,
                             Origin = "192.168.2.85",
                             UserId = 3
                         },
                         new
                         {
                             Id = 86,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(6280),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 818, DateTimeKind.Local).AddTicks(7448),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 86,
+                            EventCount = 6,
                             Origin = "192.168.2.86",
                             UserId = 3
                         },
                         new
                         {
                             Id = 87,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(6322),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 818, DateTimeKind.Local).AddTicks(7788),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 87,
+                            EventCount = 6,
                             Origin = "192.168.2.87",
                             UserId = 3
                         },
                         new
                         {
                             Id = 88,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(6364),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 818, DateTimeKind.Local).AddTicks(8005),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 88,
+                            EventCount = 6,
                             Origin = "192.168.2.88",
                             UserId = 3
                         },
                         new
                         {
                             Id = 89,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(6406),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 818, DateTimeKind.Local).AddTicks(8210),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 89,
+                            EventCount = 6,
                             Origin = "192.168.2.89",
                             UserId = 3
                         },
                         new
                         {
                             Id = 90,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(6483),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 818, DateTimeKind.Local).AddTicks(8415),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 90,
+                            EventCount = 6,
                             Origin = "192.168.2.90",
                             UserId = 3
                         },
                         new
                         {
                             Id = 91,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(6526),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 818, DateTimeKind.Local).AddTicks(8624),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 91,
+                            EventCount = 6,
                             Origin = "192.168.2.91",
                             UserId = 3
                         },
                         new
                         {
                             Id = 92,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(6568),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 818, DateTimeKind.Local).AddTicks(8824),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 92,
+                            EventCount = 6,
                             Origin = "192.168.2.92",
                             UserId = 3
                         },
                         new
                         {
                             Id = 93,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(6611),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 818, DateTimeKind.Local).AddTicks(9032),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 93,
+                            EventCount = 6,
                             Origin = "192.168.2.93",
                             UserId = 3
                         },
                         new
                         {
                             Id = 94,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(6654),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 818, DateTimeKind.Local).AddTicks(9252),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 94,
+                            EventCount = 6,
                             Origin = "192.168.2.94",
                             UserId = 3
                         },
                         new
                         {
                             Id = 95,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(6697),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 818, DateTimeKind.Local).AddTicks(9585),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 95,
+                            EventCount = 6,
                             Origin = "192.168.2.95",
                             UserId = 3
                         },
                         new
                         {
                             Id = 96,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(6740),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 818, DateTimeKind.Local).AddTicks(9815),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 96,
+                            EventCount = 6,
                             Origin = "192.168.2.96",
                             UserId = 3
                         },
                         new
                         {
                             Id = 97,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(6782),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 819, DateTimeKind.Local).AddTicks(34),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 97,
+                            EventCount = 6,
                             Origin = "192.168.2.97",
                             UserId = 3
                         },
                         new
                         {
                             Id = 98,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(6935),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 819, DateTimeKind.Local).AddTicks(259),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 98,
+                            EventCount = 6,
                             Origin = "192.168.2.98",
                             UserId = 3
                         },
                         new
                         {
                             Id = 99,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(6980),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 819, DateTimeKind.Local).AddTicks(545),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 99,
+                            EventCount = 6,
                             Origin = "192.168.2.99",
                             UserId = 3
                         },
                         new
                         {
                             Id = 100,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(7023),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 819, DateTimeKind.Local).AddTicks(777),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 100,
+                            EventCount = 6,
                             Origin = "192.168.2.100",
                             UserId = 3
                         },
                         new
                         {
                             Id = 101,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(7066),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 819, DateTimeKind.Local).AddTicks(1015),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 101,
+                            EventCount = 6,
                             Origin = "192.168.2.101",
                             UserId = 3
                         },
                         new
                         {
                             Id = 102,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(7108),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 819, DateTimeKind.Local).AddTicks(1247),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 102,
+                            EventCount = 6,
                             Origin = "192.168.2.102",
                             UserId = 3
                         },
                         new
                         {
                             Id = 103,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(7150),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 819, DateTimeKind.Local).AddTicks(1495),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 103,
+                            EventCount = 6,
                             Origin = "192.168.2.103",
                             UserId = 3
                         },
                         new
                         {
                             Id = 104,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(7192),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 819, DateTimeKind.Local).AddTicks(1963),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 104,
+                            EventCount = 6,
                             Origin = "192.168.2.104",
                             UserId = 3
                         },
                         new
                         {
                             Id = 105,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(7235),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 819, DateTimeKind.Local).AddTicks(2176),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 105,
+                            EventCount = 6,
                             Origin = "192.168.2.105",
                             UserId = 3
                         },
                         new
                         {
                             Id = 106,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(7277),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 819, DateTimeKind.Local).AddTicks(2391),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 106,
+                            EventCount = 6,
                             Origin = "192.168.2.106",
                             UserId = 3
                         },
                         new
                         {
                             Id = 107,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(7356),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 819, DateTimeKind.Local).AddTicks(2601),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 107,
+                            EventCount = 6,
                             Origin = "192.168.2.107",
                             UserId = 3
                         },
                         new
                         {
                             Id = 108,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(7400),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 819, DateTimeKind.Local).AddTicks(2805),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 108,
+                            EventCount = 6,
                             Origin = "192.168.2.108",
                             UserId = 3
                         },
                         new
                         {
                             Id = 109,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(7508),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 819, DateTimeKind.Local).AddTicks(3318),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 109,
+                            EventCount = 8,
                             Origin = "192.168.2.109",
                             UserId = 4
                         },
                         new
                         {
                             Id = 110,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(7552),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 819, DateTimeKind.Local).AddTicks(3513),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 110,
+                            EventCount = 8,
                             Origin = "192.168.2.110",
                             UserId = 4
                         },
                         new
                         {
                             Id = 111,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(7595),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 819, DateTimeKind.Local).AddTicks(3798),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 111,
+                            EventCount = 8,
                             Origin = "192.168.2.111",
                             UserId = 4
                         },
                         new
                         {
                             Id = 112,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(7637),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 819, DateTimeKind.Local).AddTicks(3992),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 112,
+                            EventCount = 8,
                             Origin = "192.168.2.112",
                             UserId = 4
                         },
                         new
                         {
                             Id = 113,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(7679),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 819, DateTimeKind.Local).AddTicks(4182),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 113,
+                            EventCount = 8,
                             Origin = "192.168.2.113",
                             UserId = 4
                         },
                         new
                         {
                             Id = 114,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(7758),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 819, DateTimeKind.Local).AddTicks(4439),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 114,
+                            EventCount = 8,
                             Origin = "192.168.2.114",
                             UserId = 4
                         },
                         new
                         {
                             Id = 115,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(7802),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 819, DateTimeKind.Local).AddTicks(4572),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 115,
+                            EventCount = 8,
                             Origin = "192.168.2.115",
                             UserId = 4
                         },
                         new
                         {
                             Id = 116,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(7977),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 819, DateTimeKind.Local).AddTicks(4689),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 116,
+                            EventCount = 8,
                             Origin = "192.168.2.116",
                             UserId = 4
                         },
                         new
                         {
                             Id = 117,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(8017),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 819, DateTimeKind.Local).AddTicks(4804),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 117,
+                            EventCount = 8,
                             Origin = "192.168.2.117",
                             UserId = 4
                         },
                         new
                         {
                             Id = 118,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(8057),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 819, DateTimeKind.Local).AddTicks(4921),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 118,
+                            EventCount = 8,
                             Origin = "192.168.2.118",
                             UserId = 4
                         },
                         new
                         {
                             Id = 119,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(8096),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 819, DateTimeKind.Local).AddTicks(5285),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 119,
+                            EventCount = 8,
                             Origin = "192.168.2.119",
                             UserId = 4
                         },
                         new
                         {
                             Id = 120,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(8136),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 819, DateTimeKind.Local).AddTicks(5435),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 120,
+                            EventCount = 8,
                             Origin = "192.168.2.120",
                             UserId = 4
                         },
                         new
                         {
                             Id = 121,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(8176),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 819, DateTimeKind.Local).AddTicks(5553),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 121,
+                            EventCount = 8,
                             Origin = "192.168.2.121",
                             UserId = 4
                         },
                         new
                         {
                             Id = 122,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(8267),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 819, DateTimeKind.Local).AddTicks(5669),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 122,
+                            EventCount = 8,
                             Origin = "192.168.2.122",
                             UserId = 4
                         },
                         new
                         {
                             Id = 123,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(8312),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 819, DateTimeKind.Local).AddTicks(5786),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 123,
+                            EventCount = 8,
                             Origin = "192.168.2.123",
                             UserId = 4
                         },
                         new
                         {
                             Id = 124,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(8350),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 819, DateTimeKind.Local).AddTicks(5901),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 124,
+                            EventCount = 8,
                             Origin = "192.168.2.124",
                             UserId = 4
                         },
                         new
                         {
                             Id = 125,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(8389),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 819, DateTimeKind.Local).AddTicks(6017),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 125,
+                            EventCount = 8,
                             Origin = "192.168.2.125",
                             UserId = 4
                         },
                         new
                         {
                             Id = 126,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(8428),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 819, DateTimeKind.Local).AddTicks(6134),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 126,
+                            EventCount = 8,
                             Origin = "192.168.2.126",
                             UserId = 4
                         },
                         new
                         {
                             Id = 127,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(8467),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 819, DateTimeKind.Local).AddTicks(6250),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 127,
+                            EventCount = 8,
                             Origin = "192.168.2.127",
                             UserId = 4
                         },
                         new
                         {
                             Id = 128,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(8687),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 819, DateTimeKind.Local).AddTicks(6442),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 128,
+                            EventCount = 8,
                             Origin = "192.168.2.128",
                             UserId = 4
                         },
                         new
                         {
                             Id = 129,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(8764),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 819, DateTimeKind.Local).AddTicks(6582),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 129,
+                            EventCount = 8,
                             Origin = "192.168.2.129",
                             UserId = 4
                         },
                         new
                         {
                             Id = 130,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(8811),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 819, DateTimeKind.Local).AddTicks(6704),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 130,
+                            EventCount = 8,
                             Origin = "192.168.2.130",
                             UserId = 4
                         },
                         new
                         {
                             Id = 131,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(8854),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 819, DateTimeKind.Local).AddTicks(6819),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 131,
+                            EventCount = 8,
                             Origin = "192.168.2.131",
                             UserId = 4
                         },
                         new
                         {
                             Id = 132,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(8896),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 819, DateTimeKind.Local).AddTicks(7076),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 132,
+                            EventCount = 8,
                             Origin = "192.168.2.132",
                             UserId = 4
                         },
                         new
                         {
                             Id = 133,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(8938),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 819, DateTimeKind.Local).AddTicks(7315),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 133,
+                            EventCount = 8,
                             Origin = "192.168.2.133",
                             UserId = 4
                         },
                         new
                         {
                             Id = 134,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(8980),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 819, DateTimeKind.Local).AddTicks(7525),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 134,
+                            EventCount = 8,
                             Origin = "192.168.2.134",
                             UserId = 4
                         },
                         new
                         {
                             Id = 135,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(9054),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 819, DateTimeKind.Local).AddTicks(7736),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 135,
+                            EventCount = 8,
                             Origin = "192.168.2.135",
                             UserId = 4
                         },
                         new
                         {
                             Id = 136,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(9098),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 819, DateTimeKind.Local).AddTicks(7948),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 136,
+                            EventCount = 8,
                             Origin = "192.168.2.136",
                             UserId = 4
                         },
                         new
                         {
                             Id = 137,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(9141),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 819, DateTimeKind.Local).AddTicks(8156),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 137,
+                            EventCount = 8,
                             Origin = "192.168.2.137",
                             UserId = 4
                         },
                         new
                         {
                             Id = 138,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(9183),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 820, DateTimeKind.Local).AddTicks(2939),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 138,
+                            EventCount = 8,
                             Origin = "192.168.2.138",
                             UserId = 4
                         },
                         new
                         {
                             Id = 139,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(9225),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 820, DateTimeKind.Local).AddTicks(3216),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 139,
+                            EventCount = 8,
                             Origin = "192.168.2.139",
                             UserId = 4
                         },
                         new
                         {
                             Id = 140,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(9267),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 820, DateTimeKind.Local).AddTicks(3476),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 140,
+                            EventCount = 8,
                             Origin = "192.168.2.140",
                             UserId = 4
                         },
                         new
                         {
                             Id = 141,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(9309),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 820, DateTimeKind.Local).AddTicks(3880),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 141,
+                            EventCount = 8,
                             Origin = "192.168.2.141",
                             UserId = 4
                         },
                         new
                         {
                             Id = 142,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(9352),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 820, DateTimeKind.Local).AddTicks(4139),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 142,
+                            EventCount = 8,
                             Origin = "192.168.2.142",
                             UserId = 4
                         },
                         new
                         {
                             Id = 143,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(9395),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 820, DateTimeKind.Local).AddTicks(4396),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 143,
+                            EventCount = 8,
                             Origin = "192.168.2.143",
                             UserId = 4
                         },
                         new
                         {
                             Id = 144,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(9470),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 820, DateTimeKind.Local).AddTicks(4658),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 144,
+                            EventCount = 8,
                             Origin = "192.168.2.144",
                             UserId = 4
                         },
                         new
                         {
                             Id = 145,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(9573),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 820, DateTimeKind.Local).AddTicks(5259),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 145,
+                            EventCount = 10,
                             Origin = "192.168.2.145",
                             UserId = 5
                         },
                         new
                         {
                             Id = 146,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(9618),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 820, DateTimeKind.Local).AddTicks(5482),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 146,
+                            EventCount = 10,
                             Origin = "192.168.2.146",
                             UserId = 5
                         },
                         new
                         {
                             Id = 147,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(9661),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 820, DateTimeKind.Local).AddTicks(5696),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 147,
+                            EventCount = 10,
                             Origin = "192.168.2.147",
                             UserId = 5
                         },
                         new
                         {
                             Id = 148,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(9704),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 820, DateTimeKind.Local).AddTicks(6019),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 148,
+                            EventCount = 10,
                             Origin = "192.168.2.148",
                             UserId = 5
                         },
                         new
                         {
                             Id = 149,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(9747),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 820, DateTimeKind.Local).AddTicks(6233),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 149,
+                            EventCount = 10,
                             Origin = "192.168.2.149",
                             UserId = 5
                         },
                         new
                         {
                             Id = 150,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(9790),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 820, DateTimeKind.Local).AddTicks(6445),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 150,
+                            EventCount = 10,
                             Origin = "192.168.2.150",
                             UserId = 5
                         },
                         new
                         {
                             Id = 151,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(9866),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 820, DateTimeKind.Local).AddTicks(6658),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 151,
+                            EventCount = 10,
                             Origin = "192.168.2.151",
                             UserId = 5
                         },
                         new
                         {
                             Id = 152,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(9909),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 820, DateTimeKind.Local).AddTicks(6869),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 152,
+                            EventCount = 10,
                             Origin = "192.168.2.152",
                             UserId = 5
                         },
                         new
                         {
                             Id = 153,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(9951),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 820, DateTimeKind.Local).AddTicks(7079),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 153,
+                            EventCount = 10,
                             Origin = "192.168.2.153",
                             UserId = 5
                         },
                         new
                         {
                             Id = 154,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 312, DateTimeKind.Local).AddTicks(9993),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 820, DateTimeKind.Local).AddTicks(7289),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 154,
+                            EventCount = 10,
                             Origin = "192.168.2.154",
                             UserId = 5
                         },
                         new
                         {
                             Id = 155,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(35),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 820, DateTimeKind.Local).AddTicks(7499),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 155,
+                            EventCount = 10,
                             Origin = "192.168.2.155",
                             UserId = 5
                         },
                         new
                         {
                             Id = 156,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(78),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 820, DateTimeKind.Local).AddTicks(7700),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 156,
+                            EventCount = 10,
                             Origin = "192.168.2.156",
                             UserId = 5
                         },
                         new
                         {
                             Id = 157,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(121),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 820, DateTimeKind.Local).AddTicks(7835),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 157,
+                            EventCount = 10,
                             Origin = "192.168.2.157",
                             UserId = 5
                         },
                         new
                         {
                             Id = 158,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(164),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 820, DateTimeKind.Local).AddTicks(7950),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 158,
+                            EventCount = 10,
                             Origin = "192.168.2.158",
                             UserId = 5
                         },
                         new
                         {
                             Id = 159,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(239),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 820, DateTimeKind.Local).AddTicks(8064),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 159,
+                            EventCount = 10,
                             Origin = "192.168.2.159",
                             UserId = 5
                         },
                         new
                         {
                             Id = 160,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(285),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 820, DateTimeKind.Local).AddTicks(8179),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 160,
+                            EventCount = 10,
                             Origin = "192.168.2.160",
                             UserId = 5
                         },
                         new
                         {
                             Id = 161,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(328),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 820, DateTimeKind.Local).AddTicks(8296),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 161,
+                            EventCount = 10,
                             Origin = "192.168.2.161",
                             UserId = 5
                         },
                         new
                         {
                             Id = 162,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(370),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 820, DateTimeKind.Local).AddTicks(8412),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 162,
+                            EventCount = 10,
                             Origin = "192.168.2.162",
                             UserId = 5
                         },
                         new
                         {
                             Id = 163,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(412),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 820, DateTimeKind.Local).AddTicks(8526),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 163,
+                            EventCount = 10,
                             Origin = "192.168.2.163",
                             UserId = 5
                         },
                         new
                         {
                             Id = 164,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(455),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 820, DateTimeKind.Local).AddTicks(8640),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 164,
+                            EventCount = 10,
                             Origin = "192.168.2.164",
                             UserId = 5
                         },
                         new
                         {
                             Id = 165,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(497),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 820, DateTimeKind.Local).AddTicks(8902),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 165,
+                            EventCount = 10,
                             Origin = "192.168.2.165",
                             UserId = 5
                         },
                         new
                         {
                             Id = 166,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(538),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 820, DateTimeKind.Local).AddTicks(9026),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 166,
+                            EventCount = 10,
                             Origin = "192.168.2.166",
                             UserId = 5
                         },
                         new
                         {
                             Id = 167,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(581),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 820, DateTimeKind.Local).AddTicks(9141),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 167,
+                            EventCount = 10,
                             Origin = "192.168.2.167",
                             UserId = 5
                         },
                         new
                         {
                             Id = 168,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(678),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 820, DateTimeKind.Local).AddTicks(9257),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 168,
+                            EventCount = 10,
                             Origin = "192.168.2.168",
                             UserId = 5
                         },
                         new
                         {
                             Id = 169,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(723),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 820, DateTimeKind.Local).AddTicks(9373),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 169,
+                            EventCount = 10,
                             Origin = "192.168.2.169",
                             UserId = 5
                         },
                         new
                         {
                             Id = 170,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(767),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 820, DateTimeKind.Local).AddTicks(9489),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 170,
+                            EventCount = 10,
                             Origin = "192.168.2.170",
                             UserId = 5
                         },
                         new
                         {
                             Id = 171,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(809),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 820, DateTimeKind.Local).AddTicks(9604),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 171,
+                            EventCount = 10,
                             Origin = "192.168.2.171",
                             UserId = 5
                         },
                         new
                         {
                             Id = 172,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(852),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 820, DateTimeKind.Local).AddTicks(9718),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 172,
+                            EventCount = 10,
                             Origin = "192.168.2.172",
                             UserId = 5
                         },
                         new
                         {
                             Id = 173,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(894),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 820, DateTimeKind.Local).AddTicks(9834),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 173,
+                            EventCount = 10,
                             Origin = "192.168.2.173",
                             UserId = 5
                         },
                         new
                         {
                             Id = 174,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(936),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(32),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 174,
+                            EventCount = 10,
                             Origin = "192.168.2.174",
                             UserId = 5
                         },
                         new
                         {
                             Id = 175,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(979),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(151),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 175,
+                            EventCount = 10,
                             Origin = "192.168.2.175",
                             UserId = 5
                         },
                         new
                         {
                             Id = 176,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(1022),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(266),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 176,
+                            EventCount = 10,
                             Origin = "192.168.2.176",
                             UserId = 5
                         },
                         new
                         {
                             Id = 177,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(1099),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(381),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 177,
+                            EventCount = 10,
                             Origin = "192.168.2.177",
                             UserId = 5
                         },
                         new
                         {
                             Id = 178,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(1142),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(575),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 178,
+                            EventCount = 10,
                             Origin = "192.168.2.178",
                             UserId = 5
                         },
                         new
                         {
                             Id = 179,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(1183),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(696),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 179,
+                            EventCount = 10,
                             Origin = "192.168.2.179",
                             UserId = 5
                         },
                         new
                         {
                             Id = 180,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(1225),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(812),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 180,
+                            EventCount = 10,
                             Origin = "192.168.2.180",
                             UserId = 5
                         },
                         new
                         {
                             Id = 181,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(1326),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(1204),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 181,
+                            EventCount = 12,
                             Origin = "192.168.2.181",
                             UserId = 6
                         },
                         new
                         {
                             Id = 182,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(1370),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(1325),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 182,
+                            EventCount = 12,
                             Origin = "192.168.2.182",
                             UserId = 6
                         },
                         new
                         {
                             Id = 183,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(1461),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(1441),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 183,
+                            EventCount = 12,
                             Origin = "192.168.2.183",
                             UserId = 6
                         },
                         new
                         {
                             Id = 184,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(1509),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(1555),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 184,
+                            EventCount = 12,
                             Origin = "192.168.2.184",
                             UserId = 6
                         },
                         new
                         {
                             Id = 185,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(1552),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(1669),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 185,
+                            EventCount = 12,
                             Origin = "192.168.2.185",
                             UserId = 6
                         },
                         new
                         {
                             Id = 186,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(1594),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(1784),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 186,
+                            EventCount = 12,
                             Origin = "192.168.2.186",
                             UserId = 6
                         },
                         new
                         {
                             Id = 187,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(1769),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(1897),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 187,
+                            EventCount = 12,
                             Origin = "192.168.2.187",
                             UserId = 6
                         },
                         new
                         {
                             Id = 188,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(1809),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(2011),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 188,
+                            EventCount = 12,
                             Origin = "192.168.2.188",
                             UserId = 6
                         },
                         new
                         {
                             Id = 189,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(1847),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(2202),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 189,
+                            EventCount = 12,
                             Origin = "192.168.2.189",
                             UserId = 6
                         },
                         new
                         {
                             Id = 190,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(1887),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(2326),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 190,
+                            EventCount = 12,
                             Origin = "192.168.2.190",
                             UserId = 6
                         },
                         new
                         {
                             Id = 191,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(1925),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(2444),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 191,
+                            EventCount = 12,
                             Origin = "192.168.2.191",
                             UserId = 6
                         },
                         new
                         {
                             Id = 192,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(2178),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(2559),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 192,
+                            EventCount = 12,
                             Origin = "192.168.2.192",
                             UserId = 6
                         },
                         new
                         {
                             Id = 193,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(2222),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(2676),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 193,
+                            EventCount = 12,
                             Origin = "192.168.2.193",
                             UserId = 6
                         },
                         new
                         {
                             Id = 194,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(2264),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(2791),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 194,
+                            EventCount = 12,
                             Origin = "192.168.2.194",
                             UserId = 6
                         },
                         new
                         {
                             Id = 195,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(2307),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(2906),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 195,
+                            EventCount = 12,
                             Origin = "192.168.2.195",
                             UserId = 6
                         },
                         new
                         {
                             Id = 196,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(2350),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(3021),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 196,
+                            EventCount = 12,
                             Origin = "192.168.2.196",
                             UserId = 6
                         },
                         new
                         {
                             Id = 197,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(2393),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(3136),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 197,
+                            EventCount = 12,
                             Origin = "192.168.2.197",
                             UserId = 6
                         },
                         new
                         {
                             Id = 198,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(2435),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(3329),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 198,
+                            EventCount = 12,
                             Origin = "192.168.2.198",
                             UserId = 6
                         },
                         new
                         {
                             Id = 199,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(2477),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(3448),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 199,
+                            EventCount = 12,
                             Origin = "192.168.2.199",
                             UserId = 6
                         },
                         new
                         {
                             Id = 200,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(2520),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(3563),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 200,
+                            EventCount = 12,
                             Origin = "192.168.2.200",
                             UserId = 6
                         },
                         new
                         {
                             Id = 201,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(2675),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(3677),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 201,
+                            EventCount = 12,
                             Origin = "192.168.2.201",
                             UserId = 6
                         },
                         new
                         {
                             Id = 202,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(2720),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(3792),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 202,
+                            EventCount = 12,
                             Origin = "192.168.2.202",
                             UserId = 6
                         },
                         new
                         {
                             Id = 203,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(2763),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(3907),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 203,
+                            EventCount = 12,
                             Origin = "192.168.2.203",
                             UserId = 6
                         },
                         new
                         {
                             Id = 204,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(2806),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(4023),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 204,
+                            EventCount = 12,
                             Origin = "192.168.2.204",
                             UserId = 6
                         },
                         new
                         {
                             Id = 205,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(2849),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(4137),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 205,
+                            EventCount = 12,
                             Origin = "192.168.2.205",
                             UserId = 6
                         },
                         new
                         {
                             Id = 206,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(2891),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(4298),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 206,
+                            EventCount = 12,
                             Origin = "192.168.2.206",
                             UserId = 6
                         },
                         new
                         {
                             Id = 207,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(2933),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(4432),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 207,
+                            EventCount = 12,
                             Origin = "192.168.2.207",
                             UserId = 6
                         },
                         new
                         {
                             Id = 208,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(2976),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(4548),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 208,
+                            EventCount = 12,
                             Origin = "192.168.2.208",
                             UserId = 6
                         },
                         new
                         {
                             Id = 209,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(3053),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(4664),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 209,
+                            EventCount = 12,
                             Origin = "192.168.2.209",
                             UserId = 6
                         },
                         new
                         {
                             Id = 210,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(3099),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(4777),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 210,
+                            EventCount = 12,
                             Origin = "192.168.2.210",
                             UserId = 6
                         },
                         new
                         {
                             Id = 211,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(3142),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(4892),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 211,
+                            EventCount = 12,
                             Origin = "192.168.2.211",
                             UserId = 6
                         },
                         new
                         {
                             Id = 212,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(3184),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(5006),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 212,
+                            EventCount = 12,
                             Origin = "192.168.2.212",
                             UserId = 6
                         },
                         new
                         {
                             Id = 213,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(3227),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(5119),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 213,
+                            EventCount = 12,
                             Origin = "192.168.2.213",
                             UserId = 6
                         },
                         new
                         {
                             Id = 214,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(3269),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(5234),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 214,
+                            EventCount = 12,
                             Origin = "192.168.2.214",
                             UserId = 6
                         },
                         new
                         {
                             Id = 215,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(3311),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(5423),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 215,
+                            EventCount = 12,
                             Origin = "192.168.2.215",
                             UserId = 6
                         },
                         new
                         {
                             Id = 216,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(3354),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(5545),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 216,
+                            EventCount = 12,
                             Origin = "192.168.2.216",
                             UserId = 6
                         },
                         new
                         {
                             Id = 217,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(3490),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(5821),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 217,
+                            EventCount = 14,
                             Origin = "192.168.2.217",
                             UserId = 7
                         },
                         new
                         {
                             Id = 218,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(3535),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(5940),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 218,
+                            EventCount = 14,
                             Origin = "192.168.2.218",
                             UserId = 7
                         },
                         new
                         {
                             Id = 219,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(3577),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(6057),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 219,
+                            EventCount = 14,
                             Origin = "192.168.2.219",
                             UserId = 7
                         },
                         new
                         {
                             Id = 220,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(3619),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(6172),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 220,
+                            EventCount = 14,
                             Origin = "192.168.2.220",
                             UserId = 7
                         },
                         new
                         {
                             Id = 221,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(3662),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(6287),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 221,
+                            EventCount = 14,
                             Origin = "192.168.2.221",
                             UserId = 7
                         },
                         new
                         {
                             Id = 222,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(3704),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(6615),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 222,
+                            EventCount = 14,
                             Origin = "192.168.2.222",
                             UserId = 7
                         },
                         new
                         {
                             Id = 223,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(3747),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(6738),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 223,
+                            EventCount = 14,
                             Origin = "192.168.2.223",
                             UserId = 7
                         },
                         new
                         {
                             Id = 224,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(3789),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(6853),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 224,
+                            EventCount = 14,
                             Origin = "192.168.2.224",
                             UserId = 7
                         },
                         new
                         {
                             Id = 225,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(3865),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(6968),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 225,
+                            EventCount = 14,
                             Origin = "192.168.2.225",
                             UserId = 7
                         },
                         new
                         {
                             Id = 226,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(3909),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(7084),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 226,
+                            EventCount = 14,
                             Origin = "192.168.2.226",
                             UserId = 7
                         },
                         new
                         {
                             Id = 227,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(3952),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(7199),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 227,
+                            EventCount = 14,
                             Origin = "192.168.2.227",
                             UserId = 7
                         },
                         new
                         {
                             Id = 228,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(3994),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(7313),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 228,
+                            EventCount = 14,
                             Origin = "192.168.2.228",
                             UserId = 7
                         },
                         new
                         {
                             Id = 229,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(4036),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(7427),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 229,
+                            EventCount = 14,
                             Origin = "192.168.2.229",
                             UserId = 7
                         },
                         new
                         {
                             Id = 230,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(4078),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(7541),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 230,
+                            EventCount = 14,
                             Origin = "192.168.2.230",
                             UserId = 7
                         },
                         new
                         {
                             Id = 231,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(4120),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(7784),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 231,
+                            EventCount = 14,
                             Origin = "192.168.2.231",
                             UserId = 7
                         },
                         new
                         {
                             Id = 232,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(4162),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(7903),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 232,
+                            EventCount = 14,
                             Origin = "192.168.2.232",
                             UserId = 7
                         },
                         new
                         {
                             Id = 233,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(4204),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(8020),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 233,
+                            EventCount = 14,
                             Origin = "192.168.2.233",
                             UserId = 7
                         },
                         new
                         {
                             Id = 234,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(4281),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(8133),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 234,
+                            EventCount = 14,
                             Origin = "192.168.2.234",
                             UserId = 7
                         },
                         new
                         {
                             Id = 235,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(4324),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(8250),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 235,
+                            EventCount = 14,
                             Origin = "192.168.2.235",
                             UserId = 7
                         },
                         new
                         {
                             Id = 236,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(4366),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(8365),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 236,
+                            EventCount = 14,
                             Origin = "192.168.2.236",
                             UserId = 7
                         },
                         new
                         {
                             Id = 237,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(4408),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(8480),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 237,
+                            EventCount = 14,
                             Origin = "192.168.2.237",
                             UserId = 7
                         },
                         new
                         {
                             Id = 238,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(4450),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(8594),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 238,
+                            EventCount = 14,
                             Origin = "192.168.2.238",
                             UserId = 7
                         },
                         new
                         {
                             Id = 239,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(4492),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(8777),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 239,
+                            EventCount = 14,
                             Origin = "192.168.2.239",
                             UserId = 7
                         },
                         new
                         {
                             Id = 240,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(4535),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(8907),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 240,
+                            EventCount = 14,
                             Origin = "192.168.2.240",
                             UserId = 7
                         },
                         new
                         {
                             Id = 241,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(4577),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(9024),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 241,
+                            EventCount = 14,
                             Origin = "192.168.2.241",
                             UserId = 7
                         },
                         new
                         {
                             Id = 242,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(4653),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(9138),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 242,
+                            EventCount = 14,
                             Origin = "192.168.2.242",
                             UserId = 7
                         },
                         new
                         {
                             Id = 243,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(4696),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(9254),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 243,
+                            EventCount = 14,
                             Origin = "192.168.2.243",
                             UserId = 7
                         },
                         new
                         {
                             Id = 244,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(4738),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(9368),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 244,
+                            EventCount = 14,
                             Origin = "192.168.2.244",
                             UserId = 7
                         },
                         new
                         {
                             Id = 245,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(4781),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(9484),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 245,
+                            EventCount = 14,
                             Origin = "192.168.2.245",
                             UserId = 7
                         },
                         new
                         {
                             Id = 246,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(4823),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(9599),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 246,
+                            EventCount = 14,
                             Origin = "192.168.2.246",
                             UserId = 7
                         },
                         new
                         {
                             Id = 247,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(4867),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(9712),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 247,
+                            EventCount = 14,
                             Origin = "192.168.2.247",
                             UserId = 7
                         },
                         new
                         {
                             Id = 248,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(4909),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 821, DateTimeKind.Local).AddTicks(9895),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 248,
+                            EventCount = 14,
                             Origin = "192.168.2.248",
                             UserId = 7
                         },
                         new
                         {
                             Id = 249,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(4953),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(17),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 249,
+                            EventCount = 14,
                             Origin = "192.168.2.249",
                             UserId = 7
                         },
                         new
                         {
                             Id = 250,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(5010),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(131),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 250,
+                            EventCount = 14,
                             Origin = "192.168.2.250",
                             UserId = 7
                         },
                         new
                         {
                             Id = 251,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(5110),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(246),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 251,
+                            EventCount = 14,
                             Origin = "192.168.2.251",
                             UserId = 7
                         },
                         new
                         {
                             Id = 252,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(5154),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(362),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 252,
+                            EventCount = 14,
                             Origin = "192.168.2.252",
                             UserId = 7
                         },
                         new
                         {
                             Id = 253,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(5306),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(733),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 253,
+                            EventCount = 16,
                             Origin = "192.168.2.253",
                             UserId = 8
                         },
                         new
                         {
                             Id = 254,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(5353),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(856),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 254,
+                            EventCount = 16,
                             Origin = "192.168.2.254",
                             UserId = 8
                         },
                         new
                         {
                             Id = 255,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(5396),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(1044),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 255,
+                            EventCount = 16,
                             Origin = "192.168.2.255",
                             UserId = 8
                         },
                         new
                         {
                             Id = 256,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(5438),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(1165),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 256,
+                            EventCount = 16,
                             Origin = "192.168.2.256",
                             UserId = 8
                         },
                         new
                         {
                             Id = 257,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(5484),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(1296),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 257,
+                            EventCount = 16,
                             Origin = "192.168.2.257",
                             UserId = 8
                         },
                         new
                         {
                             Id = 258,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(5570),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(1483),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 258,
+                            EventCount = 16,
                             Origin = "192.168.2.258",
                             UserId = 8
                         },
                         new
                         {
                             Id = 259,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(5613),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(1603),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 259,
+                            EventCount = 16,
                             Origin = "192.168.2.259",
                             UserId = 8
                         },
                         new
                         {
                             Id = 260,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(5656),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(1719),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 260,
+                            EventCount = 16,
                             Origin = "192.168.2.260",
                             UserId = 8
                         },
                         new
                         {
                             Id = 261,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(5698),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(1834),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 261,
+                            EventCount = 16,
                             Origin = "192.168.2.261",
                             UserId = 8
                         },
                         new
                         {
                             Id = 262,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(5774),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(1950),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 262,
+                            EventCount = 16,
                             Origin = "192.168.2.262",
                             UserId = 8
                         },
                         new
                         {
                             Id = 263,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(5817),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(2119),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 263,
+                            EventCount = 16,
                             Origin = "192.168.2.263",
                             UserId = 8
                         },
                         new
                         {
                             Id = 264,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(5860),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(2247),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 264,
+                            EventCount = 16,
                             Origin = "192.168.2.264",
                             UserId = 8
                         },
                         new
                         {
                             Id = 265,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(5902),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(2363),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 265,
+                            EventCount = 16,
                             Origin = "192.168.2.265",
                             UserId = 8
                         },
                         new
                         {
                             Id = 266,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(5944),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(2477),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 266,
+                            EventCount = 16,
                             Origin = "192.168.2.266",
                             UserId = 8
                         },
                         new
                         {
                             Id = 267,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(5986),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(2590),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 267,
+                            EventCount = 16,
                             Origin = "192.168.2.267",
                             UserId = 8
                         },
                         new
                         {
                             Id = 268,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(6028),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(2708),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 268,
+                            EventCount = 16,
                             Origin = "192.168.2.268",
                             UserId = 8
                         },
                         new
                         {
                             Id = 269,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(6070),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(2824),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 269,
+                            EventCount = 16,
                             Origin = "192.168.2.269",
                             UserId = 8
                         },
                         new
                         {
                             Id = 270,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(6144),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(2938),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 270,
+                            EventCount = 16,
                             Origin = "192.168.2.270",
                             UserId = 8
                         },
                         new
                         {
                             Id = 271,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(6189),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(3050),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 271,
+                            EventCount = 16,
                             Origin = "192.168.2.271",
                             UserId = 8
                         },
                         new
                         {
                             Id = 272,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(6233),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(3224),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 272,
+                            EventCount = 16,
                             Origin = "192.168.2.272",
                             UserId = 8
                         },
                         new
                         {
                             Id = 273,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(6275),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(3345),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 273,
+                            EventCount = 16,
                             Origin = "192.168.2.273",
                             UserId = 8
                         },
                         new
                         {
                             Id = 274,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(6318),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(3461),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 274,
+                            EventCount = 16,
                             Origin = "192.168.2.274",
                             UserId = 8
                         },
                         new
                         {
                             Id = 275,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(6361),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(3575),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 275,
+                            EventCount = 16,
                             Origin = "192.168.2.275",
                             UserId = 8
                         },
                         new
                         {
                             Id = 276,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(6403),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(3691),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 276,
+                            EventCount = 16,
                             Origin = "192.168.2.276",
                             UserId = 8
                         },
                         new
                         {
                             Id = 277,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(6445),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(3807),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 277,
+                            EventCount = 16,
                             Origin = "192.168.2.277",
                             UserId = 8
                         },
                         new
                         {
                             Id = 278,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(6489),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(3923),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 278,
+                            EventCount = 16,
                             Origin = "192.168.2.278",
                             UserId = 8
                         },
                         new
                         {
                             Id = 279,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(6568),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(4037),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 279,
+                            EventCount = 16,
                             Origin = "192.168.2.279",
                             UserId = 8
                         },
                         new
                         {
                             Id = 280,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(6612),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(4154),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 280,
+                            EventCount = 16,
                             Origin = "192.168.2.280",
                             UserId = 8
                         },
                         new
                         {
                             Id = 281,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(6655),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(4331),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 281,
+                            EventCount = 16,
                             Origin = "192.168.2.281",
                             UserId = 8
                         },
                         new
                         {
                             Id = 282,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(6698),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(4451),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 282,
+                            EventCount = 16,
                             Origin = "192.168.2.282",
                             UserId = 8
                         },
                         new
                         {
                             Id = 283,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(6741),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(4565),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 283,
+                            EventCount = 16,
                             Origin = "192.168.2.283",
                             UserId = 8
                         },
                         new
                         {
                             Id = 284,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(6784),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(4679),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 284,
+                            EventCount = 16,
                             Origin = "192.168.2.284",
                             UserId = 8
                         },
                         new
                         {
                             Id = 285,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(6827),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(4794),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 285,
+                            EventCount = 16,
                             Origin = "192.168.2.285",
                             UserId = 8
                         },
                         new
                         {
                             Id = 286,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(6869),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(4910),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 286,
+                            EventCount = 16,
                             Origin = "192.168.2.286",
                             UserId = 8
                         },
                         new
                         {
                             Id = 287,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(6912),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(5023),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 287,
+                            EventCount = 16,
                             Origin = "192.168.2.287",
                             UserId = 8
                         },
                         new
                         {
                             Id = 288,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(6987),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(5137),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 288,
+                            EventCount = 16,
                             Origin = "192.168.2.288",
                             UserId = 8
                         },
                         new
                         {
                             Id = 289,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(7101),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(5544),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 289,
+                            EventCount = 18,
                             Origin = "192.168.2.289",
                             UserId = 9
                         },
                         new
                         {
                             Id = 290,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(7147),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(5664),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 290,
+                            EventCount = 18,
                             Origin = "192.168.2.290",
                             UserId = 9
                         },
                         new
                         {
                             Id = 291,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(7190),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(5780),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 291,
+                            EventCount = 18,
                             Origin = "192.168.2.291",
                             UserId = 9
                         },
                         new
                         {
                             Id = 292,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(7233),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(5895),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 292,
+                            EventCount = 18,
                             Origin = "192.168.2.292",
                             UserId = 9
                         },
                         new
                         {
                             Id = 293,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(7276),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(6010),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 293,
+                            EventCount = 18,
                             Origin = "192.168.2.293",
                             UserId = 9
                         },
                         new
                         {
                             Id = 294,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(7350),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(6125),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 294,
+                            EventCount = 18,
                             Origin = "192.168.2.294",
                             UserId = 9
                         },
                         new
                         {
                             Id = 295,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(7396),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(6243),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 295,
+                            EventCount = 18,
                             Origin = "192.168.2.295",
                             UserId = 9
                         },
                         new
                         {
                             Id = 296,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(7439),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(6427),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 296,
+                            EventCount = 18,
                             Origin = "192.168.2.296",
                             UserId = 9
                         },
                         new
                         {
                             Id = 297,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(7481),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(6547),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 297,
+                            EventCount = 18,
                             Origin = "192.168.2.297",
                             UserId = 9
                         },
                         new
                         {
                             Id = 298,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(7523),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(6665),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 298,
+                            EventCount = 18,
                             Origin = "192.168.2.298",
                             UserId = 9
                         },
                         new
                         {
                             Id = 299,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(7565),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(6779),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 299,
+                            EventCount = 18,
                             Origin = "192.168.2.299",
                             UserId = 9
                         },
                         new
                         {
                             Id = 300,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(7608),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(6894),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 300,
+                            EventCount = 18,
                             Origin = "192.168.2.300",
                             UserId = 9
                         },
                         new
                         {
                             Id = 301,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(7650),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(7008),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 301,
+                            EventCount = 18,
                             Origin = "192.168.2.301",
                             UserId = 9
                         },
                         new
                         {
                             Id = 302,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(7693),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(7121),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 302,
+                            EventCount = 18,
                             Origin = "192.168.2.302",
                             UserId = 9
                         },
                         new
                         {
                             Id = 303,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(7900),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(7234),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 303,
+                            EventCount = 18,
                             Origin = "192.168.2.303",
                             UserId = 9
                         },
                         new
                         {
                             Id = 304,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(7940),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(7348),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 304,
+                            EventCount = 18,
                             Origin = "192.168.2.304",
                             UserId = 9
                         },
                         new
                         {
                             Id = 305,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(7979),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(7544),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 305,
+                            EventCount = 18,
                             Origin = "192.168.2.305",
                             UserId = 9
                         },
                         new
                         {
                             Id = 306,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(8019),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(7661),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 306,
+                            EventCount = 18,
                             Origin = "192.168.2.306",
                             UserId = 9
                         },
                         new
                         {
                             Id = 307,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(8057),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(7776),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 307,
+                            EventCount = 18,
                             Origin = "192.168.2.307",
                             UserId = 9
                         },
                         new
                         {
                             Id = 308,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(8096),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(7892),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 308,
+                            EventCount = 18,
                             Origin = "192.168.2.308",
                             UserId = 9
                         },
                         new
                         {
                             Id = 309,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(8136),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(8008),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 309,
+                            EventCount = 18,
                             Origin = "192.168.2.309",
                             UserId = 9
                         },
                         new
                         {
                             Id = 310,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(8176),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(8123),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 310,
+                            EventCount = 18,
                             Origin = "192.168.2.310",
                             UserId = 9
                         },
                         new
                         {
                             Id = 311,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(8215),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(8237),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 311,
+                            EventCount = 18,
                             Origin = "192.168.2.311",
                             UserId = 9
                         },
                         new
                         {
                             Id = 312,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(8299),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(8351),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 312,
+                            EventCount = 18,
                             Origin = "192.168.2.312",
                             UserId = 9
                         },
                         new
                         {
                             Id = 313,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(8340),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(8524),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 313,
+                            EventCount = 18,
                             Origin = "192.168.2.313",
                             UserId = 9
                         },
                         new
                         {
                             Id = 314,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(8380),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(8654),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 314,
+                            EventCount = 18,
                             Origin = "192.168.2.314",
                             UserId = 9
                         },
                         new
                         {
                             Id = 315,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(8420),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(8771),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 315,
+                            EventCount = 18,
                             Origin = "192.168.2.315",
                             UserId = 9
                         },
                         new
                         {
                             Id = 316,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(8459),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(8885),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 316,
+                            EventCount = 18,
                             Origin = "192.168.2.316",
                             UserId = 9
                         },
                         new
                         {
                             Id = 317,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(8498),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(9001),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 317,
+                            EventCount = 18,
                             Origin = "192.168.2.317",
                             UserId = 9
                         },
                         new
                         {
                             Id = 318,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(8538),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(9117),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 318,
+                            EventCount = 18,
                             Origin = "192.168.2.318",
                             UserId = 9
                         },
                         new
                         {
                             Id = 319,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(8577),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(9232),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 319,
+                            EventCount = 18,
                             Origin = "192.168.2.319",
                             UserId = 9
                         },
                         new
                         {
                             Id = 320,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(8644),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(9346),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 320,
+                            EventCount = 18,
                             Origin = "192.168.2.320",
                             UserId = 9
                         },
                         new
                         {
                             Id = 321,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(8686),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(9461),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 321,
+                            EventCount = 18,
                             Origin = "192.168.2.321",
                             UserId = 9
                         },
                         new
                         {
                             Id = 322,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(8725),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(9742),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 322,
+                            EventCount = 18,
                             Origin = "192.168.2.322",
                             UserId = 9
                         },
                         new
                         {
                             Id = 323,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(8764),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(9864),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 323,
+                            EventCount = 18,
                             Origin = "192.168.2.323",
                             UserId = 9
                         },
                         new
                         {
                             Id = 324,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(8804),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 822, DateTimeKind.Local).AddTicks(9981),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 324,
+                            EventCount = 18,
                             Origin = "192.168.2.324",
                             UserId = 9
                         },
                         new
                         {
                             Id = 325,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(8899),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 823, DateTimeKind.Local).AddTicks(368),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 325,
+                            EventCount = 20,
                             Origin = "192.168.2.325",
                             UserId = 10
                         },
                         new
                         {
                             Id = 326,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(8939),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 823, DateTimeKind.Local).AddTicks(566),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 326,
+                            EventCount = 20,
                             Origin = "192.168.2.326",
                             UserId = 10
                         },
                         new
                         {
                             Id = 327,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(9008),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 823, DateTimeKind.Local).AddTicks(688),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 327,
+                            EventCount = 20,
                             Origin = "192.168.2.327",
                             UserId = 10
                         },
                         new
                         {
                             Id = 328,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(9050),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 823, DateTimeKind.Local).AddTicks(802),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 328,
+                            EventCount = 20,
                             Origin = "192.168.2.328",
                             UserId = 10
                         },
                         new
                         {
                             Id = 329,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(9090),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 823, DateTimeKind.Local).AddTicks(988),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 329,
+                            EventCount = 20,
                             Origin = "192.168.2.329",
                             UserId = 10
                         },
                         new
                         {
                             Id = 330,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(9129),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 823, DateTimeKind.Local).AddTicks(1108),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 330,
+                            EventCount = 20,
                             Origin = "192.168.2.330",
                             UserId = 10
                         },
                         new
                         {
                             Id = 331,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(9169),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 823, DateTimeKind.Local).AddTicks(1224),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 331,
+                            EventCount = 20,
                             Origin = "192.168.2.331",
                             UserId = 10
                         },
                         new
                         {
                             Id = 332,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(9209),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 823, DateTimeKind.Local).AddTicks(1339),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 332,
+                            EventCount = 20,
                             Origin = "192.168.2.332",
                             UserId = 10
                         },
                         new
                         {
                             Id = 333,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(9249),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 823, DateTimeKind.Local).AddTicks(1454),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 333,
+                            EventCount = 20,
                             Origin = "192.168.2.333",
                             UserId = 10
                         },
                         new
                         {
                             Id = 334,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(9288),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 823, DateTimeKind.Local).AddTicks(1570),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 334,
+                            EventCount = 20,
                             Origin = "192.168.2.334",
                             UserId = 10
                         },
                         new
                         {
                             Id = 335,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(9328),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 823, DateTimeKind.Local).AddTicks(1685),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 335,
+                            EventCount = 20,
                             Origin = "192.168.2.335",
                             UserId = 10
                         },
                         new
                         {
                             Id = 336,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(9431),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 823, DateTimeKind.Local).AddTicks(1798),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 336,
+                            EventCount = 20,
                             Origin = "192.168.2.336",
                             UserId = 10
                         },
                         new
                         {
                             Id = 337,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(9472),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 823, DateTimeKind.Local).AddTicks(1961),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 337,
+                            EventCount = 20,
                             Origin = "192.168.2.337",
                             UserId = 10
                         },
                         new
                         {
                             Id = 338,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(9511),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 823, DateTimeKind.Local).AddTicks(2096),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 338,
+                            EventCount = 20,
                             Origin = "192.168.2.338",
                             UserId = 10
                         },
                         new
                         {
                             Id = 339,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(9550),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 823, DateTimeKind.Local).AddTicks(2212),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 339,
+                            EventCount = 20,
                             Origin = "192.168.2.339",
                             UserId = 10
                         },
                         new
                         {
                             Id = 340,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(9589),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 823, DateTimeKind.Local).AddTicks(2329),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 340,
+                            EventCount = 20,
                             Origin = "192.168.2.340",
                             UserId = 10
                         },
                         new
                         {
                             Id = 341,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(9628),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 823, DateTimeKind.Local).AddTicks(2446),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 341,
+                            EventCount = 20,
                             Origin = "192.168.2.341",
                             UserId = 10
                         },
                         new
                         {
                             Id = 342,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(9667),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 823, DateTimeKind.Local).AddTicks(2563),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 342,
+                            EventCount = 20,
                             Origin = "192.168.2.342",
                             UserId = 10
                         },
                         new
                         {
                             Id = 343,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(9706),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 823, DateTimeKind.Local).AddTicks(2677),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 343,
+                            EventCount = 20,
                             Origin = "192.168.2.343",
                             UserId = 10
                         },
                         new
                         {
                             Id = 344,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(9745),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 823, DateTimeKind.Local).AddTicks(2791),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 344,
+                            EventCount = 20,
                             Origin = "192.168.2.344",
                             UserId = 10
                         },
                         new
                         {
                             Id = 345,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(9816),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 823, DateTimeKind.Local).AddTicks(2905),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 345,
+                            EventCount = 20,
                             Origin = "192.168.2.345",
                             UserId = 10
                         },
                         new
                         {
                             Id = 346,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(9856),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 823, DateTimeKind.Local).AddTicks(3094),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 346,
+                            EventCount = 20,
                             Origin = "192.168.2.346",
                             UserId = 10
                         },
                         new
                         {
                             Id = 347,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(9895),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 823, DateTimeKind.Local).AddTicks(3215),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 347,
+                            EventCount = 20,
                             Origin = "192.168.2.347",
                             UserId = 10
                         },
                         new
                         {
                             Id = 348,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(9934),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 823, DateTimeKind.Local).AddTicks(3331),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 348,
+                            EventCount = 20,
                             Origin = "192.168.2.348",
                             UserId = 10
                         },
                         new
                         {
                             Id = 349,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 313, DateTimeKind.Local).AddTicks(9973),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 823, DateTimeKind.Local).AddTicks(3445),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 349,
+                            EventCount = 20,
                             Origin = "192.168.2.349",
                             UserId = 10
                         },
                         new
                         {
                             Id = 350,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 314, DateTimeKind.Local).AddTicks(12),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 823, DateTimeKind.Local).AddTicks(3560),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 350,
+                            EventCount = 20,
                             Origin = "192.168.2.350",
                             UserId = 10
                         },
                         new
                         {
                             Id = 351,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 314, DateTimeKind.Local).AddTicks(52),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 823, DateTimeKind.Local).AddTicks(3673),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 351,
+                            EventCount = 20,
                             Origin = "192.168.2.351",
                             UserId = 10
                         },
                         new
                         {
                             Id = 352,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 314, DateTimeKind.Local).AddTicks(90),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 823, DateTimeKind.Local).AddTicks(3786),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 352,
+                            EventCount = 20,
                             Origin = "192.168.2.352",
                             UserId = 10
                         },
                         new
                         {
                             Id = 353,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 314, DateTimeKind.Local).AddTicks(179),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 823, DateTimeKind.Local).AddTicks(3901),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 353,
+                            EventCount = 20,
                             Origin = "192.168.2.353",
                             UserId = 10
                         },
                         new
                         {
                             Id = 354,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 314, DateTimeKind.Local).AddTicks(219),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 823, DateTimeKind.Local).AddTicks(4016),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 354,
+                            EventCount = 20,
                             Origin = "192.168.2.354",
                             UserId = 10
                         },
                         new
                         {
                             Id = 355,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 314, DateTimeKind.Local).AddTicks(259),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 823, DateTimeKind.Local).AddTicks(4263),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 355,
+                            EventCount = 20,
                             Origin = "192.168.2.355",
                             UserId = 10
                         },
                         new
                         {
                             Id = 356,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 314, DateTimeKind.Local).AddTicks(298),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 823, DateTimeKind.Local).AddTicks(4383),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 356,
+                            EventCount = 20,
                             Origin = "192.168.2.356",
                             UserId = 10
                         },
                         new
                         {
                             Id = 357,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 314, DateTimeKind.Local).AddTicks(337),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 823, DateTimeKind.Local).AddTicks(4501),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 357,
+                            EventCount = 20,
                             Origin = "192.168.2.357",
                             UserId = 10
                         },
                         new
                         {
                             Id = 358,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 314, DateTimeKind.Local).AddTicks(376),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 823, DateTimeKind.Local).AddTicks(4617),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 358,
+                            EventCount = 20,
                             Origin = "192.168.2.358",
                             UserId = 10
                         },
                         new
                         {
                             Id = 359,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 314, DateTimeKind.Local).AddTicks(415),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 823, DateTimeKind.Local).AddTicks(4734),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 359,
+                            EventCount = 20,
                             Origin = "192.168.2.359",
                             UserId = 10
                         },
                         new
                         {
                             Id = 360,
-                            DateTime = new DateTime(2019, 12, 13, 0, 10, 37, 314, DateTimeKind.Local).AddTicks(454),
+                            DateTime = new DateTime(2019, 12, 14, 10, 34, 38, 823, DateTimeKind.Local).AddTicks(4849),
                             Details = @"Det1
 Det2
 detalhe 3
 Detalhe maior 4",
                             ErrorId = 360,
+                            EventCount = 20,
                             Origin = "192.168.2.360",
                             UserId = 10
                         });
@@ -8078,7 +8437,7 @@ Detalhe maior 4",
 
                     b.HasKey("Id");
 
-                    b.ToTable("LEVEL");
+                    b.ToTable("level");
 
                     b.HasData(
                         new
@@ -8114,7 +8473,7 @@ Detalhe maior 4",
 
                     b.HasKey("Id");
 
-                    b.ToTable("SITUATION");
+                    b.ToTable("situation");
 
                     b.HasData(
                         new
@@ -8163,7 +8522,7 @@ Detalhe maior 4",
 
                     b.HasKey("Id");
 
-                    b.ToTable("USER");
+                    b.ToTable("user");
 
                     b.HasData(
                         new
@@ -8172,7 +8531,7 @@ Detalhe maior 4",
                             Email = "user1@sp.com.br",
                             Name = "Usuário 1",
                             Password = "202cb962ac59075b964b07152d234b70",
-                            Token = "53d6a27f-e312-4b7e-b192-43d409ef3ccc"
+                            Token = "220559b5-4467-4083-8d6b-f402948f2a75"
                         },
                         new
                         {
@@ -8180,7 +8539,7 @@ Detalhe maior 4",
                             Email = "user2@sp.com.br",
                             Name = "Usuário 2",
                             Password = "289dff07669d7a23de0ef88d2f7129e7",
-                            Token = "996366d7-ae6e-48fc-a3a8-2a969d7242d5"
+                            Token = "700528be-1bb4-4989-a1c6-a1909497fa00"
                         },
                         new
                         {
@@ -8188,7 +8547,7 @@ Detalhe maior 4",
                             Email = "user3@sp.com.br",
                             Name = "Usuário 3",
                             Password = "d81f9c1be2e08964bf9f24b15f0e4900",
-                            Token = "a5d553f3-c645-452f-84ee-85d3882d3a8a"
+                            Token = "cf13241b-e1d1-466e-b099-74445516e6e6"
                         },
                         new
                         {
@@ -8196,7 +8555,7 @@ Detalhe maior 4",
                             Email = "user4@sp.com.br",
                             Name = "Usuário 4",
                             Password = "250cf8b51c773f3f8dc8b4be867a9a02",
-                            Token = "25f6c0fc-600b-4f9d-ac52-fc1d8255da7c"
+                            Token = "d4ae3fd7-daa6-4950-a326-d9a6832a6bf3"
                         },
                         new
                         {
@@ -8204,7 +8563,7 @@ Detalhe maior 4",
                             Email = "user5@sp.com.br",
                             Name = "Usuário 5",
                             Password = "99c5e07b4d5de9d18c350cdf64c5aa3d",
-                            Token = "8ccb7143-4ad0-4ea7-9c95-674dbfcfe8d5"
+                            Token = "e964e936-d7b9-4503-88f8-c29faf5f4ac2"
                         },
                         new
                         {
@@ -8212,7 +8571,7 @@ Detalhe maior 4",
                             Email = "user6@sp.com.br",
                             Name = "Usuário 6",
                             Password = "9fe8593a8a330607d76796b35c64c600",
-                            Token = "c8dae2c2-64b6-42cd-a48f-b229e626ea3a"
+                            Token = "144b7177-dea9-4ee4-bc35-d1d51257cf68"
                         },
                         new
                         {
@@ -8220,7 +8579,7 @@ Detalhe maior 4",
                             Email = "user7@sp.com.br",
                             Name = "Usuário 7",
                             Password = "68053af2923e00204c3ca7c6a3150cf7",
-                            Token = "b69744f7-4e15-492b-bf43-bb2357a56b35"
+                            Token = "d191dc79-7f0f-4512-8b93-d973848aa606"
                         },
                         new
                         {
@@ -8228,7 +8587,7 @@ Detalhe maior 4",
                             Email = "user8@sp.com.br",
                             Name = "Usuário 8",
                             Password = "86a1fa88adb5c33bd7a68ac2f9f3f96b",
-                            Token = "14303e86-1770-4eeb-ad02-a04b699bb65c"
+                            Token = "23e00fa2-3275-4939-aa0c-e397f49d1db8"
                         },
                         new
                         {
@@ -8236,7 +8595,7 @@ Detalhe maior 4",
                             Email = "user9@sp.com.br",
                             Name = "Usuário 9",
                             Password = "7cf08c3ddac57a6d4f28034f88bfb23e",
-                            Token = "f1ff3d72-2ef5-45b4-89c1-8faea4b79e93"
+                            Token = "4d76b4bc-c91a-41ef-8404-e4d050de77cd"
                         },
                         new
                         {
@@ -8244,7 +8603,7 @@ Detalhe maior 4",
                             Email = "user10@sp.com.br",
                             Name = "Usuário 10",
                             Password = "cdd773039f5b1a8f41949a1fccd0768f",
-                            Token = "c9d578cf-e7a2-47ed-acfd-b5b05f04a8e7"
+                            Token = "a103f3e6-a61b-40ff-9093-8a82270ef7ec"
                         });
                 });
 

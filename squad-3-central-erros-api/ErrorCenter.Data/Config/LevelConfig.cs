@@ -7,7 +7,7 @@ using System.Text;
 
 namespace ErrorCenter.Data.Config
 {
-    public class LevelConfig
+    public class LevelConfig : IEntityTypeConfiguration<Level>
     {
         public void Configure(EntityTypeBuilder<Level> builder)
         {

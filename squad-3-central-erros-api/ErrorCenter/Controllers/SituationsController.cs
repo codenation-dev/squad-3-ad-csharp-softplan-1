@@ -11,7 +11,10 @@ using System.Threading.Tasks;
 
 namespace ErrorCenter.Api.Controllers
 {
-    [Route("api/[controller]")]
+	/// <summary>
+	/// Controller for the Situations service.
+	/// </summary> 
+	[Route("api/[controller]")]
     [ApiController]
     public class SituationsController : ControllerBase
     {
@@ -19,6 +22,9 @@ namespace ErrorCenter.Api.Controllers
         private readonly ISituationService _service;
         private readonly IMapper _mapper;
 
+		/// <summary>
+		/// Instantiates a new SituationsController in a Context.
+		/// </summary>
         public SituationsController(IMapper mapper, ISituationService service, ErrorCenterContext context)
         {
             _service = service;
@@ -26,7 +32,9 @@ namespace ErrorCenter.Api.Controllers
             _context = context;
         }
 
-
+		/// <summary>
+		/// Returns all registered Situations.
+		/// </summary>
         // GET: api/Situations
         [HttpGet]
         public ActionResult<IEnumerable<Situation>> GetSituations()
@@ -48,6 +56,9 @@ namespace ErrorCenter.Api.Controllers
             }
         }
 
+		/// <summary>
+		/// Returns a registered Situation by its ID.
+		/// </summary>
         // GET: api/Situations/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Situation>> GetSituation(int id)
@@ -62,6 +73,9 @@ namespace ErrorCenter.Api.Controllers
             return situation;
         }
 
+		/// <summary>
+		/// Returns a registered Situation by its ID and Situation.
+		/// </summary>
         // PUT: api/Situations/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutSituation(int id, Situation situation)
@@ -92,6 +106,9 @@ namespace ErrorCenter.Api.Controllers
             return NoContent();
         }
 
+		/// <summary>
+		/// Updates a registered Situation.
+		/// </summary>
         // POST: api/Situations
         [HttpPost]
         public async Task<ActionResult<Situation>> PostSituation(Situation situation)
@@ -102,6 +119,9 @@ namespace ErrorCenter.Api.Controllers
             return CreatedAtAction("GetSituation", new { id = situation.Id }, situation);
         }
 
+		/// <summary>
+		/// Deletes a Situation.
+		/// </summary>
         // DELETE: api/Situations/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<Situation>> DeleteSituation(int id)
@@ -118,6 +138,9 @@ namespace ErrorCenter.Api.Controllers
             return situation;
         }
 
+		/// <summary>
+		/// Asserts the exitance of a Situation.
+		/// </summary>
         private bool SituationExists(int id)
         {
             return _context.Situations.Any(e => e.Id == id);

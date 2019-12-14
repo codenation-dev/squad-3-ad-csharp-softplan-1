@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 
 namespace ErrorCenter.Api.Controllers
 {
+	/// <summary>
+	/// Controller for the ErrorOccurrences service.
+	/// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class ErrorOccurrencesController : ControllerBase
@@ -19,7 +22,9 @@ namespace ErrorCenter.Api.Controllers
         private readonly IErrorOccurrenceService _service;
         private readonly IMapper _mapper;
 
-
+		/// <summary>
+		/// Instantiates a new ErrorOccurrencesController in a Context.
+		/// </summary>
         public ErrorOccurrencesController(IMapper mapper, IErrorOccurrenceService service, ErrorCenterContext context)
         {
             _service = service;
@@ -27,6 +32,9 @@ namespace ErrorCenter.Api.Controllers
             _context = context;
         }
 
+		/// <summary>
+		/// Returns all registered ErrorOccurrences.
+		/// </summary>
         // GET: api/ErrorOccurrences
         [HttpGet]
         public ActionResult<IEnumerable<ErrorOccurrenceViewModel>> GetErrorOccurrences()
@@ -48,6 +56,36 @@ namespace ErrorCenter.Api.Controllers
             }
         }
 
+		/// <summary>
+		/// Returns a registered ErrorOcurrence by its search and sort criteria.
+		/// </summary>
+        //[Route("api/erros/consulta")]
+        [HttpGet("{idAmbiente}/{tamanhoPagina}/{pagina}/{tipoOrdenacao}/{tipoFiltro}/{valorFiltro}")]
+        // https://localhost:5001/api/erros/1/10/1/T/teste
+        public ActionResult GetErrorOccurrences(int idAmbiente,
+            int tamanhoPagina, int pagina, string tipoOrdenacao, string tipoFiltro, string valorFiltro)
+        {
+            int tamPag = tamanhoPagina < 1 ? 10 : tamanhoPagina;
+            int pag = pagina < 1 ? 1 : pagina;
+
+
+            var errorOccurrencesResultPage = _service.GetErrorOccurrencesParams(idAmbiente,
+            tamPag, pag, tipoOrdenacao, tipoFiltro, valorFiltro);
+
+            if (errorOccurrencesResultPage == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(errorOccurrencesResultPage);
+            }
+
+        }
+
+		/// <summary>
+		/// Returns a registered ErrorOccurrence by its ID.
+		/// </summary>
         // GET: api/ErrorOccurrences/5
         [HttpGet("{id}")]
         public async Task<ActionResult<ErrorOccurrence>> GetErrorOccurrence(int id)
@@ -62,6 +100,9 @@ namespace ErrorCenter.Api.Controllers
             return errorOccurrence;
         }
 
+		/// <summary>
+		/// Updates a registered ErrorOccurrence.
+		/// </summary>
         // PUT: api/ErrorOccurrences/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutErrorOccurrence(int id, ErrorOccurrence errorOccurrence)
@@ -92,6 +133,9 @@ namespace ErrorCenter.Api.Controllers
             return NoContent();
         }
 
+		/// <summary>
+		/// Creates a ErrorOccurrence.
+		/// </summary>
         // POST: api/ErrorOccurrences
         [HttpPost]
         public async Task<ActionResult<ErrorOccurrence>> PostErrorOccurrence(ErrorOccurrence errorOccurrence)
@@ -102,6 +146,9 @@ namespace ErrorCenter.Api.Controllers
             return CreatedAtAction("GetErrorOccurrence", new { id = errorOccurrence.Id }, errorOccurrence);
         }
 
+		/// <summary>
+		/// Deletes an ErrorOccurence.
+		/// </summary>
         // DELETE: api/ErrorOccurrences/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<ErrorOccurrence>> DeleteErrorOccurrence(int id)
@@ -118,6 +165,9 @@ namespace ErrorCenter.Api.Controllers
             return errorOccurrence;
         }
 
+		/// <summary>
+		/// Asserts the exitance of a ErrorOccurence.
+		/// </summary>
         private bool ErrorOccurrenceExists(int id)
         {
             return _context.ErrorOccurrences.Any(e => e.Id == id);
