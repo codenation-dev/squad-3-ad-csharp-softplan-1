@@ -93,13 +93,13 @@ namespace ErrorCenter
             {
                 config.SwaggerDoc("v1", new OpenApiInfo
                 {
-                    Title = "API ErroCenter",
+                    Title = "ErrorCenter API",
                     Version = "1.0.0",
                     License = new OpenApiLicense
                     {
                         Url = new Uri("https://swagger.io/docs/specification/api-general-info/e")
                     },
-                    Description = "API para fornecimento de dados para execuções funcionalidades do ErroCenter.</br>",
+                    Description = "API para fornecimento de dados para execuções funcionalidades do ErrorCenter.</br>",
                     Contact = new OpenApiContact
                     {
                         Name = "Luciano Fagundes de Oliveira",
@@ -131,9 +131,7 @@ namespace ErrorCenter
             app.UseSwagger();
             app.UseSwaggerUI(config =>
             {
-
                 config.SwaggerEndpoint("/swagger/v1/swagger.json", "API - AceleraDev V1");
-                config.SwaggerEndpoint("/swagger/v2/swagger.json", "API - AceleraDev V2");
             });
 
             app.UseEndpoints(endpoints =>

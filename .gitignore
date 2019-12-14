@@ -1,3 +1,15 @@
 .vs
 obj
 bin
+*.cache
+squad-3-central-erros-api/ErrorCenter/obj/ErrorCenter.Api.csproj.nuget.dgspec.json
+squad-3-central-erros-api/ErrorCenter/obj/project.assets.json
+squad-3-central-erros-api/ErrorCenter.Logs/obj/project.assets.json
+squad-3-central-erros-api/ErrorCenter.Logs/obj/ErrorCenter.Domain.csproj.nuget.dgspec.json
+squad-3-central-erros-api/ErrorCenter.Data/obj/project.assets.json
+squad-3-central-erros-api/ErrorCenter.Data/obj/ErrorCenter.Data.csproj.nuget.dgspec.json
+squad-3-central-erros-api/ErrorCenter.CrossCuttingIoC/obj/project.assets.json
+squad-3-central-erros-api/ErrorCenter.CrossCuttingIoC/obj/ErrorCenter.CrossCuttingIoC.csproj.nuget.dgspec.json
+squad-3-central-erros-api/ErrorCenter.Application/obj/ErrorCenter.Application.csproj.nuget.dgspec.json
+squad-3-central-erros-api/ErrorCenter.Application/obj/project.assets.json
+squad-3-central-erros-api/Error.CrossCutting/obj/project.assets.json
