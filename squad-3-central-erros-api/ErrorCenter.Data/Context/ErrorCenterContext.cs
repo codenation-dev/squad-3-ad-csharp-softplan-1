@@ -1,11 +1,10 @@
 ﻿using AceleraDev.CrossCutting.Utils;
 using Dapper;
-using ErrorCenter.Data.Config;
 using ErrorCenter.Domain.Models;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System;
-using System.Data.SqlClient;
 using System.Linq;
 
 namespace ErrorCenter.Data.Context

@@ -1,5 +1,6 @@
 ﻿using AceleraDev.CrossCutting.Utils;
 using ErrorCenter.Application.Interfaces;
+using ErrorCenter.Application.ViewModels;
 using ErrorCenter.Data.Context;
 using ErrorCenter.Domain.Models;
 using System;
@@ -35,11 +36,13 @@ namespace ErrorCenter.Application.ApplicationServices
             return _context.Users.Select(l => l).ToList();
         }
 
-        public bool Login(string email, string password)
+        public User ValidateUserToken(string usertToken)
         {
-            // método para se pensar 
-            // aqui deve permitir a autenticação do usuário para utilizar a api que criarmos
-            throw new NotImplementedException();
+            var user = _context.Users.Where(l => (!string.IsNullOrEmpty(usertToken) && l.Token == usertToken))
+                .FirstOrDefault();
+
+            return user;
         }
+
     }
 }

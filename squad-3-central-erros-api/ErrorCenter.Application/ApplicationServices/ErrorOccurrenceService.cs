@@ -21,16 +21,39 @@ namespace ErrorCenter.Application.ApplicationServices
             this._mapper = mapper;
         }
 
-        public bool RegisterError(Error error, User user, string origin, string details, DateTime dateTime, string userToken)
+        // cadastra erro com base em objeto com dadso complatos
+        public void RegisterError(CompleteDataErrorViewModel errorData)
         {
-            _context.ErrorOccurrences.Add(new ErrorOccurrence { Error = error, User = user, Origin = origin, Details = details, DateTime = dateTime });
-
-            if (_context.ErrorOccurrences.FirstOrDefault(e => e.Error == error && e.User == user && e.Origin == origin && e.Details == details && e.DateTime == dateTime) != null)
+            if (errorData.EnvironmentId < 1)
             {
-                return true;
+                var env = _context.Environments.Where(p => p.Name.ToUpper().Contains(errorData.EnvironmentName.ToUpper()))
+                    .FirstOrDefault();
             }
 
-            return false;
+            var error = new Error()
+            {
+                Code = errorData.ErrorCode,
+                Description = "desc: " + errorData.ErrorDescription,
+                EnvironmentId = errorData.EnvironmentId,
+                LevelId = errorData.LevelId,
+                Title = "titulo: " + errorData.ErrorTitle,
+                SituationId = errorData.SituationId,
+            };
+
+            var errorSaved = _context.Errors.Add(error);
+
+
+            _context.ErrorOccurrences.Add(new ErrorOccurrence { 
+                Error = error,
+                //ErrorId = errorSaved.Entity.Id,
+                DateTime = DateTime.Parse(errorData.DateTime),
+                Details = errorData.Details,
+                EventCount = 1,
+                Origin = errorData.Origin,
+                UserId = errorData.UserId,
+            });
+
+            _context.SaveChanges();
         }
 
         private bool testarItemCorrespondeFiltro(ErrorOccurrence erro, string tipoFiltro, string valorFiltro)

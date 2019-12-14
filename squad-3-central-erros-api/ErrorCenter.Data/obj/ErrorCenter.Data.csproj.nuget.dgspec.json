@@ -38,10 +38,6 @@
       "frameworks": {
         "netcoreapp3.0": {
           "dependencies": {
-            "EntityFramework": {
-              "target": "Package",
-              "version": "[6.4.0, )"
-            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.0, )"
@@ -125,10 +121,6 @@
       "frameworks": {
         "netcoreapp3.0": {
           "dependencies": {
-            "EntityFramework": {
-              "target": "Package",
-              "version": "[6.4.0, )"
-            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.0, )"
@@ -208,10 +200,6 @@
             "Dapper": {
               "target": "Package",
               "version": "[2.0.30, )"
-            },
-            "EntityFramework": {
-              "target": "Package",
-              "version": "[6.4.0, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
