@@ -12,6 +12,9 @@ using System.Threading.Tasks;
 
 namespace ErrorCenter.Api.Controllers
 {
+	/// <summary>
+	/// Controller for the UsersController service.
+	/// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class UsersController : ControllerBase
@@ -20,6 +23,9 @@ namespace ErrorCenter.Api.Controllers
         private readonly IUserService _service;
         private readonly IMapper _mapper;
 
+		/// <summary>
+		/// Instantiates a new UsersController in a Context.
+		/// </summary>
         public UsersController(IMapper mapper, IUserService service, ErrorCenterContext context)
         {
             _service = service;
@@ -27,6 +33,9 @@ namespace ErrorCenter.Api.Controllers
             _context = context;
         }
 
+		/// <summary>
+		/// Returns all registered Users.
+		/// </summary>
         // GET: api/Users
         [HttpGet]
         public ActionResult<IEnumerable<User>> GetUsers()
@@ -49,6 +58,9 @@ namespace ErrorCenter.Api.Controllers
 
         }
 
+		/// <summary>
+		/// Returns a registered User by its ID.
+		/// </summary>
         // GET: api/Users/5
         [HttpGet("{id}")]
         public async Task<ActionResult<User>> GetUser(int id)
@@ -63,6 +75,9 @@ namespace ErrorCenter.Api.Controllers
             return user;
         }
 
+		/// <summary>
+		/// Updates a registered User by its ID.
+		/// </summary>
         // PUT: api/Users/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutUser(int id, User user)
@@ -96,6 +111,9 @@ namespace ErrorCenter.Api.Controllers
             return NoContent();
         }
 
+		/// <summary>
+		/// Creates a registered User.
+		/// </summary>
         // POST: api/Users
         [HttpPost]
         public async Task<ActionResult<User>> PostUser(User user)
@@ -109,6 +127,9 @@ namespace ErrorCenter.Api.Controllers
             return CreatedAtAction("GetUser", new { id = user.Id }, user);
         }
 
+		/// <summary>
+		/// Deletes a registered User.
+		/// </summary>
         // DELETE: api/Users/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<User>> DeleteUser(int id)
@@ -125,6 +146,9 @@ namespace ErrorCenter.Api.Controllers
             return user;
         }
 
+		/// <summary>
+		/// Asserts the exitance of a User.
+		/// </summary>
         private bool UserExists(int id)
         {
             return _context.Users.Any(e => e.Id == id);

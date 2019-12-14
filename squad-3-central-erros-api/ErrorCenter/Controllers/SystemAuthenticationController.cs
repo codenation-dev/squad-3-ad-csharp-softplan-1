@@ -17,6 +17,9 @@ using System.Security.Claims;
 
 namespace ErrorCenter.Api.Controllers
 {
+	/// <summary>
+	/// Controller for the SystemAuthentication service.
+	/// </summary> 
     [Route("api/auth")]
     public class SystemAuthenticationController : ControllerBase
     {
@@ -25,6 +28,9 @@ namespace ErrorCenter.Api.Controllers
         private readonly IMapper _mapper;
         private readonly AppSettings _appSettings;
 
+		/// <summary>
+		/// Instantiates a new SystemAuthenticationController in a Context.
+		/// </summary>
         public SystemAuthenticationController(IMapper mapper, ISystemAuthenticationService service,
             ErrorCenterContext context, IOptions<AppSettings> appSettings)
         {
@@ -34,6 +40,9 @@ namespace ErrorCenter.Api.Controllers
             _appSettings = appSettings.Value;
         }
 
+		/// <summary>
+		/// Communicates with LoginViewModel to authenticate a Login request.
+		/// </summary> 
         [AllowAnonymous]
         [HttpPost()]
         public ActionResult Post([FromBody]LoginViewModel login)
@@ -53,6 +62,9 @@ namespace ErrorCenter.Api.Controllers
 
         }
 
+		/// <summary>
+		/// Generates a JWT from the UserViewModel.
+		/// </summary> 
         private string GenarateJWT(UserViewModel user)
         {
             var tokenHandler = new JwtSecurityTokenHandler();

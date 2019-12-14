@@ -10,6 +10,9 @@ using System.Linq;
 
 namespace ErrorCenter.Api.Controllers
 {
+	/// <summary>
+	/// Controller for the ErrorOccurrences service.
+	/// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class EnvironmentsController : ControllerBase
@@ -18,6 +21,9 @@ namespace ErrorCenter.Api.Controllers
         private readonly IEnvironmentService _service;
         private readonly IMapper _mapper;
 
+		/// <summary>
+		/// Instantiates a new EnvironmentsController in a Context.
+		/// </summary>
         public EnvironmentsController(IMapper mapper, IEnvironmentService service, ErrorCenterContext context)
         {
             _service = service;
@@ -25,6 +31,9 @@ namespace ErrorCenter.Api.Controllers
             _context = context;
         }
 
+		/// <summary>
+		/// Returns all registered Environments.
+		/// </summary>
         // GET: api/Environments
         [HttpGet]
         public ActionResult<IEnumerable<EnvironmentViewModel>> GetEnvironments()
@@ -46,6 +55,9 @@ namespace ErrorCenter.Api.Controllers
             }
         }
 
+		/// <summary>
+		/// Returns a registered Environment by its ID.
+		/// </summary>
         // GET: api/Environments/5
         [HttpGet("{id}")]
         public ActionResult<EnvironmentViewModel> GetEnvironment(int id)
@@ -60,6 +72,9 @@ namespace ErrorCenter.Api.Controllers
             return Ok(_mapper.Map<EnvironmentViewModel>(environment));
         }
 
+		/// <summary>
+		/// Updates a registered Environment.
+		/// </summary>
         // PUT: api/Environments/5
         [HttpPut("{id}")]
         public ActionResult<EnvironmentViewModel> PutEnvironment(int id, Environment environment)
@@ -86,6 +101,9 @@ namespace ErrorCenter.Api.Controllers
             }
         }
 
+		/// <summary>
+		/// Deletes a registered Environment.
+		/// </summary>
         // POST: api/Environments
         [HttpPost]
         public ActionResult<EnvironmentViewModel> PostEnvironment([FromBody] EnvironmentViewModel value)
@@ -96,6 +114,9 @@ namespace ErrorCenter.Api.Controllers
 
         }
 
+		/// <summary>
+		/// Asserts the exitance of an Environment.
+		/// </summary>
         private bool EnvironmentExists(int id)
         {
             return _context.Environments.Any(e => e.Id == id);
