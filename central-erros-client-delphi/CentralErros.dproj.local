@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<BorlandProject>
-  <Transactions>
-    <Transaction>2019/12/13 11:50:45.047,=C:\Users\maxback\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2019/12/13 11:58:59.253,C:\Users\maxback\Documents\Embarcadero\Studio\Projects\central-erros-client-delphi\uMain.fmx=C:\Users\maxback\Documents\Embarcadero\Studio\Projects\Unit1.fmx</Transaction>
-    <Transaction>2019/12/13 11:58:59.253,C:\Users\maxback\Documents\Embarcadero\Studio\Projects\central-erros-client-delphi\uMain.pas=C:\Users\maxback\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2019/12/13 12:00:18.004,C:\Users\maxback\Documents\Embarcadero\Studio\Projects\central-erros-client-delphi\CentralErros.dproj=C:\Users\maxback\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
-  </Transactions>
-</BorlandProject>

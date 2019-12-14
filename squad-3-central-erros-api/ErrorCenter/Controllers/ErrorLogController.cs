@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace ErrorCenter.Api.Controllers
 {
 	/// <summary>
-	/// Classe d ocontrolador que implementa a as operação sobre as tabelas de erro
+	/// Controller for the operations of the Error tables.
 	/// </summary>
 	[Route("api/errorlog")]
 	public class ErrorLogController : ControllerBase
@@ -19,10 +19,8 @@ namespace ErrorCenter.Api.Controllers
 		private readonly IErrorOccurrenceService _erroOcuService;
 		IMapper _mapper;
 
-
-
 		/// <summary>
-		/// Instantiates a new UsersController in a Context.
+		/// Instantiates a new ErrorLogController in a Context.
 		/// </summary>
 		public ErrorLogController(IMapper mapper, IErrorOccurrenceService erroOcuService, IUserService service, IErrorOccurrenceService erroOcur)
 		{
@@ -32,7 +30,7 @@ namespace ErrorCenter.Api.Controllers
 		}
 
 		/// <summary>
-		/// Sava o erro com base em registro com todos os dados esperados
+		/// Registers the error with all expected data.
 		/// </summary>
 		/// <param name="item"></param>
 		/// <returns></returns>
@@ -56,9 +54,7 @@ namespace ErrorCenter.Api.Controllers
 			item.UserName = user.Name;
 			item.UserEmail = user.Email;
 
-
 			_erroOcuService.RegisterError(item);
-
 
 			return Ok(new { token = item.userToken, dados = item });
 		}
