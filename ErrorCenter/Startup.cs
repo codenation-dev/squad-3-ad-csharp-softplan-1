@@ -45,8 +45,8 @@ namespace ErrorCenter
             services.AddAutoMapper(typeof(AutoMappingDomainToViewModel));
             services.AddAutoMapper(typeof(AutoMappingViewModelToDomain));
 
-            // Configuração do contexto ef
-            services.AddDbContext<ErrorCenterContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            //services.AddDbContext<ErrorCenterContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<ErrorCenterContext>(options => options.UseNpgsql(Configuration.GetConnectionString("PgConnection")));
 
             // Configuração da autenticação
             ConfigureAuth(services);
