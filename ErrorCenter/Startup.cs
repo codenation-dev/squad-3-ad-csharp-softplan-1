@@ -48,6 +48,10 @@ namespace ErrorCenter
             //services.AddDbContext<ErrorCenterContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddDbContext<ErrorCenterContext>(options => options.UseNpgsql(Configuration.GetConnectionString("PgConnection")));
 
+
+            // adicionando CORS
+            services.AddCors();
+
             // Configuração da autenticação
             ConfigureAuth(services);
 
