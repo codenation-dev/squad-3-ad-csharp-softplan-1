@@ -82,7 +82,7 @@ namespace ErrorCenter.Api.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutError(int id, Error error)
         {
-            if (id != error.SituationId)
+            if (id != error.Id)
             {
                 return BadRequest();
             }
@@ -108,9 +108,53 @@ namespace ErrorCenter.Api.Controllers
             return NoContent();
         }
 
-		/// <summary>
-		/// Creates an Error.
-		/// </summary>
+        /// <summary>
+        /// Shelve a registered Error.
+        /// </summary>
+        // PUT: api/Errors/Arquivar
+        [HttpPut("{id}/shelve")]
+        public async Task<IActionResult> PutShelveError(int id)
+        {
+            if (id < 1)
+            {
+                return BadRequest();
+            }
+
+            var error = await _context.Errors.FindAsync(id);
+
+            if (error == null)
+            {
+                return NotFound();
+            }
+
+            Situation situationShelve = _context.Situations.Where(p => p.Id == 2).FirstOrDefault();
+
+            error.Situation = situationShelve;
+
+            _context.Entry(error).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!ErrorExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+        }
+
+        /// <summary>
+        /// Creates an Error.
+        /// </summary>
         // POST: api/Errors
         [HttpPost]
         public async Task<ActionResult<Error>> PostError(Error error)
