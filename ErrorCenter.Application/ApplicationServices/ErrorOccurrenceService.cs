@@ -143,13 +143,13 @@ namespace ErrorCenter.Application.ApplicationServices
             if (tipoFiltro == "L")
             {
                 res.QuantidadeTotal = _context.ErrorOccurrences.Where(
-                        errorOcor => errorOcor.Error.Level.Id.ToString().Contains(valorFiltro.ToUpper()) ||
-                                     errorOcor.Error.Level.Name.ToUpper().Contains(valorFiltro.ToUpper())).Count();
+                        errorOcor => errorOcor.Error.EnvironmentId == idAmbiente && (errorOcor.Error.Level.Id.ToString().Contains(valorFiltro.ToUpper()) ||
+                                     errorOcor.Error.Level.Name.ToUpper().Contains(valorFiltro.ToUpper()))).Count();
 
                 res.ErrorOccurrences = _mapper.Map<List<ErrorOccurrenceViewModel>>(
                         _context.ErrorOccurrences.Where(
-                        errorOcor => errorOcor.Error.Level.Id.ToString().Contains(valorFiltro.ToUpper()) ||
-                                     errorOcor.Error.Level.Name.ToUpper().Contains(valorFiltro.ToUpper()))
+                        errorOcor => errorOcor.Error.EnvironmentId == idAmbiente && (errorOcor.Error.Level.Id.ToString().Contains(valorFiltro.ToUpper()) ||
+                                     errorOcor.Error.Level.Name.ToUpper().Contains(valorFiltro.ToUpper())))
                         .OrderByDescending(p => p.DateTime)
                         .Skip(skip)
                         .Take(tamanhoPagina)
@@ -160,13 +160,13 @@ namespace ErrorCenter.Application.ApplicationServices
             if (tipoFiltro == "D")
             {
                 res.QuantidadeTotal = _context.ErrorOccurrences.Where(
-                        errorOcor => errorOcor.Details.ToUpper().Contains(valorFiltro.ToUpper()) ||
-                                     errorOcor.Error.Title.ToUpper().Contains(valorFiltro.ToUpper())).Count();
+                        errorOcor => errorOcor.Error.EnvironmentId == idAmbiente && (errorOcor.Details.ToUpper().Contains(valorFiltro.ToUpper()) ||
+                                     errorOcor.Error.Title.ToUpper().Contains(valorFiltro.ToUpper()))).Count();
 
                 res.ErrorOccurrences = _mapper.Map<List<ErrorOccurrenceViewModel>>(
                         _context.ErrorOccurrences.Where(
-                        errorOcor => errorOcor.Details.ToUpper().Contains(valorFiltro.ToUpper()) ||
-                                     errorOcor.Error.Title.ToUpper().Contains(valorFiltro.ToUpper()))
+                        errorOcor => errorOcor.Error.EnvironmentId == idAmbiente && (errorOcor.Details.ToUpper().Contains(valorFiltro.ToUpper()) ||
+                                     errorOcor.Error.Title.ToUpper().Contains(valorFiltro.ToUpper())))
                         .OrderByDescending(p => p.DateTime)
                         .Skip(skip)
                         .Take(tamanhoPagina)
@@ -177,11 +177,13 @@ namespace ErrorCenter.Application.ApplicationServices
             if (tipoFiltro == "O")
             {
                 res.QuantidadeTotal =   _context.ErrorOccurrences.Where(
-                                        errorOcor => errorOcor.Origin.Contains(valorFiltro)).Count();
+                                        errorOcor => errorOcor.Error.EnvironmentId == idAmbiente && 
+                                        errorOcor.Origin.Contains(valorFiltro)).Count();
 
                 res.ErrorOccurrences = _mapper.Map<List<ErrorOccurrenceViewModel>>(
                         _context.ErrorOccurrences.Where(
-                        errorOcor => errorOcor.Origin.Contains(valorFiltro))
+                        errorOcor => errorOcor.Error.EnvironmentId == idAmbiente && 
+                        errorOcor.Origin.Contains(valorFiltro))
                         .OrderByDescending(p => p.DateTime)
                         .Skip(skip)
                         .Take(tamanhoPagina)
@@ -197,11 +199,12 @@ namespace ErrorCenter.Application.ApplicationServices
             if(bSemFiltro)
             {
                 res.QuantidadeTotal = _context.ErrorOccurrences.Where(
-                        errorOcor => errorOcor.Id > 0).Count();
+                        errorOcor => errorOcor.Error.EnvironmentId == idAmbiente && errorOcor.Id > 0).Count();
 
                 res.ErrorOccurrences = _mapper.Map<List<ErrorOccurrenceViewModel>>(
                         _context.ErrorOccurrences.Where(
-                        errorOcor => errorOcor.Id > 0)
+                        errorOcor => errorOcor.Error.EnvironmentId == idAmbiente && 
+                        errorOcor.Id > 0)
                         .OrderByDescending(p => p.DateTime)
                         .Skip(skip)
                         .Take(tamanhoPagina)
