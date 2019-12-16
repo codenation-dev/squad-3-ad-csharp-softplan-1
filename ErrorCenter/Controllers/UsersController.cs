@@ -16,7 +16,7 @@ namespace ErrorCenter.Api.Controllers
     /// <summary>
     /// Controller for the UsersController service.
     /// </summary>
-    [Authorize]
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class UsersController : ControllerBase

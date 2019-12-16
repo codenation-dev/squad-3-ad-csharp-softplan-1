@@ -15,7 +15,7 @@ namespace ErrorCenter.Api.Controllers
     /// <summary>
     /// Controller for the Situations service.
     /// </summary> 
-    [Authorize]
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class SituationsController : ControllerBase

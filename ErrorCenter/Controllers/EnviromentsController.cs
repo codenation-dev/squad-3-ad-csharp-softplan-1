@@ -15,7 +15,7 @@ namespace ErrorCenter.Api.Controllers
     /// Controller for the ErrorOccurrences service.
     /// </summary>
     /// 
-    [Authorize]
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class EnvironmentsController : ControllerBase

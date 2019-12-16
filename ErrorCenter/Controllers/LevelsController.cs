@@ -15,7 +15,7 @@ namespace ErrorCenter.Api.Controllers
     /// <summary>
     /// Controller for the Levels service.
     /// </summary>
-    [Authorize]
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class LevelsController : ControllerBase
