@@ -80,6 +80,7 @@ namespace ErrorCenter.Data.Context
                 {
                     for (int idLevel = 1; idLevel < 4; idLevel++)
                     {
+                        /*
                         int qtdErros = idLevel + idEnv;
 
                         for (int j = 0; j < qtdErros; j++)
@@ -109,6 +110,7 @@ namespace ErrorCenter.Data.Context
 
                             idErro++;
                         }
+                        */
                     }
                 }
             }

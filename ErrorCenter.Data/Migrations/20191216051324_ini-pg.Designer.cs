@@ -3,15 +3,17 @@ using System;
 using ErrorCenter.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace ErrorCenter.Data.Migrations
 {
     [DbContext(typeof(ErrorCenterContext))]
-    partial class ErrorCenterContextModelSnapshot : ModelSnapshot
+    [Migration("20191216051324_ini-pg")]
+    partial class inipg
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

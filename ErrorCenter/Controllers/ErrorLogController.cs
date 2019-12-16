@@ -37,7 +37,7 @@ namespace ErrorCenter.Api.Controllers
 		[HttpPost()]
 		public ActionResult Post([FromBody]CompleteDataErrorViewModel item)
 		{
-			if( string.IsNullOrEmpty(item.userToken) && string.IsNullOrEmpty(item.UserEmail) )
+			if( string.IsNullOrEmpty(item.userToken) )
 			{
 				return BadRequest("Deve passar o usertoken no objeto item (corpo da requisição)");
 			}
