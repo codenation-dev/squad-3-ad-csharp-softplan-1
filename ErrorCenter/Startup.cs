@@ -34,17 +34,18 @@ namespace ErrorCenter
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers()
-                // Desabilitar referência circular na serialização dos json
+                // Desabilitar referÃªncia circular na serializaÃ§Ã£o dos json
                 .AddNewtonsoftJson(opt =>
                     opt.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
 
-            // Configuração da injeção de dependencias
+            // ConfiguraÃ§Ã£o da injeÃ§Ã£o de dependencias
             RegisterIoC.Register(services);
 
-            // Configuração do AutoMapper
+            // ConfiguraÃ§Ã£o do AutoMapper
             services.AddAutoMapper(typeof(AutoMappingDomainToViewModel));
             services.AddAutoMapper(typeof(AutoMappingViewModelToDomain));
 
+            // Configuração do contexto ef
             //services.AddDbContext<ErrorCenterContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddDbContext<ErrorCenterContext>(options => options.UseNpgsql(Configuration.GetConnectionString("PgConnection")));
 
@@ -52,7 +53,7 @@ namespace ErrorCenter
             // adicionando CORS
             services.AddCors();
 
-            // Configuração da autenticação
+            // ConfiguraÃ§Ã£o da autenticaÃ§Ã£o
             ConfigureAuth(services);
 
             
@@ -103,7 +104,7 @@ namespace ErrorCenter
                     {
                         Url = new Uri("https://swagger.io/docs/specification/api-general-info/e")
                     },
-                    Description = "API para fornecimento de dados para execuções funcionalidades do ErrorCenter.</br>",
+                    Description = "API para fornecimento de dados para execuÃ§Ãµes funcionalidades do ErrorCenter.</br>",
                     Contact = new OpenApiContact
                     {
                         Name = "Luciano Fagundes de Oliveira",
@@ -128,7 +129,7 @@ namespace ErrorCenter
                 config.AddSecurityRequirement(new OpenApiSecurityRequirement { });
                 
 
-                // Para funcionar a leitura do .xml de documentação é preciso habilitar nas configurações do projeto:
+                // Para funcionar a leitura do .xml de documentaÃ§Ã£o Ã© preciso habilitar nas configuraÃ§Ãµes do projeto:
                 // https://docs.microsoft.com/pt-br/aspnet/core/tutorials/getting-started-with-swashbuckle?view=aspnetcore-3.1&tabs=visual-studio
                 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
