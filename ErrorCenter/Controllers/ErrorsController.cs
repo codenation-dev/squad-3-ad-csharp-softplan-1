@@ -112,8 +112,8 @@ namespace ErrorCenter.Api.Controllers
         /// Shelve a registered Error.
         /// </summary>
         // PUT: api/Errors/Arquivar
-        [HttpPut("{id}/shelve")]
-        public async Task<IActionResult> PutShelveError(int id)
+        [HttpPut("{id}/shelve/{active}")]
+        public async Task<IActionResult> PutShelveError(int id, bool active)
         {
             if (id < 1)
             {
@@ -127,7 +127,8 @@ namespace ErrorCenter.Api.Controllers
                 return NotFound();
             }
 
-            Situation situationShelve = _context.Situations.Where(p => p.Id == 2).FirstOrDefault();
+            int idBusca = active ? 2 : 1;
+            Situation situationShelve = _context.Situations.Where(p => p.Id == idBusca).FirstOrDefault();
 
             error.Situation = situationShelve;
 
