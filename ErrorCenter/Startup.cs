@@ -34,22 +34,26 @@ namespace ErrorCenter
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers()
-                // Desabilitar referência circular na serialização dos json
+                // Desabilitar referÃƒÂªncia circular na serializaÃƒÂ§ÃƒÂ£o dos json
                 .AddNewtonsoftJson(opt =>
                     opt.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
 
-            // Configuração da injeção de dependencias
+            // ConfiguraÃƒÂ§ÃƒÂ£o da injeÃƒÂ§ÃƒÂ£o de dependencias
             RegisterIoC.Register(services);
 
-            // Configuração do AutoMapper
+            // ConfiguraÃƒÂ§ÃƒÂ£o do AutoMapper
             services.AddAutoMapper(typeof(AutoMappingDomainToViewModel));
             services.AddAutoMapper(typeof(AutoMappingViewModelToDomain));
 
-            // Configuração do contexto ef
+            // ConfiguraÃ§Ã£o do contexto ef
             //services.AddDbContext<ErrorCenterContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddDbContext<ErrorCenterContext>(options => options.UseNpgsql(Configuration.GetConnectionString("PgConnection")));
 
-            // Configuração da autenticação
+
+            // adicionando CORS
+            services.AddCors();
+
+            // ConfiguraÃƒÂ§ÃƒÂ£o da autenticaÃƒÂ§ÃƒÂ£o
             ConfigureAuth(services);
 
             
@@ -100,7 +104,7 @@ namespace ErrorCenter
                     {
                         Url = new Uri("https://swagger.io/docs/specification/api-general-info/e")
                     },
-                    Description = "API para fornecimento de dados para execuções funcionalidades do ErrorCenter.</br>",
+                    Description = "API para fornecimento de dados para execuÃƒÂ§ÃƒÂµes funcionalidades do ErrorCenter.</br>",
                     Contact = new OpenApiContact
                     {
                         Name = "Luciano Fagundes de Oliveira",
@@ -108,8 +112,24 @@ namespace ErrorCenter
                         Url = new Uri("https://github.com/lucianojec")
                     }
                 });
+                
+                var security = new Dictionary<string, IEnumerable<string>>
+                    {
+                        {"Bearer", new string[] { }},
+                    };
 
-                // Para funcionar a leitura do .xml de documentação é preciso habilitar nas configurações do projeto:
+                config.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    Description = "JWT Authorization header usando Bearer scheme. Exemplo: \"Authorization: Bearer {token}\"",
+                    Name = "Authorization",
+                    In = ParameterLocation.Header,
+                    Type = SecuritySchemeType.ApiKey
+                });
+
+                config.AddSecurityRequirement(new OpenApiSecurityRequirement { });
+                
+
+                // Para funcionar a leitura do .xml de documentaÃƒÂ§ÃƒÂ£o ÃƒÂ© preciso habilitar nas configuraÃƒÂ§ÃƒÂµes do projeto:
                 // https://docs.microsoft.com/pt-br/aspnet/core/tutorials/getting-started-with-swashbuckle?view=aspnetcore-3.1&tabs=visual-studio
                 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
@@ -125,15 +145,22 @@ namespace ErrorCenter
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseRouting();
+            app.UseHttpsRedirection();
 
-            app.UseAuthorization();
+            // global cors policy
+            app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+
 
             app.UseSwagger();
             app.UseSwaggerUI(config =>
             {
                 config.SwaggerEndpoint("/swagger/v1/swagger.json", "API - AceleraDev V1");
             });
+
+            app.UseRouting();
+
+            app.UseAuthentication();
+            //app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

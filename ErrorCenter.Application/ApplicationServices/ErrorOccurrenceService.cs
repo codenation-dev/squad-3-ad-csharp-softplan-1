@@ -21,39 +21,68 @@ namespace ErrorCenter.Application.ApplicationServices
             this._mapper = mapper;
         }
 
-        // cadastra erro com base em objeto com dadso complatos
+    
+            // cadastra erro com base em objeto com dadso complatos
         public void RegisterError(CompleteDataErrorViewModel errorData)
         {
-            if (errorData.EnvironmentId < 1)
-            {
-                var env = _context.Environments.Where(p => p.Name.ToUpper().Contains(errorData.EnvironmentName.ToUpper()))
-                    .FirstOrDefault();
-            }
+            DefinirValoresPadrao(errorData);
 
             var error = new Error()
             {
                 Code = errorData.ErrorCode,
-                Description = "desc: " + errorData.ErrorDescription,
+                Description = errorData.ErrorDescription,
                 EnvironmentId = errorData.EnvironmentId,
                 LevelId = errorData.LevelId,
-                Title = "titulo: " + errorData.ErrorTitle,
+                Title = errorData.ErrorTitle,
                 SituationId = errorData.SituationId,
             };
 
             var errorSaved = _context.Errors.Add(error);
 
 
-            _context.ErrorOccurrences.Add(new ErrorOccurrence { 
+            _context.ErrorOccurrences.Add(new ErrorOccurrence
+            {
                 Error = error,
                 //ErrorId = errorSaved.Entity.Id,
                 DateTime = DateTime.Parse(errorData.DateTime),
-                Details = errorData.Details,
-                EventCount = 1,
-                Origin = errorData.Origin,
+                Details = errorData.ErrorDetails,
+                EventCount = errorData.ErrorEventCount,
+                Origin = errorData.ErrorOrigin,
                 UserId = errorData.UserId,
             });
 
+
             _context.SaveChanges();
+        }
+
+        private static void DefinirValoresPadrao(CompleteDataErrorViewModel errorData)
+        {
+            if (errorData.EnvironmentId < 1)
+                errorData.EnvironmentId = 1;
+
+            if (errorData.LevelId < 1)
+                errorData.LevelId = 1;
+
+            if (errorData.SituationId < 1)
+                errorData.SituationId = 1;
+
+            if (errorData.ErrorEventCount < 1)
+                errorData.ErrorEventCount = 1;
+
+            if (string.IsNullOrEmpty(errorData.ErrorTitle))
+                errorData.ErrorTitle = "ErrorTitle omitido";
+
+            if (string.IsNullOrEmpty(errorData.ErrorDescription))
+                errorData.ErrorDescription = "ErrorDescription omitido";
+
+            if (string.IsNullOrEmpty(errorData.ErrorDetails))
+                errorData.ErrorDetails = "ErrorDetails omitido";
+
+            if (string.IsNullOrEmpty(errorData.ErrorOrigin))
+                errorData.ErrorOrigin = "ErrorOrigin omitido";
+
+            if (string.IsNullOrEmpty(errorData.DateTime))
+                errorData.DateTime = DateTime.Now.ToString();
         }
 
         private bool testarItemCorrespondeFiltro(ErrorOccurrence erro, string tipoFiltro, string valorFiltro)
@@ -103,11 +132,7 @@ namespace ErrorCenter.Application.ApplicationServices
                 ValorFiltro = valorFiltro
             };
 
-
-            res.QuantidadeTotal = _context.ErrorOccurrencesCount();
-            res.QuantidadePaginas = res.QuantidadeTotal / tamanhoPagina;
-            if ((res.QuantidadeTotal % tamanhoPagina) > 0)
-                res.QuantidadePaginas++;
+            res.QuantidadeTotal = 0;
 
             var bSemFiltro = false; 
             if ( (tipoFiltro == "T") || (valorFiltro == "none") ||  (string.IsNullOrEmpty(valorFiltro)) )
@@ -117,10 +142,14 @@ namespace ErrorCenter.Application.ApplicationServices
             else
             if (tipoFiltro == "L")
             {
+                res.QuantidadeTotal = _context.ErrorOccurrences.Where(
+                        errorOcor => errorOcor.Error.EnvironmentId == idAmbiente && (errorOcor.Error.Level.Id.ToString().Contains(valorFiltro.ToUpper()) ||
+                                     errorOcor.Error.Level.Name.ToUpper().Contains(valorFiltro.ToUpper()))).Count();
+
                 res.ErrorOccurrences = _mapper.Map<List<ErrorOccurrenceViewModel>>(
                         _context.ErrorOccurrences.Where(
-                        errorOcor => errorOcor.Error.Level.Id.ToString().Contains(valorFiltro.ToUpper()) ||
-                                     errorOcor.Error.Level.Name.ToUpper().Contains(valorFiltro.ToUpper()))
+                        errorOcor => errorOcor.Error.EnvironmentId == idAmbiente && (errorOcor.Error.Level.Id.ToString().Contains(valorFiltro.ToUpper()) ||
+                                     errorOcor.Error.Level.Name.ToUpper().Contains(valorFiltro.ToUpper())))
                         .OrderByDescending(p => p.DateTime)
                         .Skip(skip)
                         .Take(tamanhoPagina)
@@ -130,10 +159,14 @@ namespace ErrorCenter.Application.ApplicationServices
             else
             if (tipoFiltro == "D")
             {
+                res.QuantidadeTotal = _context.ErrorOccurrences.Where(
+                        errorOcor => errorOcor.Error.EnvironmentId == idAmbiente && (errorOcor.Details.ToUpper().Contains(valorFiltro.ToUpper()) ||
+                                     errorOcor.Error.Title.ToUpper().Contains(valorFiltro.ToUpper()))).Count();
+
                 res.ErrorOccurrences = _mapper.Map<List<ErrorOccurrenceViewModel>>(
                         _context.ErrorOccurrences.Where(
-                        errorOcor => errorOcor.Details.ToUpper().Contains(valorFiltro.ToUpper()) ||
-                                     errorOcor.Error.Title.ToUpper().Contains(valorFiltro.ToUpper()))
+                        errorOcor => errorOcor.Error.EnvironmentId == idAmbiente && (errorOcor.Details.ToUpper().Contains(valorFiltro.ToUpper()) ||
+                                     errorOcor.Error.Title.ToUpper().Contains(valorFiltro.ToUpper())))
                         .OrderByDescending(p => p.DateTime)
                         .Skip(skip)
                         .Take(tamanhoPagina)
@@ -143,9 +176,14 @@ namespace ErrorCenter.Application.ApplicationServices
             else
             if (tipoFiltro == "O")
             {
+                res.QuantidadeTotal =   _context.ErrorOccurrences.Where(
+                                        errorOcor => errorOcor.Error.EnvironmentId == idAmbiente && 
+                                        errorOcor.Origin.Contains(valorFiltro)).Count();
+
                 res.ErrorOccurrences = _mapper.Map<List<ErrorOccurrenceViewModel>>(
                         _context.ErrorOccurrences.Where(
-                        errorOcor => errorOcor.Origin.Contains(valorFiltro))
+                        errorOcor => errorOcor.Error.EnvironmentId == idAmbiente && 
+                        errorOcor.Origin.Contains(valorFiltro))
                         .OrderByDescending(p => p.DateTime)
                         .Skip(skip)
                         .Take(tamanhoPagina)
@@ -160,9 +198,13 @@ namespace ErrorCenter.Application.ApplicationServices
 
             if(bSemFiltro)
             {
+                res.QuantidadeTotal = _context.ErrorOccurrences.Where(
+                        errorOcor => errorOcor.Error.EnvironmentId == idAmbiente && errorOcor.Id > 0).Count();
+
                 res.ErrorOccurrences = _mapper.Map<List<ErrorOccurrenceViewModel>>(
                         _context.ErrorOccurrences.Where(
-                        errorOcor => errorOcor.Id > 0)
+                        errorOcor => errorOcor.Error.EnvironmentId == idAmbiente && 
+                        errorOcor.Id > 0)
                         .OrderByDescending(p => p.DateTime)
                         .Skip(skip)
                         .Take(tamanhoPagina)
@@ -173,6 +215,12 @@ namespace ErrorCenter.Application.ApplicationServices
             if ((tipoOrdenacao != "") && (tipoOrdenacao != "none"))
                 res.ErrorOccurrences = res.ErrorOccurrences.OrderBy(p => tipoOrdenacao == "L" ? p.Error.LevelId : 
                 p.EventCount).ToList();
+
+
+            
+            res.QuantidadePaginas = res.QuantidadeTotal / tamanhoPagina;
+            if ((res.QuantidadeTotal % tamanhoPagina) > 0)
+                res.QuantidadePaginas++;
 
             return res;
         }

@@ -3,6 +3,7 @@ using ErrorCenter.Application.Interfaces;
 using ErrorCenter.Application.ViewModels;
 using ErrorCenter.Data.Context;
 using ErrorCenter.Domain.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
@@ -11,9 +12,10 @@ using System.Threading.Tasks;
 
 namespace ErrorCenter.Api.Controllers
 {
-	/// <summary>
-	/// Controller for the Errors service.
-	/// </summary>
+    /// <summary>
+    /// Controller for the Errors service.
+    /// </summary>
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class ErrorsController : ControllerBase
@@ -80,7 +82,7 @@ namespace ErrorCenter.Api.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutError(int id, Error error)
         {
-            if (id != error.SituationId)
+            if (id != error.Id)
             {
                 return BadRequest();
             }
@@ -106,9 +108,54 @@ namespace ErrorCenter.Api.Controllers
             return NoContent();
         }
 
-		/// <summary>
-		/// Creates an Error.
-		/// </summary>
+        /// <summary>
+        /// Shelve a registered Error.
+        /// </summary>
+        // PUT: api/Errors/Arquivar
+        [HttpPut("{id}/shelve/{active}")]
+        public async Task<IActionResult> PutShelveError(int id, bool active)
+        {
+            if (id < 1)
+            {
+                return BadRequest();
+            }
+
+            var error = await _context.Errors.FindAsync(id);
+
+            if (error == null)
+            {
+                return NotFound();
+            }
+
+            int idBusca = active ? 2 : 1;
+            Situation situationShelve = _context.Situations.Where(p => p.Id == idBusca).FirstOrDefault();
+
+            error.Situation = situationShelve;
+
+            _context.Entry(error).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!ErrorExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+        }
+
+        /// <summary>
+        /// Creates an Error.
+        /// </summary>
         // POST: api/Errors
         [HttpPost]
         public async Task<ActionResult<Error>> PostError(Error error)

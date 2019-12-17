@@ -35,4 +35,12 @@
     <ProjectReference Include="..\ErrorCenter.Logs\ErrorCenter.Domain.csproj" />
   </ItemGroup>
 
+  
+
+  <ItemGroup>
+    <None Update="ErrorCenter.Api.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

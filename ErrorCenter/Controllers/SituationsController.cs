@@ -3,6 +3,7 @@ using ErrorCenter.Application.Interfaces;
 using ErrorCenter.Application.ViewModels;
 using ErrorCenter.Data.Context;
 using ErrorCenter.Domain.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
@@ -11,10 +12,11 @@ using System.Threading.Tasks;
 
 namespace ErrorCenter.Api.Controllers
 {
-	/// <summary>
-	/// Controller for the Situations service.
-	/// </summary> 
-	[Route("api/[controller]")]
+    /// <summary>
+    /// Controller for the Situations service.
+    /// </summary> 
+    //[Authorize]
+    [Route("api/[controller]")]
     [ApiController]
     public class SituationsController : ControllerBase
     {

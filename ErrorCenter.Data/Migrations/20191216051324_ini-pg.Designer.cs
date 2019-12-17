@@ -3,15 +3,17 @@ using System;
 using ErrorCenter.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace ErrorCenter.Data.Migrations
 {
     [DbContext(typeof(ErrorCenterContext))]
-    partial class ErrorCenterContextModelSnapshot : ModelSnapshot
+    [Migration("20191216051324_ini-pg")]
+    partial class inipg
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -221,7 +223,7 @@ namespace ErrorCenter.Data.Migrations
                             Email = "user1@sp.com.br",
                             Name = "Usuário 1",
                             Password = "202cb962ac59075b964b07152d234b70",
-                            Token = "f909afb2-a549-497b-b30b-3a32ae22888a"
+                            Token = "d959891e-dfaa-40cb-860c-c0c9855788a8"
                         },
                         new
                         {
@@ -229,7 +231,7 @@ namespace ErrorCenter.Data.Migrations
                             Email = "user2@sp.com.br",
                             Name = "Usuário 2",
                             Password = "289dff07669d7a23de0ef88d2f7129e7",
-                            Token = "13fd83ca-3ab0-49a4-9e26-fb6f45f696b8"
+                            Token = "ba9e481f-e138-4511-a79e-cf4de0b9beb5"
                         },
                         new
                         {
@@ -237,7 +239,7 @@ namespace ErrorCenter.Data.Migrations
                             Email = "user3@sp.com.br",
                             Name = "Usuário 3",
                             Password = "d81f9c1be2e08964bf9f24b15f0e4900",
-                            Token = "6d8ee5ad-614c-4804-a3f8-33fcd0b8a506"
+                            Token = "d61dbf56-2b56-4a3c-b973-4b97083aa60d"
                         },
                         new
                         {
@@ -245,7 +247,7 @@ namespace ErrorCenter.Data.Migrations
                             Email = "user4@sp.com.br",
                             Name = "Usuário 4",
                             Password = "250cf8b51c773f3f8dc8b4be867a9a02",
-                            Token = "ef52aa39-527c-40f9-ac7c-13d334ecf2a6"
+                            Token = "409c38f4-b167-45f0-921b-d0dcb264239b"
                         },
                         new
                         {
@@ -253,7 +255,7 @@ namespace ErrorCenter.Data.Migrations
                             Email = "user5@sp.com.br",
                             Name = "Usuário 5",
                             Password = "99c5e07b4d5de9d18c350cdf64c5aa3d",
-                            Token = "81eeefe1-8310-4b94-970f-43844eb4a0a9"
+                            Token = "f1b5b2a6-3b23-4a5a-a59e-3c9f2e681201"
                         },
                         new
                         {
@@ -261,7 +263,7 @@ namespace ErrorCenter.Data.Migrations
                             Email = "user6@sp.com.br",
                             Name = "Usuário 6",
                             Password = "9fe8593a8a330607d76796b35c64c600",
-                            Token = "adc4d2d6-55b1-4511-b630-53e2120e692c"
+                            Token = "dc7cd8ba-7dbf-4189-b327-4307a0b03259"
                         },
                         new
                         {
@@ -269,7 +271,7 @@ namespace ErrorCenter.Data.Migrations
                             Email = "user7@sp.com.br",
                             Name = "Usuário 7",
                             Password = "68053af2923e00204c3ca7c6a3150cf7",
-                            Token = "d1fe7bdf-6855-46b3-a470-f5851551ed04"
+                            Token = "7c25113d-a0c5-42c3-b94f-6ee738ad4fc9"
                         },
                         new
                         {
@@ -277,7 +279,7 @@ namespace ErrorCenter.Data.Migrations
                             Email = "user8@sp.com.br",
                             Name = "Usuário 8",
                             Password = "86a1fa88adb5c33bd7a68ac2f9f3f96b",
-                            Token = "54df8320-083f-4da7-aea4-d56126e6894b"
+                            Token = "f59a0a65-bad7-4cdd-a540-2f83bb35dde7"
                         },
                         new
                         {
@@ -285,7 +287,7 @@ namespace ErrorCenter.Data.Migrations
                             Email = "user9@sp.com.br",
                             Name = "Usuário 9",
                             Password = "7cf08c3ddac57a6d4f28034f88bfb23e",
-                            Token = "f73aed4b-90f3-41f6-a626-3737677628bc"
+                            Token = "fa50b2cf-e6d6-4d2d-a149-82545ca50674"
                         },
                         new
                         {
@@ -293,7 +295,7 @@ namespace ErrorCenter.Data.Migrations
                             Email = "user10@sp.com.br",
                             Name = "Usuário 10",
                             Password = "cdd773039f5b1a8f41949a1fccd0768f",
-                            Token = "38ddf0af-4f4d-44d4-bdaa-b7a8fde04b68"
+                            Token = "30a4f12b-ce3d-46c1-91f3-97be8fbada46"
                         });
                 });
 

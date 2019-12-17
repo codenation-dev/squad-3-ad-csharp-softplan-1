@@ -35,31 +35,7 @@ namespace ErrorCenter.Data.Context
         {
             return _configuration.GetConnectionString("DefaultConnection");
         }
-        public int ErrorOccurrencesCount()
-        {
-            string query = "select count(1) as cont from ERROR_OCCURRENCE";
-            object param = null;
-
-            using (var con = new SqlConnection(GetConnectionString()))
-            {
-                try
-                {
-                    con.Open();
-                    var res = con.Query<int>(query, param);
-                    return res.FirstOrDefault();
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception("Ocorreu um erro ao executar uma pesquisa do contador de registros com Dapper em ErrorOccurrencesCount()", ex);
-                }
-                finally
-                {
-                    con.Close();
-                }
-            }
-        }
-
-
+        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             foreach (var property in modelBuilder.Model.GetEntityTypes()
@@ -104,6 +80,7 @@ namespace ErrorCenter.Data.Context
                 {
                     for (int idLevel = 1; idLevel < 4; idLevel++)
                     {
+                        /*
                         int qtdErros = idLevel + idEnv;
 
                         for (int j = 0; j < qtdErros; j++)
@@ -133,6 +110,7 @@ namespace ErrorCenter.Data.Context
 
                             idErro++;
                         }
+                        */
                     }
                 }
             }

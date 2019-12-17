@@ -4,6 +4,7 @@ using ErrorCenter.Application.Interfaces;
 using ErrorCenter.Application.ViewModels;
 using ErrorCenter.Data.Context;
 using ErrorCenter.Domain.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
@@ -12,9 +13,10 @@ using System.Threading.Tasks;
 
 namespace ErrorCenter.Api.Controllers
 {
-	/// <summary>
-	/// Controller for the UsersController service.
-	/// </summary>
+    /// <summary>
+    /// Controller for the UsersController service.
+    /// </summary>
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class UsersController : ControllerBase
